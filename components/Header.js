@@ -4,11 +4,11 @@ import React from 'react'
 const Header = () => {
     const menuItems =
         <>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/dashboard">Dashboard</Link></li>
-            <li><Link href="/cart">My Cart</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/register">Register Now</Link></li>
+            <li className='font-bold'><Link href="/">Home</Link></li>
+            <li className='font-bold'><Link href="/dashboard">Dashboard</Link></li>
+            <li className='font-bold'><Link href="/cart">My Cart</Link></li>
+            <li className='font-bold'><Link href="/about">About Us</Link></li>
+            <li className='font-bold'><Link href="/register">Register Now</Link></li>
         </>
     return (
         <header>
