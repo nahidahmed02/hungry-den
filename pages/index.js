@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Layout from '@/components/Layout/Layout'
+import Shop from '@/components/Shop/Shop'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,7 @@ export default function Home() {
 
       <main>
         <Layout>
-          <h>NEXT Restaurant</h>
+          <Shop></Shop>
         </Layout>
       </main>
     </>
