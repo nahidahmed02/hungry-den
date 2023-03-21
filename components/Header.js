@@ -5,10 +5,10 @@ const Header = () => {
     const menuItems =
         <>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/">Dashboard</Link></li>
-            <li><Link href="/">My Cart</Link></li>
+            <li><Link href="/dashboard">Dashboard</Link></li>
+            <li><Link href="/cart">My Cart</Link></li>
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/">Register Now</Link></li>
+            <li><Link href="/register">Register Now</Link></li>
         </>
     return (
         <header>
@@ -22,7 +22,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl italic">N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</a>
+                    <Link className="btn btn-ghost normal-case text-xl italic" href='/'>N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1">
