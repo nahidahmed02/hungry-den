@@ -1,0 +1,98 @@
+[
+    {
+        "id": "1",
+        "category": "halal_meat",
+        "name": "halal_meat_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/halalmeat.jpg"
+    },
+    {
+        "id": "2",
+        "category": "halal_meat",
+        "name": "halal_meat_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/HalalMeat2.jpg"
+    },
+    {
+        "id": "3",
+        "category": "meat",
+        "name": "meat_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/meat.jpg"
+    },
+    {
+        "id": "4",
+        "category": "meat",
+        "name": "meat_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/meat2.webp"
+    },
+    {
+        "id": "5",
+        "category": "beef",
+        "name": "beef_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/beef-cut-types_header.jpg"
+    },
+    {
+        "id": "6",
+        "category": "beef",
+        "name": "beef_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/Beef-loin.webp"
+    },
+    {
+        "id": "7",
+        "category": "fish",
+        "name": "fish_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/fish.webp"
+    },
+    {
+        "id": "8",
+        "category": "fish",
+        "name": "fish_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/Tandoori-Fish-750x750.webp"
+    },
+    {
+        "id": "9",
+        "category": "soft_drink",
+        "name": "soft_drink_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/cocacola.jpg"
+    },
+    {
+        "id": "10",
+        "category": "soft_drink",
+        "name": "soft_drink_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/Sunkist_Soda_Orange_flavour_(Hong_Kong_version).jpg"
+    },
+    {
+        "id": "11",
+        "category": "snacks",
+        "name": "snacks_1",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/snack-plate.webp"
+    },
+    {
+        "id": "12",
+        "category": "snacks",
+        "name": "snacks_2",
+        "price": "10",
+        "vat": "1",
+        "photo": "./images/Product-Categories-Snacks2.jpg"
+    }
+]

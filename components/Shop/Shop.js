@@ -1,5 +1,6 @@
 import React from 'react'
 import Category from './Category'
+import Foods from './Foods'
 
 const Shop = () => {
     return (
@@ -9,7 +10,7 @@ const Shop = () => {
             <hr />
 
             <Category />
-
+            <Foods></Foods>
 
         </section>
     )
