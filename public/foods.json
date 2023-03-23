@@ -5,7 +5,7 @@
         "name": "halal_meat_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/halalmeat.jpg"
+        "photo": "/public/images/halalmeat.jpg"
     },
     {
         "id": "2",
@@ -13,7 +13,7 @@
         "name": "halal_meat_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/HalalMeat2.jpg"
+        "photo": "/public//images/HalalMeat2.jpg"
     },
     {
         "id": "3",
@@ -21,7 +21,7 @@
         "name": "meat_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/meat.jpg"
+        "photo": "/public//images/meat.jpg"
     },
     {
         "id": "4",
@@ -29,7 +29,7 @@
         "name": "meat_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/meat2.webp"
+        "photo": "/public//images/meat2.webp"
     },
     {
         "id": "5",
@@ -37,7 +37,7 @@
         "name": "beef_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/beef-cut-types_header.jpg"
+        "photo": "/public//images/beef-cut-types_header.jpg"
     },
     {
         "id": "6",
@@ -45,7 +45,7 @@
         "name": "beef_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/Beef-loin.webp"
+        "photo": "/public//images/Beef-loin.webp"
     },
     {
         "id": "7",
@@ -53,7 +53,7 @@
         "name": "fish_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/fish.webp"
+        "photo": "/public//images/fish.webp"
     },
     {
         "id": "8",
@@ -61,7 +61,7 @@
         "name": "fish_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/Tandoori-Fish-750x750.webp"
+        "photo": "/public//images/Tandoori-Fish-750x750.webp"
     },
     {
         "id": "9",
@@ -69,7 +69,7 @@
         "name": "soft_drink_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/cocacola.jpg"
+        "photo": "/public//images/cocacola.jpg"
     },
     {
         "id": "10",
@@ -77,7 +77,7 @@
         "name": "soft_drink_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/Sunkist_Soda_Orange_flavour_(Hong_Kong_version).jpg"
+        "photo": "/public//images/Sunkist_Soda_Orange_flavour_(Hong_Kong_version).jpg"
     },
     {
         "id": "11",
@@ -85,7 +85,7 @@
         "name": "snacks_1",
         "price": "10",
         "vat": "1",
-        "photo": "./images/snack-plate.webp"
+        "photo": "/public//images/snack-plate.webp"
     },
     {
         "id": "12",
@@ -93,6 +93,6 @@
         "name": "snacks_2",
         "price": "10",
         "vat": "1",
-        "photo": "./images/Product-Categories-Snacks2.jpg"
+        "photo": "/public//images/Product-Categories-Snacks2.jpg"
     }
 ]

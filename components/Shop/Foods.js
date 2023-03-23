@@ -12,7 +12,7 @@ const Foods = () => {
     }, [])
 
     return (
-        <section className='mx-32 grid lg:grid-cols-4 gap-8 mb-14 mt-6'>
+        <section className='bg-slate-300 rounded-md mx-8 lg:mx-24 p-8 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8 mb-14 mt-6'>
             {foods.map(food => <Food
                 key={food.id}
                 food={food}
