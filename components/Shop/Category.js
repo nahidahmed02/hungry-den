@@ -1,6 +1,10 @@
-import React from 'react'
+import { Context } from '@/context/Context'
+import React, { useContext } from 'react'
 
 const Category = () => {
+    const { foods } = useContext(Context)
+    console.log(foods);
+
     return (
         <section className="navbar">
             <ul className="menu menu-horizontal px-1 mx-auto">

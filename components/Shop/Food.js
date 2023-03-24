@@ -31,9 +31,9 @@ const Food = ({ food }) => {
                     <h2 className="">Price: ${price}</h2>
                     <h2 className="">Vat: {vat}</h2>
                     <h2 className="">Amount:
-                        <span onClick={decrement} className='cursor-pointer ml-1 lg:ml-2 mr-1'>-</span>
-                        {count}
-                        <span onClick={increment} className='cursor-pointer ml-1'>+</span>
+                        <span onClick={decrement} className='cursor-pointer font-bold bg-slate-300 px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'>-</span>
+                        <span className='px-2'>{count}</span>
+                        <span onClick={increment} className='cursor-pointer font-bold bg-slate-300 px-1 lg:pb-1 ml-1'>+</span>
                     </h2>
                     <h2 className="">Total: {count === 0 ? 0 : total}</h2>
 
