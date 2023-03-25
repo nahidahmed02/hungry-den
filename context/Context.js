@@ -4,6 +4,15 @@ export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
     const [foods, setFoods] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category === 'All' ? '' : category)
+    }
+
+    const filteredFoods = selectedCategory
+        ? foods.filter(food => food.category === selectedCategory)
+        : foods
 
     useEffect(() => {
         fetch('foods.json')
@@ -12,7 +21,7 @@ export const ContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <Context.Provider value={{ foods, setFoods }}>
+        <Context.Provider value={{ foods, selectedCategory, handleCategoryClick, filteredFoods }}>
             {children}
         </Context.Provider>
     )

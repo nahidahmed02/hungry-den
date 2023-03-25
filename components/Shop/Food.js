@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 
 const Food = ({ food }) => {
     const { category, name, price, vat, photo } = food;
-
     let [count, setCount] = useState(0)
+
     function increment() {
         setCount(count + 1);
     }

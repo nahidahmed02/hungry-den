@@ -3,7 +3,7 @@
         "id": "1",
         "category": "halal-meat",
         "name": "halal_meat_1",
-        "price": "10",
+        "price": "22",
         "vat": "1",
         "photo": "/public/images/halalmeat.jpg"
     },
@@ -11,7 +11,7 @@
         "id": "2",
         "category": "halal-meat",
         "name": "halal_meat_2",
-        "price": "10",
+        "price": "20",
         "vat": "1",
         "photo": "/public//images/HalalMeat2.jpg"
     },
@@ -19,7 +19,7 @@
         "id": "3",
         "category": "meat",
         "name": "meat_1",
-        "price": "10",
+        "price": "19",
         "vat": "1",
         "photo": "/public//images/meat.jpg"
     },
@@ -27,7 +27,7 @@
         "id": "4",
         "category": "meat",
         "name": "meat_2",
-        "price": "10",
+        "price": "16",
         "vat": "1",
         "photo": "/public//images/meat2.webp"
     },
@@ -35,7 +35,7 @@
         "id": "5",
         "category": "beef",
         "name": "beef_1",
-        "price": "10",
+        "price": "14",
         "vat": "1",
         "photo": "/public//images/beef-cut-types_header.jpg"
     },
@@ -43,7 +43,7 @@
         "id": "6",
         "category": "beef",
         "name": "beef_2",
-        "price": "10",
+        "price": "17",
         "vat": "1",
         "photo": "/public//images/Beef-loin.webp"
     },
@@ -51,7 +51,7 @@
         "id": "7",
         "category": "fish",
         "name": "fish_1",
-        "price": "10",
+        "price": "18",
         "vat": "1",
         "photo": "/public//images/fish.webp"
     },
@@ -59,7 +59,7 @@
         "id": "8",
         "category": "fish",
         "name": "fish_2",
-        "price": "10",
+        "price": "15",
         "vat": "1",
         "photo": "/public//images/Tandoori-Fish-750x750.webp"
     },
@@ -67,7 +67,7 @@
         "id": "9",
         "category": "soft-drinks",
         "name": "soft_drink_1",
-        "price": "10",
+        "price": "13",
         "vat": "1",
         "photo": "/public//images/cocacola.jpg"
     },
@@ -83,7 +83,7 @@
         "id": "11",
         "category": "snacks",
         "name": "snacks_1",
-        "price": "10",
+        "price": "11",
         "vat": "1",
         "photo": "/public//images/snack-plate.webp"
     },
@@ -94,5 +94,37 @@
         "price": "10",
         "vat": "1",
         "photo": "/public//images/Product-Categories-Snacks2.jpg"
+    },
+    {
+        "id": "13",
+        "category": "snacks",
+        "name": "snacks_3",
+        "price": "12",
+        "vat": "1",
+        "photo": "/public//images/Product-Categories-Snacks2.jpg"
+    },
+    {
+        "id": "14",
+        "category": "halal-meat",
+        "name": "halal_meat_3",
+        "price": "15",
+        "vat": "1",
+        "photo": "/public/images/halalmeat.jpg"
+    },
+    {
+        "id": "15",
+        "category": "halal-meat",
+        "name": "halal_meat_4",
+        "price": "20",
+        "vat": "1",
+        "photo": "/public/images/halalmeat.jpg"
+    },
+    {
+        "id": "16",
+        "category": "beef",
+        "name": "beef_3",
+        "price": "13",
+        "vat": "1",
+        "photo": "/public//images/Beef-loin.webp"
     }
 ]

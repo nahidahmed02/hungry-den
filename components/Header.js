@@ -22,8 +22,9 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl italic" href='/'>N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</Link>
+                    <Link className="btn btn-ghost normal-case text-xl italic ml-20" href='/'>N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</Link>
                 </div>
+
                 <div className="navbar-end hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
