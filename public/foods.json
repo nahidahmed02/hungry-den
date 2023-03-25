@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "category": "halal_meat",
+        "category": "halal-meat",
         "name": "halal_meat_1",
         "price": "10",
         "vat": "1",
@@ -9,7 +9,7 @@
     },
     {
         "id": "2",
-        "category": "halal_meat",
+        "category": "halal-meat",
         "name": "halal_meat_2",
         "price": "10",
         "vat": "1",
@@ -65,7 +65,7 @@
     },
     {
         "id": "9",
-        "category": "soft_drink",
+        "category": "soft-drinks",
         "name": "soft_drink_1",
         "price": "10",
         "vat": "1",
@@ -73,7 +73,7 @@
     },
     {
         "id": "10",
-        "category": "soft_drink",
+        "category": "soft-drinks",
         "name": "soft_drink_2",
         "price": "10",
         "vat": "1",
