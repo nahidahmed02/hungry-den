@@ -5,14 +5,14 @@ const Header = () => {
     const menuItems =
         <>
             <li className='font-bold'><Link href="/">Home</Link></li>
-            <li className='font-bold'><Link href="/dashboard">Dashboard</Link></li>
             <li className='font-bold'><Link href="/cart">My Cart</Link></li>
+            <li className='font-bold'><Link href="/dashboard">Dashboard</Link></li>
             <li className='font-bold'><Link href="/about">About Us</Link></li>
             <li className='font-bold'><Link href="/register">Register Now</Link></li>
         </>
     return (
         <header>
-            <div className="navbar bg-neutral text-neutral-content">
+            <div className="navbar fixNav bg-neutral text-neutral-content">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Header = () => {
                     <Link className="btn btn-ghost normal-case text-xl italic ml-20" href='/'>N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</Link>
                 </div>
 
-                <div className="navbar-end hidden lg:flex ">
+                <div className="navbar-end hidden lg:flex mr-20">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
