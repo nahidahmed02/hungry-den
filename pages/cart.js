@@ -1,10 +1,11 @@
+import Cart from '@/components/Cart/Cart'
 import Layout from '@/components/Layout/Layout'
 import React from 'react'
 
 const cart = () => {
     return (
         <Layout>
-            <div>cart</div>
+            <Cart></Cart>
         </Layout>
     )
 }

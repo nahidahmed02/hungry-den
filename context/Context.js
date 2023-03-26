@@ -21,7 +21,12 @@ export const ContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <Context.Provider value={{ foods, selectedCategory, handleCategoryClick, filteredFoods }}>
+        <Context.Provider value={{
+            foods,
+            selectedCategory,
+            handleCategoryClick,
+            filteredFoods
+        }}>
             {children}
         </Context.Provider>
     )
