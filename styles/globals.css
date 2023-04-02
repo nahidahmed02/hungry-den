@@ -17,24 +17,22 @@
 }
 
 .page-item {
-    margin: 0 2px;
+    margin: 0 4px;
+}
+
+.page-link {
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .active {
     background-color: #007bff;
-    border-color: #007bff;
+    border-radius: 5px;
     color: #fff;
-}
-
-.page-link {
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    color: #007bff;
-    cursor: pointer;
-    display: block;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
 }
 
 .page-link:hover {

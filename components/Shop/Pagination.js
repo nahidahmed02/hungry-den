@@ -9,7 +9,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
     }
 
     return (
-        <section className="flex justify-center mt-6">
+        <section className="flex justify-center mb-4">
             <nav>
                 <ul className="pagination ">
                     {pageNumbers.map(number => (
