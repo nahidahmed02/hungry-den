@@ -12,7 +12,7 @@ const Cart = () => {
         <section className='mt-20'>
             {!selectedFoods
                 ?
-                <p>No Items Selected</p>
+                <p className='font-bold text-center my-12 text-2xl italic text-red-600'>No Items Selected</p>
                 :
                 <section>
                     {selectedFoods.map(selectedFood => <SelectedFood

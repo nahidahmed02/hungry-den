@@ -6,9 +6,9 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart }) => {
 
     return (
         <section className='flex'>
-            <h1 className='mr-4'>{name}</h1>
-            <h1 className='mr-4'>{price}</h1>
-            <h1 className='mr-4'>{vat}</h1>
+            <h1 className='mr-4'>Name: {name}</h1>
+            <h1 className='mr-4'>Price: {price}</h1>
+            <h1 className='mr-4'>VAT: {vat}</h1>
             <button onClick={handleRemoveFromCart} className='btn btn-sm ml-6'>Remove</button>
         </section>
     )
