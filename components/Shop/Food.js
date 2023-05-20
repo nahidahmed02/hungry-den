@@ -6,6 +6,7 @@ const Food = ({ food }) => {
     const router = useRouter();
 
     const { category, name, price, vat, photo } = food;
+    console.log(food);
 
     const [isAddedToCart, setIsAddedToCart] = useState(false);
     let [count, setCount] = useState(1);
@@ -21,7 +22,9 @@ const Food = ({ food }) => {
         setCount(count - 1);
     }
 
-    let total = price * count + parseFloat(vat) * count;
+    let vatCount = (price * vat / 100) * count;
+
+    let total = (parseFloat(price) * count) + parseFloat(vatCount);
 
 
     const handleAddToCart = () => {
@@ -41,13 +44,13 @@ const Food = ({ food }) => {
         <section>
             <div className="card bg-base-100 shadow-xl py-3">
                 <figure className="px-4 pt-2 lg:px-6 lg:pt-6">
-                    <Image src='https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434__480.jpg' alt="" width={170} height={95} className="rounded-xl mb-3" />
+                    <Image src={photo} alt="food" width={170} height={95} className="rounded-xl mb-3" />
                 </figure>
                 <div className="text-sm mx-4 lg:mx-8">
                     <h2 className="">Category: {category}</h2>
                     <h2 className="">Name: {name}</h2>
                     <h2 className="">Price: ${price}</h2>
-                    <h2 className="">Vat: ${vat}</h2>
+                    <h2 className="">Vat {vat}% : {vatCount}</h2>
                     <h2 className="">Quantity:
                         <span onClick={decrement} className='cursor-pointer font-bold bg-slate-300 px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'>-</span>
                         <span className='px-2'>{count}</span>
