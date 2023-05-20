@@ -22,7 +22,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl italic ml-20" href='/'>N E <span className='text-red-600 text-3xl mx-1 '> X </span> T</Link>
+                    <Link className="normal-case font-serif font-bold text-2xl italic ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span> 🔥</Link>
                 </div>
 
                 <div className="navbar-end hidden lg:flex mr-20">
