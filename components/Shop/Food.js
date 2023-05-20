@@ -22,9 +22,9 @@ const Food = ({ food }) => {
         setCount(count - 1);
     }
 
-    let vatCount = (price * vat / 100) * count;
+    let vatCount = ((price * vat / 100) * count).toFixed(2);
 
-    let total = (parseFloat(price) * count) + parseFloat(vatCount);
+    let total = ((parseFloat(price) * count) + parseFloat(vatCount)).toFixed(2);
 
 
     const handleAddToCart = () => {
