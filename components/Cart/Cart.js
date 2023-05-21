@@ -4,18 +4,22 @@ import SelectedFood from './SelectedFood';
 const Cart = () => {
     const [selectedFoods, setSelectedFoods] = useState([]);
 
-    const storedSelectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
 
     useEffect(() => {
-        if (storedSelectedFoods) {
-            setSelectedFoods(storedSelectedFoods);
+        if (typeof window !== 'undefined') {
+            const storedSelectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
+            if (storedSelectedFoods) {
+                setSelectedFoods(storedSelectedFoods);
+            }
         }
     }, []);
 
     const handleRemoveFromCart = (id) => {
-        const updatedSelectedFoods = selectedFoods.filter((item) => item.id !== id);
-        setSelectedFoods(updatedSelectedFoods);
-        localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFoods));
+        if (typeof window !== 'undefined') {
+            const updatedSelectedFoods = selectedFoods.filter((item) => item.id !== id);
+            setSelectedFoods(updatedSelectedFoods);
+            localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFoods));
+        }
     };
 
     return (
