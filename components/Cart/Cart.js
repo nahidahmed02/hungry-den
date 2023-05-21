@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SelectedFood from './SelectedFood';
 
 const Cart = () => {
+    const [selectedFoods, setSelectedFoods] = useState([]);
 
-    const selectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
+    const storedSelectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
+
+    useEffect(() => {
+        if (storedSelectedFoods) {
+            setSelectedFoods(storedSelectedFoods);
+        }
+    }, []);
 
     const handleRemoveFromCart = (id) => {
-        if (typeof window !== 'undefined') {
-            const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
-            const updatedSelectedFood = existingSelectedFood.filter((item) => item.id !== id);
-            localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFood));
-        }
+        const updatedSelectedFoods = selectedFoods.filter((item) => item.id !== id);
+        setSelectedFoods(updatedSelectedFoods);
+        localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFoods));
     };
 
     return (
