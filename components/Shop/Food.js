@@ -1,14 +1,19 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Food = ({ food }) => {
     const router = useRouter();
-
     const { id, category, name, price, vat, photo } = food;
-
-    const [isAddedToCart, setIsAddedToCart] = useState(false);
     let [count, setCount] = useState(1);
+    const [isAddedToCart, setIsAddedToCart] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
+        setCartItems(existingSelectedFood);
+        setIsAddedToCart(existingSelectedFood.some((item) => item.id === id));
+    }, [id]);
 
     function increment() {
         setCount(count + 1);
@@ -22,7 +27,6 @@ const Food = ({ food }) => {
     }
 
     let vatCount = ((price * vat / 100) * count).toFixed(2);
-
     let total = ((parseFloat(price) * count) + parseFloat(vatCount)).toFixed(2);
 
 
@@ -30,6 +34,7 @@ const Food = ({ food }) => {
         if (typeof window !== 'undefined') {
             const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
             localStorage.setItem('selectedFood', JSON.stringify([...existingSelectedFood, food]));
+            setCartItems([...existingSelectedFood, food]);
             setIsAddedToCart(true)
         }
     }
@@ -39,6 +44,7 @@ const Food = ({ food }) => {
             const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
             const updatedSelectedFood = existingSelectedFood.filter(item => item.id !== id);
             localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFood));
+            setCartItems(updatedSelectedFood)
             setIsAddedToCart(false)
         }
     };
