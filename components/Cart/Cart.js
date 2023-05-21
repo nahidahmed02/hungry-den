@@ -2,15 +2,20 @@ import React from 'react'
 import SelectedFood from './SelectedFood';
 
 const Cart = () => {
+
     const selectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
 
-    const handleRemoveFromCart = () => {
-        localStorage.removeItem('selectedFood');
+    const handleRemoveFromCart = (id) => {
+        if (typeof window !== 'undefined') {
+            const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
+            const updatedSelectedFood = existingSelectedFood.filter((item) => item.id !== id);
+            localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFood));
+        }
     };
 
     return (
         <section className='mt-36 mb-20'>
-            {!selectedFoods
+            {selectedFoods.length === 0
                 ?
                 <p className='font-bold text-center text-2xl italic text-red-600'>No Items Selected</p>
                 :

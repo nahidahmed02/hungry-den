@@ -5,8 +5,7 @@ import React, { useState } from 'react'
 const Food = ({ food }) => {
     const router = useRouter();
 
-    const { category, name, price, vat, photo } = food;
-    console.log(food);
+    const { id, category, name, price, vat, photo } = food;
 
     const [isAddedToCart, setIsAddedToCart] = useState(false);
     let [count, setCount] = useState(1);
@@ -36,8 +35,12 @@ const Food = ({ food }) => {
     }
 
     const handleRemoveFromCart = () => {
-        localStorage.removeItem('selectedFood');
-        setIsAddedToCart(false)
+        if (typeof window !== 'undefined') {
+            const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
+            const updatedSelectedFood = existingSelectedFood.filter(item => item.id !== id);
+            localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFood));
+            setIsAddedToCart(false)
+        }
     };
 
     return (
