@@ -1,11 +1,37 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Header = () => {
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsInCart, setItemsInCart] = useState(0);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (typeof window !== undefined) {
+                try {
+                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
+                    setCartItems(cart || []);
+                    setItemsInCart(cart ? cart.length : 0);
+
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+        fetchData();
+    }, [cartItems])
+
+
     const menuItems =
         <>
             <li className='font-bold'><Link href="/">Home</Link></li>
-            <li className='font-bold'><Link href="/cart">My Cart</Link></li>
+            <li className='font-bold'>
+                <Link href="/cart">My Cart
+                    <span className="indicator-item badge badge-warning">
+                        {itemsInCart}
+                    </span>
+                </Link>
+            </li>
             <li className='font-bold'><Link href="/dashboard">Dashboard</Link></li>
             <li className='font-bold'><Link href="/about">About Us</Link></li>
             <li className='font-bold'><Link href="/register">Register Now</Link></li>
