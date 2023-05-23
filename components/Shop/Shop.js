@@ -22,7 +22,12 @@ const Shop = () => {
     const currentFilteredFoods = filteredFoods.slice(indexOfFirstFood, indexOfLastFood);
     return (
         <section className='mt-20'>
+
             <h1 className='text-center text-2xl font-bold mt-4 mb-2 text-green-600'>What would you like to order?</h1>
+
+            <div className="form-control searchBar">
+                <input type="text" placeholder="Search" className="input w-52" />
+            </div>
 
             <Category />
 

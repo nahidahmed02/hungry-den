@@ -12,6 +12,26 @@
     z-index: 1;
 }
 
+
+/* ----- searchBar ----- */
+
+.searchBar-div {
+    /* background-color: yellow; */
+
+}
+
+.searchBar {
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    top: 82px;
+    right: 96px;
+    z-index: 1;
+    border: 1px solid orange;
+    border-radius: 8px;
+}
+
+
 /* ----- pagination ----- */
 
 .pagination {
