@@ -35,6 +35,21 @@ export const ContextProvider = ({ children }) => {
     const indexOfFirstFood = indexOfLastFood - foodsPerPage;
     const currentFilteredFoods = filteredFoods.slice(indexOfFirstFood, indexOfLastFood);
 
+    // ----------- search bar implementation----------------
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResult, setSearchResult] = useState([]);
+
+    const handleSearch = (e) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+
+        // search logic
+        const results = foods.filter(food => food.name.toLowerCase().includes(query.toLowerCase()));
+        setSearchResult(results);
+    };
+
+
     return (
         <Context.Provider value={{
             foods,
@@ -44,7 +59,10 @@ export const ContextProvider = ({ children }) => {
             currentFilteredFoods,
             totalPages,
             currentPage,
-            handlePageChange
+            handlePageChange,
+            searchQuery,
+            searchResult,
+            handleSearch
         }}>
             {children}
         </Context.Provider>
