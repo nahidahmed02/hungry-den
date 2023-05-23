@@ -16,6 +16,7 @@ export const ContextProvider = ({ children }) => {
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category === 'All' ? '' : category)
+        setSearchQuery('')
     }
 
     const filteredFoods = selectedCategory
