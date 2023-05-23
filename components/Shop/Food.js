@@ -52,8 +52,8 @@ const Food = ({ food }) => {
     return (
         <section>
             <div className="card bg-slate-200 shadow-xl py-3">
-                <figure className="px-4 pt-2 lg:px-6 lg:pt-6">
-                    <Image src={photo} alt="food" width={170} height={95} className="rounded-xl mb-3" />
+                <figure className="px-4 pt-2 lg:px-6 lg:pt-6 ">
+                    <Image src={photo} alt="food" width={170} height={95} className="rounded-xl mb-3 hover:w-96" />
                 </figure>
                 <div className="text-sm mx-4 lg:mx-8">
                     <h2 className="">Category: {category}</h2>
