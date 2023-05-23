@@ -1,6 +1,9 @@
-import React from 'react'
+import { Context } from '@/context/Context';
+import React, { useContext } from 'react'
 
-const Pagination = ({ totalPages, currentPage, onPageChange }) => {
+const Pagination = () => {
+
+    const { totalPages, currentPage, handlePageChange } = useContext(Context);
 
     const pageNumbers = [];
 
@@ -17,7 +20,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
                             key={number}
                             className={`page-item ${currentPage === number ? 'active' : ''}`}
                         >
-                            <button onClick={() => onPageChange(number)} className="page-link">
+                            <button onClick={() => handlePageChange(number)} className="page-link">
                                 {number}
                             </button>
                         </li>

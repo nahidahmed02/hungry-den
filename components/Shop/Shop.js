@@ -1,45 +1,23 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import Category from './Category'
 import Foods from './Foods'
 import Pagination from './Pagination'
-import { Context } from '@/context/Context';
+import SearchBar from './SearchBar';
 
 const Shop = () => {
-    const { filteredFoods } = useContext(Context);
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const [foodsPerPage, setFoodsPerPage] = useState(6);
-
-    const totalFilteredFoods = filteredFoods.length;
-    const totalPages = Math.ceil(totalFilteredFoods / foodsPerPage);
-
-    const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    }
-
-    const indexOfLastFood = currentPage * foodsPerPage;
-    const indexOfFirstFood = indexOfLastFood - foodsPerPage;
-    const currentFilteredFoods = filteredFoods.slice(indexOfFirstFood, indexOfLastFood);
     return (
         <section className='mt-20'>
 
             <h1 className='text-center text-2xl font-bold mt-4 mb-2 text-green-600'>What would you like to order?</h1>
 
-            <div className="form-control searchBar">
-                <input type="text" placeholder="Search" className="input w-52" />
-            </div>
+            {/* <SearchBar></SearchBar> */}
 
             <Category />
 
-            <Foods
-                currentFilteredFoods={currentFilteredFoods}
-            ></Foods>
+            <Foods />
 
-            <Pagination
-                totalPages={totalPages}
-                currentPage={currentPage}
-                onPageChange={handlePageChange}
-            ></Pagination>
+            <Pagination />
 
         </section>
     )

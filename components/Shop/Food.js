@@ -51,7 +51,7 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card bg-base-100 shadow-xl py-3">
+            <div className="card bg-slate-200 shadow-xl py-3">
                 <figure className="px-4 pt-2 lg:px-6 lg:pt-6">
                     <Image src={photo} alt="food" width={170} height={95} className="rounded-xl mb-3" />
                 </figure>
