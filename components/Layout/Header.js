@@ -1,8 +1,11 @@
 import { Context } from '@/context/Context';
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
 
 const Header = () => {
+    const router = useRouter();
+    // console.log(router);
     const { searchQuery, handleSearch } = useContext(Context);
     const [cartItems, setCartItems] = useState([]);
     const [itemsInCart, setItemsInCart] = useState(0);
@@ -53,16 +56,18 @@ const Header = () => {
                     <Link className="normal-case font-serif font-bold text-2xl italic ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span> 🔥</Link>
                 </div>
 
-                <div className="form-control h-8 lg:mr-5">
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        value={searchQuery}
-                        onChange={handleSearch}
-                        className="input bg-transparent text-orange-300 border-yellow-400"
-                    />
+                {
+                    router.pathname === '/' && <div className="form-control h-8 lg:mr-5">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            value={searchQuery}
+                            onChange={handleSearch}
+                            className="input bg-transparent text-orange-300 border-yellow-400"
+                        />
 
-                </div>
+                    </div>
+                }
 
                 <div className="navbar-end hidden lg:flex mr-20">
                     <ul className="menu menu-horizontal px-1">
