@@ -7,6 +7,8 @@ export const ContextProvider = ({ children }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [foodsPerPage, setFoodsPerPage] = useState(6);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
         fetch('foods.json')
@@ -15,8 +17,9 @@ export const ContextProvider = ({ children }) => {
     }, [])
 
     const handleCategoryClick = (category) => {
-        setSelectedCategory(category === 'All' ? '' : category)
-        setSearchQuery('')
+        setSelectedCategory(category === 'All' ? '' : category);
+        setSearchQuery('');
+        setCurrentPage(1);
     }
 
     const filteredFoods = selectedCategory
@@ -25,7 +28,12 @@ export const ContextProvider = ({ children }) => {
         :
         foods
 
-    const totalFilteredFoods = filteredFoods.length;
+    const totalFilteredFoods = !searchQuery
+        ?
+        filteredFoods.length
+        :
+        searchResult.length;
+
     const totalPages = Math.ceil(totalFilteredFoods / foodsPerPage);
 
     const handlePageChange = (pageNumber) => {
@@ -37,9 +45,6 @@ export const ContextProvider = ({ children }) => {
     const currentFilteredFoods = filteredFoods.slice(indexOfFirstFood, indexOfLastFood);
 
     // ----------- search bar implementation----------------
-
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResult, setSearchResult] = useState([]);
 
     const handleSearch = (e) => {
         const query = e.target.value;
