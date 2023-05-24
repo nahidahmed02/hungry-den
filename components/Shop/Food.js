@@ -53,6 +53,7 @@ const Food = ({ food }) => {
         }
     };
 
+    const itemFromCart = cartItems?.filter(cartItem => cartItem.id === id);
 
     return (
         <section>
@@ -70,7 +71,7 @@ const Food = ({ food }) => {
 
                     <h2 className="mb-0.5">Quantity:
                         <span onClick={decrement} className='cursor-pointer font-bold bg-slate-300 px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'>-</span>
-                        <span className='px-2'>{(isAddedToCart) ? orderedFood.quantity : quantity}</span>
+                        <span className='px-2'>{(isAddedToCart) ? itemFromCart[0]?.quantity : quantity}</span>
                         <span onClick={increment} className='cursor-pointer font-bold bg-slate-300 px-1 lg:pb-1 ml-1'>+</span>
                     </h2>
 
