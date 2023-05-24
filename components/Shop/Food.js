@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react'
 const Food = ({ food }) => {
     const router = useRouter();
     const { id, category, name, price, vat, photo } = food;
-    let [count, setCount] = useState(1);
+
+    let [quantity, setQuantity] = useState(1);
     const [isAddedToCart, setIsAddedToCart] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
@@ -16,29 +17,21 @@ const Food = ({ food }) => {
     }, [id]);
 
     function increment() {
-        setCount(count + 1);
+        setQuantity(quantity + 1);
     }
 
     function decrement() {
-        if (count === 1) {
+        if (quantity === 1) {
             return
         }
-        setCount(count - 1);
+        setQuantity(quantity - 1);
     }
 
-    let vatCount = ((price * vat / 100) * count).toFixed(2);
-    let total = ((parseFloat(price) * count) + parseFloat(vatCount)).toFixed(2);
+    let vatCount = ((price * vat / 100) * quantity).toFixed(2);
+    let total = ((parseFloat(price) * quantity) + parseFloat(vatCount)).toFixed(2);
 
     const orderedFood = {
-        id,
-        category,
-        name,
-        count,
-        vat,
-        vatCount,
-        price,
-        total,
-        photo
+        id, category, name, quantity, vat, vatCount, price, total, photo
     }
 
     const handleAddToCart = () => {
@@ -60,25 +53,27 @@ const Food = ({ food }) => {
         }
     };
 
+
     return (
         <section>
             <div className="card bg-slate-200 shadow-xl py-3">
+
                 <figure className="px-4 pt-2 lg:px-6 lg:pt-6 ">
                     <Image src={photo} alt="food" width={170} height={95} className="rounded-xl mb-3 hover:w-96" />
                 </figure>
+
                 <div className="text-sm mx-4 lg:mx-8">
-                    <h2 className="">Category: {category}</h2>
-                    <h2 className="">Name: {name}</h2>
-                    <h2 className="">Price: ${price}</h2>
-                    <h2 className="">Vat {vat}% : {vatCount}</h2>
-                    <h2 className="">Quantity:
+                    <h2 className="mb-0.5">Category: {category}</h2>
+                    <h2 className="mb-0.5">Name: {name}</h2>
+                    <h2 className="mb-0.5">Price: ${price} + vat({vat}%)</h2>
+                    <h2 className="mb-0.5">Quantity:
                         <span onClick={decrement} className='cursor-pointer font-bold bg-slate-300 px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'>-</span>
-                        <span className='px-2'>{count}</span>
+                        <span className='px-2'>{(isAddedToCart) ? orderedFood.quantity : quantity}</span>
                         <span onClick={increment} className='cursor-pointer font-bold bg-slate-300 px-1 lg:pb-1 ml-1'>+</span>
                     </h2>
-                    <h2 className="">Total: ${total}</h2>
+                    <h2 className="mb-0.5">Total: ${total}</h2>
 
-                    <div className="card-actions mt-2 ">
+                    <div className="card-actions mt-2">
                         {(!isAddedToCart) && <button className="rounded-lg px-2 text-white font-bold btn-xs bg-blue-500 mx-auto"
                             onClick={handleAddToCart}
                         >Add to Cart</button>}
