@@ -4,6 +4,7 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart }) => {
     const { id, category, name, price, vat, photo } = selectedFood;
 
 
+
     return (
         <section className='flex'>
             <h1 className='mr-4'>Name: {name}</h1>
