@@ -18,6 +18,7 @@ const Food = ({ food }) => {
 
     function increment() {
         setQuantity(quantity + 1);
+        handleRemoveFromCart()
     }
 
     function decrement() {
@@ -25,6 +26,7 @@ const Food = ({ food }) => {
             return
         }
         setQuantity(quantity - 1);
+        handleRemoveFromCart()
     }
 
     let vatCount = ((price * vat / 100) * quantity).toFixed(2);
