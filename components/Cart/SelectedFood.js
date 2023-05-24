@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SelectedFood = ({ selectedFood, handleRemoveFromCart }) => {
+const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
     const { id,
         category,
         name,
@@ -14,13 +14,17 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart }) => {
 
 
     return (
-        <section className='flex'>
-            <h1 className='mr-4'>Name: {name}</h1>
-            <h1 className='mr-4'>Price: {price}</h1>
-            <h1 className='mr-4'>VAT {vat}% : {vatCount}</h1>
-            <h1 className='mr-4'>Quantuty: {quantity}</h1>
-            <button onClick={() => handleRemoveFromCart(id)} className='btn btn-sm ml-6'>Remove</button>
-        </section>
+        <tr className='text-center'>
+            <th className='border border-b-black'>{index + 1}</th>
+            <td className='border border-b-black'>{photo}</td>
+            <td className='border border-b-black'>{category}</td>
+            <td className='border border-b-black'>{name}</td>
+            <td className='border border-b-black'>${price} + {vat}% vat</td>
+            <td className='border border-b-black'>{quantity}</td>
+            <td className='border border-b-black'>{total}</td>
+            <td className='border border-b-black'>{<button onClick={() => handleRemoveFromCart(id)} className='btn btn-xs border-none bg-red-600'>Remove</button>}</td>
+        </tr>
+
     )
 }
 
