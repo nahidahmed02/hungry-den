@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
@@ -17,7 +18,7 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
         <>
             <tr className='text-center'>
                 <th className='border border-b-black'>{index + 1}</th>
-                <td className='border border-b-black'>{photo}</td>
+                <td className='border border-b-black'><Image src={photo} alt='' width={60} height={60} className='mx-auto' /></td>
                 <td className='border border-b-black'>{category}</td>
                 <td className='border border-b-black'>{name}</td>
                 <td className='border border-b-black'>${price} + {vat}% vat</td>
