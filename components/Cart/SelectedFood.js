@@ -14,17 +14,19 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
 
 
     return (
-        <tr className='text-center'>
-            <th className='border border-b-black'>{index + 1}</th>
-            <td className='border border-b-black'>{photo}</td>
-            <td className='border border-b-black'>{category}</td>
-            <td className='border border-b-black'>{name}</td>
-            <td className='border border-b-black'>${price} + {vat}% vat</td>
-            <td className='border border-b-black'>{quantity}</td>
-            <td className='border border-b-black'>{total}</td>
-            <td className='border border-b-black'>{<button onClick={() => handleRemoveFromCart(id)} className='btn btn-xs border-none bg-red-600'>Remove</button>}</td>
-        </tr>
+        <>
+            <tr className='text-center'>
+                <th className='border border-b-black'>{index + 1}</th>
+                <td className='border border-b-black'>{photo}</td>
+                <td className='border border-b-black'>{category}</td>
+                <td className='border border-b-black'>{name}</td>
+                <td className='border border-b-black'>${price} + {vat}% vat</td>
+                <td className='border border-b-black'>{quantity}</td>
+                <td className='border border-b-black'>{total}</td>
+                <td className='border border-b-black'>{<button onClick={() => handleRemoveFromCart(id)} className='btn btn-xs border-none bg-red-600'>Remove</button>}</td>
+            </tr>
 
+        </>
     )
 }
 

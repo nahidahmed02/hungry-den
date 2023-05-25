@@ -32,15 +32,15 @@ const Food = ({ food }) => {
     let vatCount = ((price * vat / 100) * quantity).toFixed(2);
     let total = ((parseFloat(price) * quantity) + parseFloat(vatCount)).toFixed(2);
 
-    const orderedFood = {
+    const foodAddedToCart = {
         id, category, name, quantity, vat, vatCount, price, total, photo
     }
 
     const handleAddToCart = () => {
         if (typeof window !== 'undefined') {
             const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
-            localStorage.setItem('selectedFood', JSON.stringify([...existingSelectedFood, orderedFood]));
-            setCartItems([...existingSelectedFood, orderedFood]);
+            localStorage.setItem('selectedFood', JSON.stringify([...existingSelectedFood, foodAddedToCart]));
+            setCartItems([...existingSelectedFood, foodAddedToCart]);
             setIsAddedToCart(true)
         }
     }
