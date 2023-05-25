@@ -77,7 +77,7 @@ const Food = ({ food }) => {
                         <span onClick={increment} className='cursor-pointer font-bold bg-slate-300 px-1 lg:pb-1 ml-1'>+</span>
                     </h2>
 
-                    <h2 className="mb-0.5">Total: ${total}</h2>
+                    <h2 className="mb-0.5">Total: ${isAddedToCart ? itemFromCart[0].total : total}</h2>
 
                 </div>
 
