@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import SelectedFood from './SelectedFood';
+import { useRouter } from 'next/router';
 
 const Cart = () => {
+    const router = useRouter();
     const [selectedFoods, setSelectedFoods] = useState([]);
-
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -26,7 +27,7 @@ const Cart = () => {
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
 
     return (
-        <section className='mt-32 mb-20'>
+        <section className='mt-24 mb-16'>
 
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-8'>Cart</h2>
 
@@ -63,8 +64,7 @@ const Cart = () => {
 
                     <div className='mt-6 text-center'>
                         <p className=' mr-6 py-3 px-8 text-lg font-bold'>Total : ${sumOfAllPrice}</p>
-                        <button className='bg-blue-400 text-white rounded py-1 px-4  font-bold'>Proceed To Payment</button>
-
+                        <button onClick={() => router.push('/paymentOpt')} className='bg-blue-400 text-white rounded py-1 px-4  font-bold'>Proceed To Payment</button>
                     </div>
                 </>
             }
