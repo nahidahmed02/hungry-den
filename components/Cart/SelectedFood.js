@@ -23,7 +23,7 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
                 <td className='border border-b-black'>{name}</td>
                 <td className='border border-b-black'>${price} + {vat}% vat</td>
                 <td className='border border-b-black'>{quantity}</td>
-                <td className='border border-b-black'>{total}</td>
+                <td className='border border-b-black'>${total}</td>
                 <td className='border border-b-black'>{<button onClick={() => handleRemoveFromCart(id)} className='btn btn-xs border-none bg-red-600'>Remove</button>}</td>
             </tr>
 

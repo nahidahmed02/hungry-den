@@ -26,7 +26,10 @@ const Cart = () => {
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
 
     return (
-        <section className='mt-36 mb-20'>
+        <section className='mt-32 mb-20'>
+
+            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-8'>Cart</h2>
+
             {selectedFoods.length === 0
                 ?
                 <p className='font-bold text-center text-2xl italic text-red-600'>No Items Selected</p>
@@ -58,9 +61,10 @@ const Cart = () => {
                         </table>
                     </div>
 
+                    <div className='mt-6 text-center'>
+                        <p className=' mr-6 py-3 px-8 text-lg font-bold'>Total : ${sumOfAllPrice}</p>
+                        <button className='bg-blue-400 text-white rounded py-1 px-4  font-bold'>Proceed To Payment</button>
 
-                    <div className='mt-5 mx-24 lg:mx-96 '>
-                        <p className='py-5 px-8 border border-black'>Total : {sumOfAllPrice}</p>
                     </div>
                 </>
             }
