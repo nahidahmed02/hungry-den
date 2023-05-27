@@ -1,16 +1,16 @@
 import DashboardLayout from '@/components/Dashboard/DashboardLayout'
-import Profile from '@/components/Dashboard/Profile'
+import ManageUsers from '@/components/Dashboard/ManageUsers'
 import Layout from '@/components/Layout/Layout'
 import React from 'react'
 
-const dashboard = () => {
+const manageUsers = () => {
     return (
         <Layout>
             <DashboardLayout>
-                <Profile></Profile>
+                <ManageUsers></ManageUsers>
             </DashboardLayout>
         </Layout>
     )
 }
 
-export default dashboard
+export default manageUsers

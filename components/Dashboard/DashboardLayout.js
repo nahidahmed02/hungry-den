@@ -9,14 +9,16 @@ const DashboardLayout = ({ children }) => {
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <label htmlFor="my-drawer-2" className="btn btn-sm drawer-button lg:hidden">Open drawer</label>
-                    <h2 className='ml-6 text-3xl font-serif font-bold text-orange-500 sticky'>Dashboard</h2>
+                    <h2 className='ml-6 text-3xl font-serif font-bold text-orange-500'>Dashboard</h2>
 
                     {children}
                 </div>
-                <div className="drawer-side mb-auto mt-8 lg:ml-3 sticky">
+
+                <div className="drawer-side mb-auto mt-8 sticky">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+
                     <ul className="menu p-4 overflow-y-auto w-52 text-base-content">
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/profile'>Profile</Link></li>
+                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard'>Profile</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/orders'>Orders</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/addItem'>Add Item</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/deleteItem'>Delete Item</Link></li>

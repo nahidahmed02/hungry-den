@@ -1,16 +1,16 @@
 import DashboardLayout from '@/components/Dashboard/DashboardLayout'
-import Profile from '@/components/Dashboard/Profile'
+import Orders from '@/components/Dashboard/Orders'
 import Layout from '@/components/Layout/Layout'
 import React from 'react'
 
-const dashboard = () => {
+const orders = () => {
     return (
         <Layout>
             <DashboardLayout>
-                <Profile></Profile>
+                <Orders></Orders>
             </DashboardLayout>
         </Layout>
     )
 }
 
-export default dashboard
+export default orders
