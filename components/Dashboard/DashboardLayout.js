@@ -8,7 +8,7 @@ const DashboardLayout = ({ children }) => {
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <label htmlFor="my-drawer-2" className="btn btn-sm drawer-button lg:hidden">Open drawer</label>
                     <h2 className='ml-6 text-3xl font-serif font-bold text-orange-500 sticky'>Dashboard</h2>
 
                     {children}
