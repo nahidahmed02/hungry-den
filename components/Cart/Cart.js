@@ -39,24 +39,27 @@ const Cart = () => {
                     <div className="overflow-x-auto mx-24 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
-                                <tr>
-                                    <th className='bg-orange-400 text-center text-white'>SL No.</th>
-                                    <th className='bg-orange-400 text-center text-white'>Image</th>
-                                    <th className='bg-orange-400 text-center text-white'>Category</th>
-                                    <th className='bg-orange-400 text-center text-white'>Name</th>
-                                    <th className='bg-orange-400 text-center text-white'>Unit Price</th>
-                                    <th className='bg-orange-400 text-center text-white'>Quantity</th>
-                                    <th className='bg-orange-400 text-center text-white'>Price (+vat)</th>
-                                    <th className='bg-orange-400 text-center text-white'>Action</th>
+                                <tr className='text-center text-white'>
+                                    <td className='bg-orange-400 '>SL No.</td>
+                                    <th className='bg-orange-400'>Image</th>
+                                    <th className='bg-orange-400'>Category</th>
+                                    <th className='bg-orange-400'>Name</th>
+                                    <th className='bg-orange-400'>Unit Price</th>
+                                    <th className='bg-orange-400'>Quantity</th>
+                                    <th className='bg-orange-400'>Price (+vat)</th>
+                                    <th className='bg-orange-400'>Action</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                {selectedFoods.map((selectedFood, index) => <SelectedFood
-                                    key={selectedFood.id}
-                                    index={index}
-                                    selectedFood={selectedFood}
-                                    handleRemoveFromCart={handleRemoveFromCart}
-                                ></SelectedFood>)}
+                                {
+                                    selectedFoods.map((selectedFood, index) => <SelectedFood
+                                        key={selectedFood.id}
+                                        index={index}
+                                        selectedFood={selectedFood}
+                                        handleRemoveFromCart={handleRemoveFromCart}
+                                    ></SelectedFood>)
+                                }
 
                             </tbody>
                         </table>
