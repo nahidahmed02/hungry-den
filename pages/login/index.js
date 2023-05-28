@@ -1,16 +1,11 @@
 import Layout from '@/components/Layout/Layout'
-import Link from 'next/link'
+import Login from '@/components/Register/Login'
 import React from 'react'
 
 const login = () => {
     return (
         <Layout>
-            <div className='mt-24'>login
-                <br />
-                Or,
-                <br />
-                <Link href="/register">Register Now</Link>
-            </div>
+            <Login></Login>
         </Layout>
 
     )

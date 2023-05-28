@@ -12,6 +12,11 @@
     z-index: 1;
 }
 
+.active-link {
+    --tw-text-opacity: 1;
+    color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
 /* ----- pagination ----- */
 
 .pagination {

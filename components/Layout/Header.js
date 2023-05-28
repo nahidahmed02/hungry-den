@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useState } from 'react'
 
 const Header = () => {
     const router = useRouter();
-    // console.log(router);
+
     const { searchQuery, handleSearch } = useContext(Context);
     const [cartItems, setCartItems] = useState([]);
     const [itemsInCart, setItemsInCart] = useState(0);
@@ -29,18 +29,31 @@ const Header = () => {
 
     const menuItems =
         <>
-            <li className='font-bold'><Link href="/">Home</Link></li>
-            <li className='font-bold'>
+            <li className={`font-bold ${router.pathname === '/' ? 'active-link' : ''} `}>
+                <Link href="/">Home</Link>
+            </li>
+
+            <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : ''} `}>
                 <Link href="/cart">My Cart
                     <span className="indicator-item badge badge-warning">
                         {itemsInCart}
                     </span>
                 </Link>
             </li>
-            <li className='font-bold'><Link href="/dashboard">Dashboard</Link></li>
-            <li className='font-bold'><Link href="/about">About Us</Link></li>
-            <li className='font-bold'><Link href="/register">Register Now</Link></li>
+
+            <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : ''} `}>
+                <Link href="/dashboard">Dashboard</Link>
+            </li>
+
+            <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : ''} `}>
+                <Link href="/about">About Us</Link>
+            </li>
+
+            <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : ''} `}>
+                <Link href="/login">Register</Link>
+            </li>
         </>
+
     return (
         <header>
             <div className="navbar fixNav bg-neutral text-neutral-content">
