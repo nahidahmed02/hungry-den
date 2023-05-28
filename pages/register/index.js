@@ -5,7 +5,7 @@ import React from 'react'
 const register = () => {
     return (
         <Layout>
-            <div>register
+            <div className='mt-24'>register
                 <br />
                 Or,
                 <br />

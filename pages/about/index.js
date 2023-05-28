@@ -4,7 +4,9 @@ import React from 'react'
 const about = () => {
     return (
         <Layout>
-            about
+            <section className='mt-20'>
+                about
+            </section>
         </Layout>
     )
 }

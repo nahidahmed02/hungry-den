@@ -3,9 +3,9 @@ import React from 'react'
 
 const DashboardLayout = ({ children }) => {
     return (
-        <section className='mt-24 mb-8 border border-black'>
+        <section className='mt-20'>
 
-            <div className="drawer drawer-mobile">
+            <div className="drawer drawer-mobile" style={{ position: 'relative' }}>
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <label htmlFor="my-drawer-2" tabIndex={1} className="btn btn-ghost lg:hidden">

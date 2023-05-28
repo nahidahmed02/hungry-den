@@ -5,7 +5,7 @@ import React from 'react'
 const login = () => {
     return (
         <Layout>
-            <div>login
+            <div className='mt-24'>login
                 <br />
                 Or,
                 <br />
