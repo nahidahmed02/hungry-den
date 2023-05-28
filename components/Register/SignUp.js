@@ -5,7 +5,7 @@ import { FcGoogle } from 'react-icons/fc'
 const SignUp = () => {
     return (
         <div className='mt-28 mb-8'>
-            <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-5'>Create an Account</h2>
+            <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Create an Account</h2>
 
             <form className='flex flex-col'>
 
