@@ -66,11 +66,11 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="normal-case font-serif font-bold text-2xl italic ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span> 🔥</Link>
+                    <Link className="normal-case font-serif font-bold text-2xl italic ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
                 </div>
 
                 {
-                    router.pathname === '/' && <div className="form-control h-8 lg:mr-5">
+                    router.pathname === '/' && <div className="form-control h-8 lg:mr-14">
                         <input
                             type="text"
                             placeholder="Search"
