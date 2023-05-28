@@ -83,15 +83,15 @@ const Food = ({ food }) => {
 
                 <div className="card-actions my-4 mx-5">
 
-                    {(!isAddedToCart) && <button className="rounded-lg px-2 text-white font-bold btn-xs bg-blue-500 mx-auto"
+                    {(!isAddedToCart) && <button className="rounded-lg px-2 text-white font-bold btn-xs bg-green-600 mx-auto"
                         onClick={handleAddToCart}
                     >Add to Cart</button>}
 
                     {(isAddedToCart) && <>
-                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-green-600 mx-auto"
+                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-orange-500 mx-auto"
                             onClick={() => router.push('/cart')}
                         >Go to Cart</button>
-                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-red-700 mx-auto"
+                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-red-600 mx-auto"
                             onClick={handleRemoveFromCart}
                         >Remove From Cart</button>
                     </>}
