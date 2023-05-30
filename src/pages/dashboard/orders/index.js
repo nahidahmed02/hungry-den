@@ -1,6 +1,3 @@
-// import DashboardLayout from '@/components/Dashboard/DashboardLayout'
-// import Orders from '@/components/Dashboard/Orders'
-// import Layout from '@/components/Layout/Layout'
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
 import Orders from '@/src/components/Dashboard/Orders'
 import Layout from '@/src/components/Layout/Layout'

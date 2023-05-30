@@ -1,6 +1,3 @@
-// import AddItem from '@/components/Dashboard/AddItem'
-// import DashboardLayout from '@/components/Dashboard/DashboardLayout'
-// import Layout from '@/components/Layout/Layout'
 import AddItem from '@/src/components/Dashboard/AddItem'
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
 import Layout from '@/src/components/Layout/Layout'

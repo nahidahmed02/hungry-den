@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Food from './Food'
 import { Context } from '@/src/context/Context';
-// import { Context } from '@/context/Context'
 
 
 const Foods = () => {

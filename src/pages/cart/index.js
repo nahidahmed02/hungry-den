@@ -1,5 +1,3 @@
-// import Cart from '@/components/Cart/Cart'
-// import Layout from '@/components/Layout/Layout'
 import Cart from '@/src/components/Cart/Cart'
 import Layout from '@/src/components/Layout/Layout'
 import React from 'react'

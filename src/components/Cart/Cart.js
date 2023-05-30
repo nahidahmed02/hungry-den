@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import SelectedFood from './SelectedFood';
 import { useRouter } from 'next/router';
 import SelectedFood from './SelectedFood';
 
