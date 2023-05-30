@@ -1,27 +1,38 @@
 import Link from 'next/link'
 import React from 'react'
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const handleLogin = data =>
+        console.log(data);
+
+
     return (
-        <section className='mt-28 mb-20'>
+        <section className='w-96 mx-auto mt-28 mb-20'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Login to your Account</h2>
 
-            <form className='flex flex-col'>
+            <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col '>
 
                 <input
+                    {...register("email", { required: "Email is required" })}
                     type="email"
                     placeholder="Email"
                     className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
+                {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
 
                 <input
+                    {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
                     type="password"
                     placeholder="Password"
                     className="input input-bordered w-full max-w-xs mx-auto mb-4"
                     required
                 />
+                {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                 <button
                     type="submit"
