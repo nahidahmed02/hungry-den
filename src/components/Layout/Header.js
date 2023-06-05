@@ -49,9 +49,11 @@ const Header = () => {
                 </Link>
             </li>
 
-            <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : ''} `}>
-                <Link href="/dashboard">Dashboard</Link>
-            </li>
+            {user?.uid &&
+                <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : ''} `}>
+                    <Link href="/dashboard">Dashboard</Link>
+                </li>
+            }
 
             <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : ''} `}>
                 <Link href="/about">About Us</Link>
