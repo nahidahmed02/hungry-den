@@ -1,6 +1,6 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc'
 
@@ -8,15 +8,21 @@ const Login = () => {
 
     const { signInWithEmailPassword } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [loginError, setLoginError] = useState('');
 
     const handleLogin = data => {
         console.log(data);
+
+        setLoginError('');
         signInWithEmailPassword(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error)
+                setLoginError(error.message)
+            })
     }
 
 
@@ -50,7 +56,7 @@ const Login = () => {
 
                     Login
                 </button>
-
+                {loginError && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{loginError}</p>}
             </form>
 
             <p className='text-center mb-6'>Don&#39;t have an account?
