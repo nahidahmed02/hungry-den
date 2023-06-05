@@ -1,13 +1,22 @@
+import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
+    const { createUserWithEmailPassword } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleSignUp = data =>
+    const handleSignUp = data => {
         console.log(data);
+        createUserWithEmailPassword(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error));
+    }
 
     return (
         <div className='w-96 mx-auto mt-28 mb-8'>
