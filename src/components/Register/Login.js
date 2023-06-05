@@ -25,7 +25,6 @@ const Login = () => {
             })
     }
 
-
     return (
         <section className='w-96 mx-auto mt-28 mb-20'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Login to your Account</h2>
