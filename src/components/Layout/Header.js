@@ -1,3 +1,4 @@
+import { AuthContext } from '@/src/context/AuthProvider';
 import { Context } from '@/src/context/Context';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
@@ -6,9 +7,16 @@ import React, { useContext, useEffect, useState } from 'react'
 const Header = () => {
     const router = useRouter();
 
+    const { user, logout } = useContext(AuthContext);
     const { searchQuery, handleSearch } = useContext(Context);
     const [cartItems, setCartItems] = useState([]);
     const [itemsInCart, setItemsInCart] = useState(0);
+
+    const handleLogOut = () => {
+        logout()
+        // .then(res => console.log(res))
+        // .catch(error => console.log(error))
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,9 +57,16 @@ const Header = () => {
                 <Link href="/about">About Us</Link>
             </li>
 
-            <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : ''} `}>
-                <Link href="/login">Register</Link>
-            </li>
+            {user?.uid
+                ?
+                <li className={`font-bold`}>
+                    <button onClick={handleLogOut} href="/login">Logout</button>
+                </li>
+                :
+                <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : ''} `}>
+                    <Link href="/login">Register</Link>
+                </li>
+            }
         </>
 
     return (
