@@ -62,11 +62,11 @@ const Header = () => {
             {user?.uid
                 ?
                 <li className={`font-bold`}>
-                    <button onClick={handleLogOut} href="/login">Logout</button>
+                    <button onClick={handleLogOut}>Logout</button>
                 </li>
                 :
                 <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : ''} `}>
-                    <Link href="/login">Register</Link>
+                    <Link href="/login">Login</Link>
                 </li>
             }
         </>

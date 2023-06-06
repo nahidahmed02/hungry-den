@@ -55,7 +55,9 @@ const Login = () => {
 
                     Login
                 </button>
-                {loginError && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{loginError}</p>}
+
+                {loginError && <p className='text-red-500 ml-10 pr-5 mb-2.5 font-semibold'>{loginError}</p>}
+
             </form>
 
             <p className='text-center mb-6'>Don&#39;t have an account?
