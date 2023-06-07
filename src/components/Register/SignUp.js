@@ -6,19 +6,29 @@ import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
-    const { createUserWithEmailPassword } = useContext(AuthContext);
+    const { createUserWithEmailPassword, updateUser } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
 
     const handleSignUp = data => {
         console.log(data);
+        setSignUpError('');
 
-        setSignUpError('')
         createUserWithEmailPassword(data.email, data.password)
             .then(result => {
-                toast.success('Welcome to Friends Kebab');
+
                 const user = result.user;
                 console.log(user);
+
+                const userInfo = {
+                    displayName: data.name
+                }
+
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(error => console.log(error))
+
+                toast.success('Welcome to Friends Kebab');
             })
             .catch(error => {
                 console.log(error);
