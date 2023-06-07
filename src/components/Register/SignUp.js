@@ -2,6 +2,7 @@ import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
@@ -12,6 +13,7 @@ const SignUp = () => {
         console.log(data);
         createUserWithEmailPassword(data.email, data.password)
             .then(result => {
+                toast.success('Welcome to Friends Kebab');
                 const user = result.user;
                 console.log(user);
             })

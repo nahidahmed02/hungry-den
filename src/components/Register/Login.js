@@ -2,6 +2,7 @@ import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
@@ -16,6 +17,7 @@ const Login = () => {
         setLoginError('');
         signInWithEmailPassword(data.email, data.password)
             .then(result => {
+                toast.success('Welcome back to Friends Kebab')
                 const user = result.user;
                 console.log(user);
             })
