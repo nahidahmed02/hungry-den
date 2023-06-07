@@ -1,6 +1,6 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
@@ -8,16 +8,22 @@ import { FcGoogle } from 'react-icons/fc'
 const SignUp = () => {
     const { createUserWithEmailPassword } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [signUpError, setSignUpError] = useState('');
 
     const handleSignUp = data => {
         console.log(data);
+
+        setSignUpError('')
         createUserWithEmailPassword(data.email, data.password)
             .then(result => {
                 toast.success('Welcome to Friends Kebab');
                 const user = result.user;
                 console.log(user);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                setSignUpError(error.message)
+            });
     }
 
     return (
@@ -59,6 +65,8 @@ const SignUp = () => {
 
                     Sign Up
                 </button>
+
+                {signUpError && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{signUpError}</p>}
 
             </form>
 
