@@ -1,5 +1,6 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -10,6 +11,9 @@ const Login = () => {
     const { signInWithEmailPassword } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = useState('');
+    const location = useRouter();
+
+    const from = location?.state?.from?.pathname || '/';
 
     const handleLogin = data => {
         console.log(data);
@@ -20,6 +24,7 @@ const Login = () => {
                 toast.success('Welcome back to Friends Kebab')
                 const user = result.user;
                 console.log(user);
+                location.push(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
