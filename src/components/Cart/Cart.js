@@ -36,7 +36,7 @@ const Cart = () => {
                 <p className='font-bold text-center text-2xl italic text-red-600'>No Items Selected</p>
                 :
                 <>
-                    <div className="overflow-x-auto mx-24 border rounded-t-lg border-black border-b-0">
+                    <div className="overflow-x-auto ml-6 lg:mx-24 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
                                 <tr className='text-center text-white'>
