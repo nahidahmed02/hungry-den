@@ -83,7 +83,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="normal-case font-serif font-bold text-2xl italic ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
+                    <Link className="normal-case font-serif font-bold  lg:text-2xl italic lg:ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
                 </div>
 
                 {
