@@ -83,17 +83,17 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="normal-case font-serif font-bold lg:text-2xl italic lg:ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
+                    <Link className="normal-case font-serif font-bold lg:text-2xl italic ml-4 lg:ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
                 </div>
 
                 {
-                    router.pathname === '/' && <div className="form-control h-8 lg:mr-14">
+                    router.pathname === '/' && <div className="form-control h-6 lg:h-8 lg:mr-14">
                         <input
                             type="text"
                             placeholder="Search"
                             value={searchQuery}
                             onChange={handleSearch}
-                            className="input bg-transparent text-orange-300 border-yellow-400 w-44 lg:w-56 ml-5 lg:ml-0"
+                            className="input bg-transparent text-orange-300 border-yellow-400 w-40 lg:w-56 ml-7 lg:ml-0"
                         />
 
                     </div>
