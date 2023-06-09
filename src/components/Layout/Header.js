@@ -83,7 +83,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="normal-case font-serif font-bold  lg:text-2xl italic lg:ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
+                    <Link className="normal-case font-serif font-bold lg:text-2xl italic lg:ml-24 text-orange-400 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
                 </div>
 
                 {
@@ -93,7 +93,7 @@ const Header = () => {
                             placeholder="Search"
                             value={searchQuery}
                             onChange={handleSearch}
-                            className="input bg-transparent text-orange-300 border-yellow-400"
+                            className="input bg-transparent text-orange-300 border-yellow-400 w-44 lg:w-56 ml-5 lg:ml-0"
                         />
 
                     </div>
