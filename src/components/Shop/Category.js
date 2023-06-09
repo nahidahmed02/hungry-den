@@ -15,10 +15,10 @@ const Category = () => {
             <hr className='mx-24' />
 
             <section className="navbar">
-                <ul className="menu menu-horizontal px-1 mx-auto">
+                <ul className="menu menu-horizontal px-1 ml-3 lg:mx-auto">
 
                     <li
-                        className={`cursor-pointer text-white px-2 py-1 mx-2 mb-2 lg:mb-0 rounded 
+                        className={`cursor-pointer text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                         ${selectedCategory === ''
                                 ?
                                 'bg-blue-500'
@@ -32,7 +32,7 @@ const Category = () => {
 
                     {
                         category.map(ctgry => <li
-                            className={`cursor-pointer text-white px-2 py-1 mx-2 mb-2 lg:mb-0 rounded 
+                            className={`cursor-pointer text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                     ${selectedCategory === ctgry
                                     ?
                                     'bg-blue-500'
