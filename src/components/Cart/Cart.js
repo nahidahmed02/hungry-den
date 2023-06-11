@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import SelectedFood from './SelectedFood';
+import { AuthContext } from '@/src/context/AuthProvider';
+import Loading from '../Loading/Loading';
 
 const Cart = () => {
     const router = useRouter();
     const [selectedFoods, setSelectedFoods] = useState([]);
+    const { loading } = useContext(AuthContext)
+
+
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -25,6 +30,10 @@ const Cart = () => {
 
     const sumOfAllPrice =
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <section className='mt-24 mb-16'>
