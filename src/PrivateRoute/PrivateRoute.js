@@ -1,19 +1,20 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import { useRouter } from 'next/router';
+import Loading from '../components/Loading/Loading';
 
 const PrivateRoute = ({ children }) => {
 
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const location = useRouter();
 
-    useEffect(() => {
-        if (!user) {
-            location.push('/login');
+    if (loading) {
+        return <Loading></Loading>
+    }
 
-        }
-    }, [user, location]);
-
+    if (!user) {
+        location.push('/login');
+    }
 
     // return <Link href='/login' state={{ from: location }} replace></Link>;
     return user ? children : null;
