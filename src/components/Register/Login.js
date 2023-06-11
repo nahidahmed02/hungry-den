@@ -79,7 +79,7 @@ const Login = () => {
                 </span>
             </p>
 
-            <div className='divider w-1/4 mx-auto'>OR</div>
+            <div className='divider mx-11'>OR</div>
 
             <div className='text-center mt-6'>
                 <button

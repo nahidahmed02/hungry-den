@@ -12,7 +12,7 @@ const Category = () => {
     return (
         <>
             <p className='text-center font-bold mb-1'>Filter by Category</p>
-            <hr className='mx-24' />
+            <hr className='mx-7 lg:mx-24' />
 
             <section className="navbar">
                 <ul className="menu menu-horizontal px-1 ml-3 lg:mx-auto">
