@@ -20,6 +20,10 @@ const Cart = () => {
         }
     }, []);
 
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     const handleRemoveFromCart = (id) => {
         if (typeof window !== 'undefined') {
             const updatedSelectedFoods = selectedFoods.filter((item) => item.id !== id);
@@ -30,10 +34,6 @@ const Cart = () => {
 
     const sumOfAllPrice =
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
-
-    if (loading) {
-        return <Loading></Loading>
-    }
 
     return (
         <section className='mt-24 mb-16'>
