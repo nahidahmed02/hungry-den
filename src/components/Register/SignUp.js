@@ -10,6 +10,11 @@ const SignUp = () => {
     const { user, createUserWithEmailPassword, updateUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordView = () => {
+        setShowPassword(!showPassword);
+    }
 
     const router = useRouter();
 
@@ -82,11 +87,12 @@ const SignUp = () => {
 
                 <input
                     {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Password"
                     className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
+                <button onClick={togglePasswordView}>{showPassword ? 'Hide' : 'Show'}</button>
                 {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                 <button
