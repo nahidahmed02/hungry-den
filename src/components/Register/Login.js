@@ -1,20 +1,19 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
 
-    const { user, signInWithEmailPassword } = useContext(AuthContext);
+    const { signInWithEmailPassword } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = useState('');
-    const location = useRouter();
-    const { from } = location?.query || '/';
 
-    // const {from} = pathname ;
+    const router = useRouter();
+    const from = router?.query?.from || '/';
 
     const handleLogin = data => {
         setLoginError('');
@@ -24,19 +23,13 @@ const Login = () => {
                 toast.success('Welcome back to Friends Kebab')
                 const user = result.user;
                 console.log(user);
-                location?.push(from, { shallow: true });
+                router.push(from);
             })
             .catch(error => {
                 console.log(error)
                 setLoginError(error.message)
             })
     }
-
-    // useEffect(() => {
-    //     if (user) {
-
-    //     }
-    // }, [user, location, from])
 
     return (
         <section className='w-96 mx-auto mt-28 mb-20'>

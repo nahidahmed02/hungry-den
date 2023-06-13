@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import { useRouter } from 'next/router';
 import Loading from '../components/Loading/Loading';
@@ -6,19 +6,20 @@ import Loading from '../components/Loading/Loading';
 const PrivateRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
-    const location = useRouter();
+    const router = useRouter();
 
     if (loading) {
         return <Loading></Loading>
     }
 
     if (!user) {
-        location.push('/login');
+        router.replace({
+            pathname: '/login',
+            query: { from: router.asPath }
+        })
     }
 
-    // return <Link href='/login' state={{ from: location }} replace></Link>;
-    return user ? children : null;
-
+    return children;
 };
 
 export default PrivateRoute;
