@@ -65,7 +65,7 @@ const Food = ({ food }) => {
                     <Image src={photo} alt="food" width={192} height={95} className="rounded-t-md mt-5 lg:mt-7 mb-3 lg:mb-4 px-4 lg:px-0" />
                 </figure>
 
-                <div className="text-sm mx-4 lg:mx-8">
+                <div className="text-sm mx-4 md:mx-8 lg:mx-8">
 
                     <h2 className="mb-0.5">Category: {category}</h2>
                     <h2 className="mb-0.5">Name: {name}</h2>
