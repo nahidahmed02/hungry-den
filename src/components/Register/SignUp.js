@@ -1,17 +1,23 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
-    const { createUserWithEmailPassword, updateUser } = useContext(AuthContext);
+    const { user, createUserWithEmailPassword, updateUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
 
+    const router = useRouter();
+
+    if (user) {
+        router.push('/');
+    }
+
     const handleSignUp = data => {
-        console.log(data);
         setSignUpError('');
 
         createUserWithEmailPassword(data.email, data.password)
@@ -34,6 +40,20 @@ const SignUp = () => {
                 console.log(error);
                 setSignUpError(error.message)
             });
+    }
+
+    const handleGoogleSignUp = () => {
+        setSignUpError('')
+
+        signInWithGoogle()
+            .then(result => {
+                console.log(result);
+                toast.success('Welcome to Friends Kebab')
+            })
+            .catch(error => {
+                console.log(error)
+                setSignUpError(error.message)
+            })
     }
 
     return (
@@ -91,7 +111,9 @@ const SignUp = () => {
             <div className='text-center mt-6'>
                 <button
                     type="submit"
-                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md">
+                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md"
+                    onClick={() => handleGoogleSignUp()}
+                >
                     <FcGoogle className='text-xl mr-5' />
                     Continue With Google
                 </button>

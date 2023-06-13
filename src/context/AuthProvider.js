@@ -10,7 +10,6 @@ import {
     signInWithPopup,
     GoogleAuthProvider
 } from 'firebase/auth';
-import { toast } from 'react-hot-toast';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
