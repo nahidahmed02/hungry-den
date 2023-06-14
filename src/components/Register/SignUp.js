@@ -92,7 +92,7 @@ const SignUp = () => {
                     className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
-                <button onClick={() => togglePasswordView()} className='  -mt-11 ml-64 mb-5'>{showPassword ? 'Hide' : 'Show'}</button>
+                <button onClick={() => togglePasswordView()} className='-mt-11 ml-64 mb-6 text-sm'>{showPassword ? 'Hide' : 'Show'}</button>
 
                 {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
