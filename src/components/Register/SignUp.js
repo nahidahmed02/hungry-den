@@ -7,19 +7,14 @@ import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 
 const SignUp = () => {
-    const { user, createUserWithEmailPassword, updateUser, signInWithGoogle } = useContext(AuthContext);
+    const { user, createUserWithEmailPassword, updateUser, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
 
     const router = useRouter();
 
     if (user) {
         router.push('/');
-    }
-
-    const togglePasswordView = () => {
-        return setShowPassword(!showPassword);
     }
 
     const handleSignUp = data => {

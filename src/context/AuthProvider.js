@@ -18,6 +18,7 @@ const provider = new GoogleAuthProvider(auth);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const createUserWithEmailPassword = (email, password) => {
         setLoading(true)
@@ -42,6 +43,10 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const togglePasswordView = () => {
+        return setShowPassword(!showPassword);
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log('observing');
@@ -59,7 +64,9 @@ const AuthProvider = ({ children }) => {
         updateUser,
         logout,
         user,
-        loading
+        loading,
+        showPassword,
+        togglePasswordView
     }
 
     return (
