@@ -8,7 +8,7 @@ import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
 
-    const { user, signInWithEmailPassword, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
+    const { user, signInWithEmailPassword, signInWithGoogle, forgotPassword, showPassword, togglePasswordView } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = useState('');
 
@@ -72,7 +72,9 @@ const Login = () => {
                     className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
-                <button type='button' onClick={togglePasswordView} className='-mt-11 ml-64 mb-6 text-sm'>{showPassword ? 'Hide' : 'Show'}</button>
+                <button type='button' onClick={togglePasswordView} className='-mt-10 ml-64 mb-6 text-xs'>{showPassword ? 'Hide' : 'Show'}</button>
+                <button type='button' onClick={forgotPassword} className='ml-52 -mt-2 mb-2 text-xs text-red-600'>Forgot Password?</button>
+
                 {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                 <button
