@@ -8,7 +8,7 @@ import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
 
-    const { user, signInWithEmailPassword, signInWithGoogle } = useContext(AuthContext);
+    const { user, signInWithEmailPassword, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = useState('');
 
@@ -67,11 +67,12 @@ const Login = () => {
 
                 <input
                     {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className="input input-bordered w-full max-w-xs mx-auto mb-4"
+                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
+                <button type='button' onClick={togglePasswordView} className='-mt-11 ml-64 mb-6 text-sm'>{showPassword ? 'Hide' : 'Show'}</button>
                 {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                 <button
