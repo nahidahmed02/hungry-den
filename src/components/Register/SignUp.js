@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
+import { BsMicrosoft } from 'react-icons/bs'
 
 const SignUp = () => {
     const { user, createUserWithEmailPassword, updateUser, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
@@ -57,7 +58,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className='bg-login-signup pt-28 pb-8'>
+        <div className=' pt-28 '>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Create an Account</h2>
 
             <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-6'>
@@ -118,6 +119,17 @@ const SignUp = () => {
                 >
                     <FcGoogle className='text-xl mr-5' />
                     Continue With Google
+                </button>
+            </div>
+
+            <div className='text-center '>
+                <button
+                    type="submit"
+                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md"
+                    onClick={() => handleGoogleSignUp()}
+                >
+                    <BsMicrosoft className='text-xl mr-5 text-purple-500' />
+                    Continue With Microsoft
                 </button>
             </div>
 
