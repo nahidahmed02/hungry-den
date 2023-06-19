@@ -10,6 +10,7 @@ const Login = () => {
 
     const { user, signInWithEmailPassword, signInWithGoogle, forgotPassword, showPassword, togglePasswordView } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [email, setEmail] = useState('');
     const [loginError, setLoginError] = useState('');
 
     const router = useRouter();
@@ -20,6 +21,16 @@ const Login = () => {
             router.push(from);
         }
     }, [user, from, router])
+
+    const handleForgotPassword = () => {
+        forgotPassword(email)
+            .then(result => {
+                toast.success('Email Sent')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
 
     const handleLogin = data => {
         setLoginError('');
@@ -60,6 +71,7 @@ const Login = () => {
                     {...register("email", { required: "Email is required" })}
                     type="email"
                     placeholder="Email"
+                    onChange={event => setEmail(event.target.value)}
                     className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
@@ -73,7 +85,7 @@ const Login = () => {
                     required
                 />
                 <button type='button' onClick={togglePasswordView} className='-mt-10 ml-64 mb-6 text-xs'>{showPassword ? 'Hide' : 'Show'}</button>
-                <button type='button' onClick={forgotPassword} className='ml-52 -mt-2 mb-2 text-xs text-red-600'>Forgot Password?</button>
+                <button type='button' onClick={handleForgotPassword} className='ml-52 -mt-2 mb-2 text-xs text-red-600'>Forgot Password?</button>
 
                 {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
