@@ -57,10 +57,10 @@ const SignUp = () => {
     }
 
     return (
-        <div className='w-96 mx-auto mt-28 mb-8'>
+        <div className='bg-signup pt-28 pb-8'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Create an Account</h2>
 
-            <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col'>
+            <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-6'>
 
                 <input
                     {...register("name", { required: "Name is required" })}
@@ -93,7 +93,7 @@ const SignUp = () => {
 
                 <button
                     type="submit"
-                    className="bg-orange-400 text-white font-bold w-full max-w-xs mx-auto mb-3 py-2 rounded-md">
+                    className="bg-orange-400 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
 
                     Sign Up
                 </button>
@@ -102,15 +102,15 @@ const SignUp = () => {
 
             </form>
 
-            <p className='text-center mb-6'>Already have an account?
+            <p className='text-center mb-5'>Already have an account?
                 <span className='ml-2 text-blue-400 underline font-semibold'>
                     <Link href='/login'>Login</Link>
                 </span>
             </p>
 
-            <div className='divider mx-11'>OR</div>
+            <div className='divider w-80 mx-auto text-sm'>OR</div>
 
-            <div className='text-center mt-6'>
+            <div className='text-center mt-5'>
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md"

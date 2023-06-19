@@ -53,3 +53,13 @@
     border-color: #007bff;
     color: #fff;
 }
+
+
+/* ------------ bg-signup --------------- */
+
+.bg-signup {
+    background: url(../public/images/blob-scene-haikei\ \(1\).png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 96vh;
+}
