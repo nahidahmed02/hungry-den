@@ -57,7 +57,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className='bg-signup pt-28 pb-8'>
+        <div className='bg-login-signup pt-28 pb-8'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Create an Account</h2>
 
             <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-6'>

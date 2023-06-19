@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     return (
-        <section className='bg-signup'>
+        <section className='bg-login-signup'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold pt-28 mb-4'>Login to your Account</h2>
 
             <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-5'>
