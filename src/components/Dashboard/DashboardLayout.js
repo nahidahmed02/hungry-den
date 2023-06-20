@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { CgProfile } from 'react-icons/cg'
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -20,7 +21,11 @@ const DashboardLayout = ({ children }) => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
                     <ul className="menu p-4 overflow-y-auto w-52 text-base-content">
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard'>Profile</Link></li>
+                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                            <Link href='/dashboard'>
+                                <CgProfile className='text-xl' /> Profile
+                            </Link>
+                        </li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/orders'>Orders</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/addItem'>Add Item</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/deleteItem'>Delete Item</Link></li>

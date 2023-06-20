@@ -126,7 +126,6 @@ const SignUp = () => {
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
-                    onClick={() => handleGoogleSignUp()}
                 >
                     <BsFacebook className='text-xl mr-5 text-blue-500' />
                     Continue With Facebook
