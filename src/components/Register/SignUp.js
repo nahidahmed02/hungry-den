@@ -5,7 +5,7 @@ import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
-import { BsMicrosoft } from 'react-icons/bs'
+import { BsFacebook } from 'react-icons/bs'
 
 const SignUp = () => {
     const { user, createUserWithEmailPassword, updateUser, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
@@ -114,7 +114,7 @@ const SignUp = () => {
             <div className='text-center mt-5'>
                 <button
                     type="submit"
-                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md"
+                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
                     onClick={() => handleGoogleSignUp()}
                 >
                     <FcGoogle className='text-xl mr-5' />
@@ -125,11 +125,11 @@ const SignUp = () => {
             <div className='text-center '>
                 <button
                     type="submit"
-                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 py-2 rounded-md"
+                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
                     onClick={() => handleGoogleSignUp()}
                 >
-                    <BsMicrosoft className='text-xl mr-5 text-purple-500' />
-                    Continue With Microsoft
+                    <BsFacebook className='text-xl mr-5 text-blue-500' />
+                    Continue With Facebook
                 </button>
             </div>
 
