@@ -58,10 +58,10 @@ const SignUp = () => {
     }
 
     return (
-        <div className=' pt-28 '>
+        <div className='bg-login-signup pt-28 '>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Create an Account</h2>
 
-            <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-6'>
+            <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-4'>
 
                 <input
                     {...register("name", { required: "Name is required" })}
@@ -103,15 +103,15 @@ const SignUp = () => {
 
             </form>
 
-            <p className='text-center mb-5'>Already have an account?
+            <p className='text-center text-sm mb-4'>Already have an account?
                 <span className='ml-2 text-blue-400 underline font-semibold'>
-                    <Link href='/login'>Login</Link>
+                    <Link href='/login' className='italic'>Login</Link>
                 </span>
             </p>
 
-            <div className='divider w-80 mx-auto text-sm'>OR</div>
+            <div className='divider w-80 mx-auto text-xs'>OR</div>
 
-            <div className='text-center mt-5'>
+            <div className='text-center mt-4'>
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
@@ -122,7 +122,7 @@ const SignUp = () => {
                 </button>
             </div>
 
-            <div className='text-center '>
+            <div className='text-center'>
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"

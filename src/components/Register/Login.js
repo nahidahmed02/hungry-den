@@ -66,7 +66,7 @@ const Login = () => {
         <section className='bg-login-signup'>
             <h2 className='text-orange-500 font-serif text-center text-xl font-bold pt-28 mb-4'>Login to your Account</h2>
 
-            <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-5'>
+            <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-4'>
 
                 <input
                     {...register("email", { required: "Email is required" })}
@@ -101,15 +101,15 @@ const Login = () => {
 
             </form>
 
-            <p className='text-center mb-5'>Don&#39;t have an account?
+            <p className='text-center text-sm mb-4'>Don&#39;t have an account?
                 <span className='ml-2 text-blue-400 underline font-semibold'>
-                    <Link href='/signup'>Create an account</Link>
+                    <Link href='/signup' className='italic'>Create an account</Link>
                 </span>
             </p>
 
-            <div className='divider mx-auto w-80'>OR</div>
+            <div className='divider mx-auto w-80 text-xs'>OR</div>
 
-            <div className='text-center mt-5'>
+            <div className='text-center mt-4'>
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
