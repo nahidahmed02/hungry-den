@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { VscNotebook } from 'react-icons/vsc'
+import { BiAddToQueue } from 'react-icons/bi'
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -33,7 +34,12 @@ const DashboardLayout = ({ children }) => {
                                 <VscNotebook /> Orders
                             </Link>
                         </li>
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/addItem'>Add Item</Link></li>
+
+                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                            <Link href='/dashboard/addItem'>
+                                <BiAddToQueue /> Add Item
+                            </Link>
+                        </li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/deleteItem'>Delete Item</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/manageUsers'>Manage Users</Link></li>
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'><Link href='/dashboard/myOrders'>My Orders</Link></li>
