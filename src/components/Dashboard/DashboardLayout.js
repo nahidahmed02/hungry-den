@@ -5,6 +5,7 @@ import { VscNotebook } from 'react-icons/vsc'
 import { BiAddToQueue } from 'react-icons/bi'
 import { MdDelete } from 'react-icons/md'
 import { FaUsersCog } from 'react-icons/fa'
+import { GoListOrdered } from 'react-icons/go'
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -57,7 +58,7 @@ const DashboardLayout = ({ children }) => {
 
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
                             <Link href='/dashboard/myOrders'>
-                                My Orders
+                                <GoListOrdered /> My Orders
                             </Link>
                         </li>
 
