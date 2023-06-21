@@ -6,6 +6,7 @@ import { BiAddToQueue } from 'react-icons/bi'
 import { MdDelete } from 'react-icons/md'
 import { FaUsersCog } from 'react-icons/fa'
 import { GoListOrdered } from 'react-icons/go'
+import { MdRateReview } from 'react-icons/md'
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -64,7 +65,7 @@ const DashboardLayout = ({ children }) => {
 
                         <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
                             <Link href='/dashboard/addReview'>
-                                Add Review
+                                <MdRateReview /> Add Review
                             </Link>
                         </li>
                     </ul>
