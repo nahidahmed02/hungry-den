@@ -1,28 +1,41 @@
+import { AuthContext } from '@/src/context/AuthProvider'
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import ProfileModal from './Modals/ProfileModal';
 
 const Profile = () => {
+    const { user } = useContext(AuthContext);
+    const [profileModal, setProfileModal] = useState(null);
+    console.log(user);
     return (
-        <div className=''>
+        <div>
             <h2 className='mt-6 text-2xl font-serif font-bold text-orange-500 text-center'>Profile</h2>
             <div className="mx-auto card w-96 bg-base-100 shadow-2xl border mt-5">
                 <figure className="px-10 pt-10">
                     <Image
-                        fill='auto'
+                        width={10}
+                        height={10}
                         alt='user'
-                        src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                        src=''
                         className="rounded-xl" />
                 </figure>
                 <div className="card-body">
-                    <p>Name:</p>
-                    <p>E-Mail:</p>
-                    <p>Phone:</p>
-                    <p>Address:</p>
-                    <div className="card-actions mt-3">
-                        <button className="btn btn-xs border-none bg-orange-500">Edit</button>
+                    <p className='font-semibold'>Name: <span className='font-normal'>{user?.displayName}</span></p>
+                    <p className='font-semibold'>E-Mail: <span className='font-normal'>{user?.email}</span></p>
+                    <p className='font-semibold'>Phone:</p>
+                    <p className='font-semibold'>Address:</p>
+                    <div className="card-actions mt-3 mx-auto">
+                        <button onClick={() => setProfileModal(true)} htmlFor="my_modal_7" className="btn btn-xs border-none bg-orange-500">Edit</button>
                     </div>
                 </div>
             </div>
+
+            {
+                profileModal && <ProfileModal
+                    id={user.uid}
+                    setProfileModal={setProfileModal}
+                ></ProfileModal>
+            }
         </div>
     )
 }
