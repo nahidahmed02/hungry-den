@@ -49,14 +49,14 @@ const Cart = () => {
                         <table className="table w-full">
                             <thead>
                                 <tr className='text-center text-white'>
-                                    <td className='bg-orange-400 '>SL No.</td>
-                                    <th className='bg-orange-400'>Image</th>
-                                    <th className='bg-orange-400'>Category</th>
-                                    <th className='bg-orange-400'>Name</th>
-                                    <th className='bg-orange-400'>Unit Price</th>
-                                    <th className='bg-orange-400'>Quantity</th>
-                                    <th className='bg-orange-400'>Price (+vat)</th>
-                                    <th className='bg-orange-400'>Action</th>
+                                    <td className='bg-orange-500 '>SL No.</td>
+                                    <th className='bg-orange-500'>Image</th>
+                                    <th className='bg-orange-500'>Category</th>
+                                    <th className='bg-orange-500'>Name</th>
+                                    <th className='bg-orange-500'>Unit Price</th>
+                                    <th className='bg-orange-500'>Quantity</th>
+                                    <th className='bg-orange-500'>Price (+vat)</th>
+                                    <th className='bg-orange-500'>Action</th>
                                 </tr>
                             </thead>
 
@@ -76,7 +76,7 @@ const Cart = () => {
 
                     <div className='mt-6 text-center'>
                         <p className=' mr-6 py-3 px-8 text-lg font-bold'>Total : ${sumOfAllPrice}</p>
-                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-400 text-white rounded-md py-1 px-4  font-bold'>Proceed To Payment</button>
+                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white rounded-md py-1 px-4  font-bold'>Proceed To Payment</button>
                     </div>
                 </>
             }
