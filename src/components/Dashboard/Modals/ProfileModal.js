@@ -33,8 +33,8 @@ const ProfileModal = ({ setProfileModal }) => {
                     </form>
 
                     <div className='text-center'>
-                        <label className="btn btn-xs bg-orange-400 mr-4" onClick={() => setProfileModal(false)}>Save</label>
-                        <label className="modal-backdrop btn btn-xs bg-red-500" htmlFor="my_modal_7" onClick={() => setProfileModal(false)}>Close</label>
+                        <button className="btn btn-xs bg-orange-500 mr-4" onClick={() => setProfileModal(false)}>Save</button>
+                        <button className="modal-backdrop btn btn-xs bg-red-500" htmlFor="my_modal_7" onClick={() => setProfileModal(false)}>Close</button>
                     </div>
 
                 </div>
