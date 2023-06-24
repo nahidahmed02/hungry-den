@@ -25,7 +25,7 @@ const Profile = () => {
                     <p className='font-semibold'>Phone:</p>
                     <p className='font-semibold'>Address:</p>
                     <div className="card-actions mt-3 mx-auto">
-                        <button onClick={() => setProfileModal(true)} htmlFor="my_modal_7" className="btn btn-xs border-none bg-orange-500">Edit</button>
+                        <button onClick={() => setProfileModal(true)} htmlFor="my_modal_7" className="btn btn-xs border-none bg-orange-400">Edit</button>
                     </div>
                 </div>
             </div>

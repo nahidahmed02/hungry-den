@@ -26,43 +26,43 @@ const DashboardLayout = ({ children }) => {
                 <div className="drawer-side mb-auto mt-8 sticky">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-52 text-base-content">
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard'>
                                 <CgProfile className='text-xl' /> Profile
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/orders'>
                                 <VscNotebook /> Orders
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/addItem'>
                                 <BiAddToQueue /> Add Item
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/deleteItem'>
                                 <MdDelete /> Delete Item
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/manageUsers'>
                                 <FaUsersCog /> Manage Users
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/myOrders'>
                                 <GoListOrdered /> My Orders
                             </Link>
                         </li>
 
-                        <li className='text-white font-bold bg-orange-400 rounded-md mb-1'>
+                        <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
                             <Link href='/dashboard/addReview'>
                                 <MdRateReview /> Add Review
                             </Link>
