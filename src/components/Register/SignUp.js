@@ -94,7 +94,7 @@ const SignUp = () => {
 
                 <button
                     type="submit"
-                    className="bg-orange-400 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
+                    className="bg-orange-500 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
 
                     Sign Up
                 </button>
