@@ -10,7 +10,7 @@ const Profile = () => {
     return (
         <div>
             <h2 className='mt-6 text-2xl font-serif font-bold text-orange-500 text-center'>Profile</h2>
-            <div className="mx-auto card w-96 bg-base-100 shadow-2xl border mt-5">
+            <div className="mx-8 lg:mx-auto card w-auto lg:w-96 bg-base-100 shadow-2xl border mt-5">
                 <figure className="px-10 pt-10">
                     <Image
                         width={10}
@@ -29,6 +29,8 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
+
+            {/* <button className='border px-2 py-3'>test</button> */}
 
             {
                 profileModal && <ProfileModal

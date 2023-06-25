@@ -30,14 +30,11 @@ const SignUp = () => {
             await updateUser(user, userInfo)
 
             toast.success('Welcome to Friends Kebab');
+
         } catch (error) {
             console.log(error);
             setSignUpError(error.message)
         };
-
-
-
-
     }
 
     const handleGoogleSignUp = () => {
