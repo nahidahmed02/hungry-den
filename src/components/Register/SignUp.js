@@ -18,29 +18,26 @@ const SignUp = () => {
         router.push('/');
     }
 
-    const handleSignUp = data => {
+    const handleSignUp = async (data) => {
         setSignUpError('');
 
-        createUserWithEmailPassword(data.email, data.password)
-            .then(result => {
+        try {
+            const { user } = await createUserWithEmailPassword(data.email, data.password)
+            const userInfo = {
+                displayName: data.name
+            }
 
-                const user = result.user;
-                console.log(user);
+            await updateUser(user, userInfo)
 
-                const userInfo = {
-                    displayName: data.name
-                }
+            toast.success('Welcome to Friends Kebab');
+        } catch (error) {
+            console.log(error);
+            setSignUpError(error.message)
+        };
 
-                updateUser(userInfo)
-                    .then(() => { })
-                    .catch(error => console.log(error))
 
-                toast.success('Welcome to Friends Kebab');
-            })
-            .catch(error => {
-                console.log(error);
-                setSignUpError(error.message)
-            });
+
+
     }
 
     const handleGoogleSignUp = () => {

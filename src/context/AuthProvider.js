@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, provider);
     }
 
-    const updateUser = userInfo => {
+    const updateUser = (user, userInfo) => {
         return updateProfile(user, userInfo)
     }
 
