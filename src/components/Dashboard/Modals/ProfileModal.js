@@ -33,7 +33,7 @@ const ProfileModal = ({ setProfileModal }) => {
 
                         <div className='text-center'>
                             <button type='submit' className="text-white font-bold rounded btn-xs bg-orange-500 mr-4" onClick={() => setProfileModal(false)}>Save</button>
-                            <button className="modal-backdrop text-white font-bold rounded btn-xs bg-red-500" htmlFor="my_modal_7" onClick={() => setProfileModal(false)}>Close</button>
+                            <button className="modal-backdrop text-white font-bold rounded btn-xs bg-red-500" onClick={() => setProfileModal(false)}>Close</button>
                         </div>
 
                     </form>

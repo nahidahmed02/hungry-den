@@ -19,11 +19,10 @@ const DashboardLayout = ({ children }) => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
 
-
                     {children}
                 </div>
 
-                <div className="drawer-side mb-auto mt-8 sticky">
+                <div className="drawer-side mb-auto mt-8">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-52 text-base-content">
                         <li className='text-white font-bold bg-orange-500 rounded-md mb-1'>
