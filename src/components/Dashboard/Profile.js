@@ -1,7 +1,8 @@
-import { AuthContext } from '@/src/context/AuthProvider'
-import Image from 'next/image'
-import React, { useContext, useState } from 'react'
+import { AuthContext } from '@/src/context/AuthProvider';
+import Image from 'next/image';
+import React, { useContext, useState } from 'react';
 import ProfileModal from './Modals/ProfileModal';
+import noPic from '../../../public/images/default_user.jpg';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Profile = () => {
                         width={150}
                         height={150}
                         alt='user'
-                        src={user?.photoURL}
+                        src={user?.photoURL ? user.photoURL : noPic}
                         className="rounded-full" />
                 </figure>
                 <div className="card-body">
