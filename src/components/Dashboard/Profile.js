@@ -6,20 +6,20 @@ import ProfileModal from './Modals/ProfileModal';
 const Profile = () => {
     const { user } = useContext(AuthContext);
     const [profileModal, setProfileModal] = useState(null);
-    console.log(user);
+    console.log(user?.photoURL);
     return (
 
         <div>
             <h2 className='mt-6 text-2xl font-serif font-bold text-orange-500 text-center'>Profile</h2>
             <div className="mx-8 lg:mx-auto card w-auto lg:w-96 bg-base-100 shadow-2xl border mt-5">
-                {/* <figure className="px-10 pt-10">
+                <figure className="px-10 pt-10">
                     <Image
-                        width={10}
-                        height={10}
+                        width={150}
+                        height={150}
                         alt='user'
-                        src=''
-                        className="rounded-xl" />
-                </figure> */}
+                        src={user?.photoURL}
+                        className="rounded-full" />
+                </figure>
                 <div className="card-body">
                     <p className='font-semibold'>Name: <span className='font-normal'>{user?.displayName}</span></p>
                     <p className='font-semibold'>E-Mail: <span className='font-normal'>{user?.email}</span></p>
