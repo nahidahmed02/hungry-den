@@ -2,8 +2,13 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { AiFillEdit } from 'react-icons/ai';
 
-const ProfileModal = ({ setProfileModal }) => {
+const ProfileModal = ({ setProfileModal, setProfilePic }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        setProfilePic(URL.createObjectURL(file));
+    };
 
     const handleEditProfile = data => {
         console.log(data);
@@ -17,19 +22,17 @@ const ProfileModal = ({ setProfileModal }) => {
 
                         <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>
 
-                        <span className='flex  mx-auto mb-2.5 text-gray-400'>
+                        <label className='w-full max-w-xs mx-auto mb-1 text-gray-400'>
                             Update Profile Picture
-                            <label htmlFor="imageInput" className='my-auto'>
-                                <AiFillEdit className='cursor-pointer ml-4 text-black' />
-                            </label>
-                        </span>
+
+                        </label>
 
                         <input
                             id="imageInput"
                             type="file"
                             accept="image/*"
-                            // onChange={handleImageUpload}
-                            hidden
+                            onChange={handleImageUpload}
+                            className='w-full max-w-xs mx-auto mb-2.5'
                         />
 
                         <input
