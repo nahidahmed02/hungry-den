@@ -1,13 +1,21 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Image from 'next/image';
 import React, { useContext, useState } from 'react';
+import { AiFillEdit } from 'react-icons/ai'
 import ProfileModal from './Modals/ProfileModal';
 import noPic from '../../../public/images/default_user.jpg';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
+    const [profilePic, setProfilePic] = useState(user?.photoURL ? user.photoURL : noPic)
     const [profileModal, setProfileModal] = useState(null);
-    console.log(user?.photoURL);
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        setProfilePic(URL.createObjectURL(file));
+    };
+
+
     return (
 
         <div>
@@ -18,9 +26,12 @@ const Profile = () => {
                         width={150}
                         height={150}
                         alt='user'
-                        src={user?.photoURL ? user.photoURL : noPic}
+                        src={profilePic}
                         className="rounded-full" />
                 </figure>
+
+
+
                 <div className="card-body">
                     <p className='font-semibold'>Name: <span className='font-normal'>{user?.displayName}</span></p>
                     <p className='font-semibold'>E-Mail: <span className='font-normal'>{user?.email}</span></p>

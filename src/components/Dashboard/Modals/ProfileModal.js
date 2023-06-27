@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { AiFillEdit } from 'react-icons/ai';
 
 const ProfileModal = ({ setProfileModal }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -16,19 +17,32 @@ const ProfileModal = ({ setProfileModal }) => {
 
                         <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>
 
+                        <span className='flex  mx-auto mb-2.5 text-gray-400'>
+                            Update Profile Picture
+                            <label htmlFor="imageInput" className='my-auto'>
+                                <AiFillEdit className='cursor-pointer ml-4 text-black' />
+                            </label>
+                        </span>
+
+                        <input
+                            id="imageInput"
+                            type="file"
+                            accept="image/*"
+                            // onChange={handleImageUpload}
+                            hidden
+                        />
+
                         <input
                             {...register("phone")}
                             type="text"
                             placeholder="phone"
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
-                            required
                         />
                         <input
                             {...register("address")}
                             type="text"
                             placeholder="address"
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
-                            required
                         />
 
                         <div className='text-center'>
