@@ -1,4 +1,4 @@
-import AddReview from '@/src/components/Dashboard/AddReview'
+import AddReview from '@/src/components/Dashboard/AddReview/AddReview'
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
 import Layout from '@/src/components/Layout/Layout'
 import React from 'react'

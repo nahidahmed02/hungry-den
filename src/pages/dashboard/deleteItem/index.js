@@ -1,5 +1,5 @@
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
-import DeleteItem from '@/src/components/Dashboard/DeleteItem'
+import DeleteItem from '@/src/components/Dashboard/DeleteItem/DeleteItem'
 import Layout from '@/src/components/Layout/Layout'
 import React from 'react'
 

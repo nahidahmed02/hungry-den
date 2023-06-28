@@ -1,5 +1,5 @@
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
-import MyOrders from '@/src/components/Dashboard/MyOrders'
+import MyOrders from '@/src/components/Dashboard/MyOrders/MyOrders'
 import Layout from '@/src/components/Layout/Layout'
 import React from 'react'
 

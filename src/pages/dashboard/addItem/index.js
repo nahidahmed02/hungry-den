@@ -1,4 +1,4 @@
-import AddItem from '@/src/components/Dashboard/AddItem'
+import AddItem from '@/src/components/Dashboard/AddItem/AddItem'
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
 import Layout from '@/src/components/Layout/Layout'
 import React from 'react'

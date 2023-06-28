@@ -1,8 +1,8 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import Image from 'next/image';
 import React, { useContext, useState } from 'react';
-import ProfileModal from './Modals/ProfileModal';
-import noPic from '../../../public/images/default_user.jpg';
+import ProfileModal from './ProfileModal';
+import noPic from '../../../../public/images/default_user.jpg';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
