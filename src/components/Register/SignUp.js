@@ -8,7 +8,16 @@ import { FcGoogle } from 'react-icons/fc'
 import { BsFacebook } from 'react-icons/bs'
 
 const SignUp = () => {
-    const { user, createUserWithEmailPassword, updateUser, signInWithGoogle, showPassword, togglePasswordView } = useContext(AuthContext);
+    const {
+        user,
+        createUserWithEmailPassword,
+        updateUser,
+        signInWithGoogle,
+        signInWithFacebook,
+        showPassword,
+        togglePasswordView
+    } = useContext(AuthContext);
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
 
@@ -44,6 +53,20 @@ const SignUp = () => {
             .then(result => {
                 console.log(result);
                 toast.success('Welcome to Friends Kebab')
+            })
+            .catch(error => {
+                console.log(error)
+                setSignUpError(error.message)
+            })
+    }
+
+    const handleFacebookLogin = () => {
+        setSignUpError('')
+
+        signInWithFacebook()
+            .then(result => {
+                console.log(result);
+                toast.success('Welcome back to Friends Kebab')
             })
             .catch(error => {
                 console.log(error)
@@ -120,6 +143,7 @@ const SignUp = () => {
                 <button
                     type="submit"
                     className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
+                    onClick={() => handleFacebookLogin()}
                 >
                     <BsFacebook className='text-xl mr-5 text-blue-500' />
                     Continue With Facebook
