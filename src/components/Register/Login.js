@@ -87,9 +87,9 @@ const Login = () => {
 
     return (
         <section className='bg-login-signup'>
-            <div className='lg:flex lg:justify-center '>
+            <div className='lg:flex lg:justify-center'>
 
-                <div className='lg:w-96 '>
+                <div className='lg:w-96'>
                     <h2 className='text-orange-500 font-serif text-center text-xl font-bold pt-28 lg:pt-44 mb-4 '>Login to your Account</h2>
 
                     <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-4'>
