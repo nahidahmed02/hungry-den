@@ -87,71 +87,79 @@ const Login = () => {
 
     return (
         <section className='bg-login-signup'>
-            <h2 className='text-orange-500 font-serif text-center text-xl font-bold pt-28 mb-4'>Login to your Account</h2>
+            <div className='lg:flex lg:justify-center '>
 
-            <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-4'>
+                <div className='lg:w-96 '>
+                    <h2 className='text-orange-500 font-serif text-center text-xl font-bold pt-28 lg:pt-44 mb-4 '>Login to your Account</h2>
 
-                <input
-                    {...register("email", { required: "Email is required" })}
-                    type="email"
-                    placeholder="Email"
-                    onChange={event => setEmail(event.target.value)}
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
-                    required
-                />
-                {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
+                    <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-4'>
 
-                <input
-                    {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
-                    required
-                />
-                <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-400 bg-white'>{showPassword ? 'Hide' : 'Show'}</button>
-                <button type='button' onClick={handleForgotPassword} className='w-fit ml-64 -mt-2 mb-2 text-xs text-red-600'>Forgot Password?</button>
+                        <input
+                            {...register("email", { required: "Email is required" })}
+                            type="email"
+                            placeholder="Email"
+                            onChange={event => setEmail(event.target.value)}
+                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            required
+                        />
+                        {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
 
-                {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
+                        <input
+                            {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            required
+                        />
+                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-400 bg-white'>{showPassword ? 'Hide' : 'Show'}</button>
+                        <button type='button' onClick={handleForgotPassword} className='w-fit ml-64 -mt-2 mb-2 text-xs text-red-600'>Forgot Password?</button>
 
-                <button
-                    type="submit"
-                    className="bg-orange-500 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
+                        {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
-                    Login
-                </button>
+                        <button
+                            type="submit"
+                            className="bg-orange-500 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
 
-                {loginError && <p className='text-red-500 ml-10 pr-5 mb-2.5 font-semibold'>{loginError}</p>}
+                            Login
+                        </button>
 
-            </form>
+                        {loginError && <p className='text-red-500 ml-10 pr-5 mb-2.5 font-semibold'>{loginError}</p>}
 
-            <p className='text-center text-sm mb-4'>Don&#39;t have an account?
-                <span className='ml-2 text-blue-400 underline font-semibold'>
-                    <Link href='/signup' className='italic'>Create an account</Link>
-                </span>
-            </p>
+                    </form>
 
-            <div className='divider mx-auto w-80 text-xs'>OR</div>
+                    <p className='text-center text-sm mb-4'>Don&#39;t have an account?
+                        <span className='ml-2 text-blue-400 underline font-semibold'>
+                            <Link href='/signup' className='italic'>Create an account</Link>
+                        </span>
+                    </p>
+                </div>
 
-            <div className='text-center mt-4'>
-                <button
-                    type="submit"
-                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
-                    onClick={() => handleGoogleLogIn()}
-                >
-                    <FcGoogle className='text-xl mr-5' />
-                    Continue With Google
-                </button>
-            </div>
+                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-xs lg:rotate-90 lg:mt-80'>OR</div>
 
-            <div className='text-center'>
-                <button
-                    type="submit"
-                    className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
-                    onClick={() => handleFacebookLogin()}
-                >
-                    <BsFacebook className='text-xl mr-5 text-blue-500' />
-                    Continue With Facebook
-                </button>
+                <div className='lg:mt-64 lg:w-96'>
+                    <div className='text-center mt-4'>
+                        <button
+                            type="submit"
+                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
+                            onClick={() => handleGoogleLogIn()}
+                        >
+                            <FcGoogle className='text-xl mr-5' />
+                            Continue With Google
+                        </button>
+                    </div>
+
+                    <div className='text-center'>
+                        <button
+                            type="submit"
+                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
+                            onClick={() => handleFacebookLogin()}
+                        >
+                            <BsFacebook className='text-xl mr-5 text-blue-500' />
+                            Continue With Facebook
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
         </section>
