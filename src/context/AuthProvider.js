@@ -9,12 +9,14 @@ import {
     updateProfile,
     signInWithPopup,
     GoogleAuthProvider,
+    FacebookAuthProvider,
     sendPasswordResetEmail
 } from 'firebase/auth';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider(auth);
+const googleAuthProvider = new GoogleAuthProvider(auth);
+const facebookAuthProvider = new FacebookAuthProvider(auth);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -32,7 +34,11 @@ const AuthProvider = ({ children }) => {
     }
 
     const signInWithGoogle = () => {
-        return signInWithPopup(auth, provider);
+        return signInWithPopup(auth, googleAuthProvider);
+    }
+
+    const signInWithFacebook = () => {
+        return signInWithPopup(auth, facebookAuthProvider)
     }
 
     const updateUser = (user, userInfo) => {
@@ -66,6 +72,7 @@ const AuthProvider = ({ children }) => {
         createUserWithEmailPassword,
         signInWithEmailPassword,
         signInWithGoogle,
+        signInWithFacebook,
         updateUser,
         forgotPassword,
         logout,

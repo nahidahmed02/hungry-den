@@ -8,7 +8,7 @@ const Profile = () => {
     const { user } = useContext(AuthContext);
     const [profilePic, setProfilePic] = useState(user?.photoURL ? user.photoURL : noPic)
     const [profileModal, setProfileModal] = useState(null);
-
+    console.log(user);
     return (
 
         <div>
