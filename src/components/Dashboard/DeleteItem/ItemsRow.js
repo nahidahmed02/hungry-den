@@ -1,12 +1,14 @@
 import React from 'react';
 
-const ItemsRow = () => {
+const ItemsRow = ({ item, index }) => {
+    const { category, name } = item;
+
     return (
-        <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
+        <tr className='text-center'>
+            <th className='border border-b-black'>{index + 1}.</th>
+            <td className='border border-b-black'>{category}</td>
+            <td className='border border-b-black'>{name}</td>
+            <td className='border border-b-black'><button className='btn btn-xs border-none bg-red-500'>Delete</button></td>
         </tr>
     );
 };
