@@ -30,7 +30,7 @@ const Profile = () => {
                     <p className='font-semibold'>E-Mail: <span className='font-normal'>{user?.email}</span></p>
                     <p className='font-semibold'>Phone:</p>
                     <p className='font-semibold'>Address:</p>
-                    <button onClick={() => setProfileModal(true)} style={{ 'zIndex': 4, 'position': 'relative' }} className="text-white font-bold rounded btn-sm border-none bg-orange-500 mt-3">Edit</button>
+                    <button onClick={() => setProfileModal(true)} className="text-white font-bold rounded btn-sm border-none bg-orange-500 mt-3">Edit</button>
 
                 </div>
             </div>

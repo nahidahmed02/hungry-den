@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ItemsRow from './ItemsRow';
 import { Context } from '@/src/context/Context';
+import Modal from './Modal';
 
 const DeleteItem = () => {
     const { foods } = useContext(Context);
+    const [deleteItemModal, setDeleteItemModal] = useState(null);
 
     return (
         <section>
@@ -25,11 +27,19 @@ const DeleteItem = () => {
                                 key={item.id}
                                 item={item}
                                 index={index}
+                                setDeleteItemModal={setDeleteItemModal}
                             ></ItemsRow>)
                         }
                     </tbody>
                 </table>
             </div>
+
+            {
+                deleteItemModal && <Modal
+                    setDeleteItemModal={setDeleteItemModal}
+                ></Modal>
+            }
+
         </section>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { AiFillEdit } from 'react-icons/ai';
 
 const ProfileModal = ({ setProfileModal, setProfilePic }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
