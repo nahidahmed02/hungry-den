@@ -14,7 +14,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
         console.log(data);
     }
     return (
-        <div>
+        <section>
             <input type="checkbox" id="my_modal_7" className="modal-toggle" defaultChecked={true} />
             <div className="modal">
                 <div className="modal-box">
@@ -58,7 +58,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
 
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
