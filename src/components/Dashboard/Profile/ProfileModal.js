@@ -21,7 +21,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
 
                     <form onSubmit={handleSubmit(handleEditProfile)} className='flex flex-col w-auto lg:w-96 mx-auto mb-4'>
 
-                        <label className='w-full max-w-xs ml-9 mb-1'>
+                        <label className='w-full max-w-xs ml-2.5 lg:ml-9 mb-1 font-semibold'>
                             Update Profile Picture
                         </label>
 
@@ -33,7 +33,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
                             className='w-full max-w-xs mx-auto mb-2.5'
                         />
 
-                        <label className='w-full max-w-xs ml-9 mb-1'>
+                        <label className='w-full max-w-xs ml-2.5 lg:ml-9 mb-1 font-semibold'>
                             Phone
                         </label>
 
@@ -44,7 +44,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
-                        <label className='w-full max-w-xs ml-9 mb-1'>
+                        <label className='w-full max-w-xs ml-2.5 lg:ml-9 mb-1 font-semibold'>
                             Address
                         </label>
 
