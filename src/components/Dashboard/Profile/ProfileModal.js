@@ -17,13 +17,12 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
             <input type="checkbox" id="my_modal_7" className="modal-toggle" defaultChecked={true} />
             <div className="modal">
                 <div className="modal-box">
+                    <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>
+
                     <form onSubmit={handleSubmit(handleEditProfile)} className='flex flex-col w-auto lg:w-96 mx-auto mb-4'>
 
-                        <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>
-
-                        <label className='w-full max-w-xs mx-auto mb-1 text-gray-400'>
+                        <label className='w-full max-w-xs ml-9 mb-1'>
                             Update Profile Picture
-
                         </label>
 
                         <input
@@ -34,16 +33,25 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
                             className='w-full max-w-xs mx-auto mb-2.5'
                         />
 
+                        <label className='w-full max-w-xs ml-9 mb-1'>
+                            Phone
+                        </label>
+
                         <input
                             {...register("phone")}
                             type="text"
-                            placeholder="phone"
+                            placeholder="Phone"
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
+
+                        <label className='w-full max-w-xs ml-9 mb-1'>
+                            Address
+                        </label>
+
                         <input
                             {...register("address")}
                             type="text"
-                            placeholder="address"
+                            placeholder="Address"
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
