@@ -15,6 +15,9 @@ const AddItem = () => {
 
             <form onSubmit={handleSubmit(handleAddItem)} className='flex flex-col w-96 mx-auto mb-4'>
 
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>
+                    Category
+                </label>
                 <input
                     {...register("category", { required: "Category is required" })}
                     type="text"
@@ -24,6 +27,9 @@ const AddItem = () => {
                 />
                 {errors.category && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.category?.message}</p>}
 
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>
+                    Name
+                </label>
                 <input
                     {...register("name", { required: "Name is required" })}
                     type="text"
@@ -35,30 +41,42 @@ const AddItem = () => {
 
                 <div className='flex w-full max-w-xs mx-auto mb-2.5'>
 
-                    <input
-                        {...register("price", { required: "Price is required" })}
-                        type="number"
-                        placeholder="Price"
-                        className="input input-bordered w-1/2"
-                        required
-                    />
-                    {errors.price && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
-
-                    <div className='flex w-1/2 justify-end'>
+                    <div className='flex flex-col'>
+                        <label className='w-full max-w-xs ml-1.5 mb-1 font-semibold'>
+                            Price
+                        </label>
                         <input
-                            {...register("vat", { required: "Vat is required" })}
+                            {...register("price", { required: "Price is required" })}
                             type="number"
-                            placeholder="VAT"
-                            className="input input-bordered w-2/3"
+                            placeholder="Price"
+                            className="input input-bordered w-full"
                             required
                         />
-                        <label className='ml-1 mt-3 text-gray-400'>%</label>
+                    </div>
+                    {errors.price && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
+
+                    <div className='flex flex-col'>
+
+                        <label className='w-full max-w-xs ml-11 mb-1 font-semibold'>
+                            VAT
+                        </label>
+                        <div className='flex justify-end'>
+                            <input
+                                {...register("vat", { required: "Vat is required" })}
+                                type="number"
+                                placeholder="VAT"
+                                className="input input-bordered w-2/3"
+                                required
+                            />
+                            <label className='ml-1 mt-3 text-gray-400'>%</label>
+                        </div>
+
                     </div>
                     {errors.vat && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.vat?.message}</p>}
 
                 </div>
 
-                <label className='w-full max-w-xs mx-auto mb-1 text-gray-400'>Add Photo</label>
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>Add Photo</label>
                 <input
                     {...register("img", { required: "Image is required" })}
                     type="file"
