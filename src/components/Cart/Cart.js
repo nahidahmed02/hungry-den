@@ -38,7 +38,7 @@ const Cart = () => {
     return (
         <section className='mt-24 mb-16'>
 
-            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-8'>Cart</h2>
+            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Cart</h2>
 
             {selectedFoods.length === 0
                 ?
