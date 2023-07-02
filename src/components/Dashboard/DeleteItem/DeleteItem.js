@@ -9,9 +9,9 @@ const DeleteItem = () => {
 
     return (
         <section>
-            <h2 className='lg:mt-6 text-2xl font-serif font-bold text-orange-500 text-center'>Delete Item</h2>
+            <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Delete Item</h2>
 
-            <div className="overflow-x-auto mx-3 lg:mx-28 mt-5 mb-8 border rounded-t-lg border-black border-b-0">
+            <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
                 <table className="table w-full">
                     <thead>
                         <tr className='text-center text-white'>
