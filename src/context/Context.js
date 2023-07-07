@@ -11,7 +11,7 @@ export const ContextProvider = ({ children }) => {
     const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
-        fetch('foods.json')
+        fetch('http://localhost:5000/foods')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])

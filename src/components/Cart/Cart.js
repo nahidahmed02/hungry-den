@@ -26,7 +26,7 @@ const Cart = () => {
 
     const handleRemoveFromCart = (id) => {
         if (typeof window !== 'undefined') {
-            const updatedSelectedFoods = selectedFoods.filter((item) => item.id !== id);
+            const updatedSelectedFoods = selectedFoods.filter((item) => item._id !== id);
             setSelectedFoods(updatedSelectedFoods);
             localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFoods));
         }
@@ -63,7 +63,7 @@ const Cart = () => {
                             <tbody>
                                 {
                                     selectedFoods.map((selectedFood, index) => <SelectedFood
-                                        key={selectedFood.id}
+                                        key={selectedFood._id}
                                         index={index}
                                         selectedFood={selectedFood}
                                         handleRemoveFromCart={handleRemoveFromCart}

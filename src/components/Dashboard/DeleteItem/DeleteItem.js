@@ -24,7 +24,7 @@ const DeleteItem = () => {
                     <tbody>
                         {
                             foods?.map((item, index) => <ItemsRow
-                                key={item.id}
+                                key={item._id}
                                 item={item}
                                 index={index}
                                 setDeleteItemModal={setDeleteItemModal}

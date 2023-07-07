@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 const Food = ({ food }) => {
     const router = useRouter();
-    const { id, category, name, price, vat, photo } = food;
+    const { _id, category, name, price, vat, photo } = food;
 
     let [quantity, setQuantity] = useState(1);
     const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -13,8 +13,8 @@ const Food = ({ food }) => {
     useEffect(() => {
         const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
         setCartItems(existingSelectedFood);
-        setIsAddedToCart(existingSelectedFood.some((item) => item.id === id));
-    }, [id]);
+        setIsAddedToCart(existingSelectedFood.some((item) => item._id === _id));
+    }, [_id]);
 
     function increment() {
         setQuantity(quantity + 1);
@@ -33,7 +33,7 @@ const Food = ({ food }) => {
     let total = ((parseFloat(price) * quantity) + parseFloat(vatCount)).toFixed(2);
 
     const foodAddedToCart = {
-        id, category, name, quantity, vat, vatCount, price, total, photo
+        _id, category, name, quantity, vat, vatCount, price, total, photo
     }
 
     const handleAddToCart = () => {
@@ -48,14 +48,14 @@ const Food = ({ food }) => {
     const handleRemoveFromCart = () => {
         if (typeof window !== 'undefined') {
             const existingSelectedFood = JSON.parse(localStorage.getItem('selectedFood')) || [];
-            const updatedSelectedFood = existingSelectedFood.filter(item => item.id !== id);
+            const updatedSelectedFood = existingSelectedFood.filter(item => item._id !== _id);
             localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFood));
             setCartItems(updatedSelectedFood)
             setIsAddedToCart(false)
         }
     };
 
-    const itemFromCart = cartItems?.filter(cartItem => cartItem.id === id);
+    const itemFromCart = cartItems?.filter(cartItem => cartItem._id === _id);
 
     return (
         <section>
