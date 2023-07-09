@@ -1,20 +1,28 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../components/Loading/Loading';
 
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
-    const [foods, setFoods] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [foodsPerPage, setFoodsPerPage] = useState(6);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResult, setSearchResult] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/foods')
-            .then(res => res.json())
-            .then(data => setFoods(data))
-    }, [])
+    const { data: foods, isLoading } = useQuery({
+        queryKey: ['foods'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/foods');
+            const data = res.json();
+            return data;
+        }
+    })
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category === 'All' ? '' : category);
