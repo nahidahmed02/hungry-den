@@ -27,6 +27,20 @@ const SignUp = () => {
         router.push('/');
     }
 
+    const saveUser = (name, email) => {
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ name, email })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('save user', data);
+            })
+    }
+
     const handleSignUp = async (data) => {
         setSignUpError('');
 
@@ -37,6 +51,9 @@ const SignUp = () => {
             }
 
             await updateUser(user, userInfo)
+                .then(() => {
+                    saveUser(data.name, data.email)
+                })
 
             toast.success('Welcome to Friends Kebab');
 
