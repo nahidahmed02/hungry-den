@@ -38,9 +38,9 @@ export const ContextProvider = ({ children }) => {
 
     const totalFilteredFoods = !searchQuery
         ?
-        filteredFoods.length
+        filteredFoods?.length
         :
-        searchResult.length;
+        searchResult?.length;
 
     const totalPages = Math.ceil(totalFilteredFoods / foodsPerPage);
 
@@ -50,7 +50,7 @@ export const ContextProvider = ({ children }) => {
 
     const indexOfLastFood = currentPage * foodsPerPage;
     const indexOfFirstFood = indexOfLastFood - foodsPerPage;
-    const currentFilteredFoods = filteredFoods.slice(indexOfFirstFood, indexOfLastFood);
+    const currentFilteredFoods = filteredFoods?.slice(indexOfFirstFood, indexOfLastFood);
 
     // ------------------ search bar implementation --------------------
 
@@ -59,7 +59,7 @@ export const ContextProvider = ({ children }) => {
         setSearchQuery(query);
 
         // search logic
-        const results = foods.filter(food => food.name.toLowerCase().includes(query.toLowerCase()));
+        const results = foods?.filter(food => food.name.toLowerCase().includes(query.toLowerCase()));
         setSearchResult(results);
         setCurrentPage(1);
     };

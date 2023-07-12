@@ -4,10 +4,10 @@ import React, { useContext } from 'react'
 const Category = () => {
     const { foods, selectedCategory, handleCategoryClick } = useContext(Context);
 
-    const categories = foods.map(food => food.category)
+    const categories = foods?.map(food => food.category)
 
     // removing the duplicates categories
-    const category = categories.filter((category, index) => categories.indexOf(category) === index)
+    const category = categories?.filter((category, index) => categories.indexOf(category) === index)
 
     return (
         <>
@@ -31,7 +31,7 @@ const Category = () => {
                     </li>
 
                     {
-                        category.map(ctgry => <li
+                        category?.map(ctgry => <li
                             className={`cursor-pointer text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                     ${selectedCategory === ctgry
                                     ?
