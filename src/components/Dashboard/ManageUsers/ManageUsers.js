@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import UsersRow from './UsersRow';
 
 const ManageUsers = () => {
+    const [allUsers, setAllUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/users')
+            .then(res => res.json())
+            .then(data => setAllUsers(data))
+    }, [])
+
     return (
         <section>
             <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Manage Users</h2>
@@ -18,13 +27,13 @@ const ManageUsers = () => {
                     </thead>
 
                     <tbody>
-                        <tr className='text-center'>
-                            <td className='border border-b-black'>index</td>
-                            <td className='border border-b-black'>name</td>
-                            <td className='border border-b-black'>www.dfas.com</td>
-                            <td className='border border-b-black'>Admin / User</td>
-                            <td className='border border-b-black'><button className='btn btn-xs border-none bg-red-500'>Make Admin</button></td>
-                        </tr>
+                        {
+                            allUsers?.map((user, index) => <UsersRow
+                                key={user._id}
+                                user={user}
+                                index={index}
+                            ></UsersRow>)
+                        }
                     </tbody>
                 </table>
             </div>
