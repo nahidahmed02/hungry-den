@@ -8,7 +8,7 @@ const UsersRow = ({ user, index }) => {
             <td className='border border-b-black'>{name}</td>
             <td className='border border-b-black'>{email}</td>
             <td className='border border-b-black'>Admin / User</td>
-            <td className='border border-b-black'><button className='btn btn-xs border-none bg-green-500'>Make Admin</button></td>
+            <td className='border border-b-black'><button className='btn btn-xs border-none bg-green-600'>Make Admin</button></td>
         </tr>
     );
 };

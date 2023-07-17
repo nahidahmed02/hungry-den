@@ -20,12 +20,8 @@ const SignUp = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
-
     const router = useRouter();
 
-    if (user) {
-        router.push('/');
-    }
 
     const saveUser = (name, email) => {
         fetch('http://localhost:5000/users', {
@@ -37,9 +33,23 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('save user', data);
+                getToken(email)
             })
     }
+
+
+    const getToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                const token = data.accessToken;
+                if (token) {
+                    localStorage.setItem('accessToken', token)
+                    router.push('/');
+                }
+            })
+    }
+
 
     const handleSignUp = async (data) => {
         setSignUpError('');
@@ -63,6 +73,7 @@ const SignUp = () => {
         };
     }
 
+
     const handleGoogleSignUp = () => {
         setSignUpError('')
 
@@ -77,7 +88,8 @@ const SignUp = () => {
             })
     }
 
-    const handleFacebookLogin = () => {
+
+    const handleFacebookSignUp = () => {
         setSignUpError('')
 
         signInWithFacebook()
@@ -165,7 +177,7 @@ const SignUp = () => {
                         <button
                             type="submit"
                             className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
-                            onClick={() => handleFacebookLogin()}
+                            onClick={() => handleFacebookSignUp()}
                         >
                             <BsFacebook className='text-xl mr-5 text-blue-500' />
                             Continue With Facebook
