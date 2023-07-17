@@ -1,4 +1,5 @@
 import { AuthContext } from '@/src/context/AuthProvider';
+import useToken from '@/src/hooks/useToken';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
@@ -22,15 +23,16 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [email, setEmail] = useState('');
     const [loginError, setLoginError] = useState('');
-
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail);
     const router = useRouter();
     const from = router?.query?.from || '/';
 
     useEffect(() => {
-        if (user) {
+        if (token) {
             router.push(from);
         }
-    }, [user, from, router])
+    }, [token, from, router])
 
     const handleForgotPassword = () => {
         forgotPassword(email)
@@ -50,6 +52,7 @@ const Login = () => {
                 toast.success('Welcome back to Friends Kebab')
                 const user = result.user;
                 console.log(user);
+                setLoginUserEmail(data.email);
             })
             .catch(error => {
                 console.log(error)
