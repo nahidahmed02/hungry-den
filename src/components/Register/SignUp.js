@@ -1,11 +1,12 @@
 import { AuthContext } from '@/src/context/AuthProvider';
-import Link from 'next/link'
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { FcGoogle } from 'react-icons/fc'
-import { BsFacebook } from 'react-icons/bs'
+import { FcGoogle } from 'react-icons/fc';
+import { BsFacebook } from 'react-icons/bs';
+import useToken from '@/src/hooks/useToken';
 
 const SignUp = () => {
     const {
@@ -20,7 +21,14 @@ const SignUp = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUpError] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [token] = useToken(userEmail);
     const router = useRouter();
+
+
+    if (token) {
+        router.push('/');
+    }
 
 
     const saveUser = (name, email) => {
@@ -33,20 +41,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
-                getToken(email)
-            })
-    }
-
-
-    const getToken = email => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                const token = data.accessToken;
-                if (token) {
-                    localStorage.setItem('accessToken', token)
-                    router.push('/');
-                }
+                setUserEmail(email)
             })
     }
 
