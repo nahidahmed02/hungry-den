@@ -1,39 +1,20 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import { Context } from '@/src/context/Context';
-import Link from 'next/link'
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react';
 
 const Header = () => {
-    const router = useRouter();
 
+    const { itemsInCart, searchQuery, handleSearch } = useContext(Context);
     const { user, logout } = useContext(AuthContext);
-    const { searchQuery, handleSearch } = useContext(Context);
-    const [cartItems, setCartItems] = useState([]);
-    const [itemsInCart, setItemsInCart] = useState(0);
+    const router = useRouter();
 
     const handleLogOut = () => {
         logout()
             .then(res => console.log(res))
             .catch(error => console.log(error))
     }
-
-    useEffect(() => {
-        const fetchData = async () => {
-            if (typeof window !== undefined) {
-                try {
-                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
-                    setCartItems(cart || []);
-                    setItemsInCart(cart ? cart.length : 0);
-
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        fetchData();
-    }, [cartItems])
-
 
     const menuItems =
         <>

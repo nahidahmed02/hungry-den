@@ -10,6 +10,30 @@ export const ContextProvider = ({ children }) => {
     const [foodsPerPage, setFoodsPerPage] = useState(6);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResult, setSearchResult] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsInCart, setItemsInCart] = useState(0);
+
+
+    // ----------------------- set cart items --------------------------
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (typeof window !== undefined) {
+                try {
+                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
+                    setCartItems(cart || []);
+                    setItemsInCart(cart ? cart.length : 0);
+
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+        fetchData();
+    }, [cartItems])
+
+
+    // ------------------ fetch foods from database --------------------
 
     const { data: foods, isLoading } = useQuery({
         queryKey: ['foods'],
@@ -20,9 +44,15 @@ export const ContextProvider = ({ children }) => {
         }
     })
 
+
+    // ---------- showing loader while loading foods from DB -------------
+
     if (isLoading) {
         return <Loading></Loading>
     }
+
+
+    // ------------------ category and pagination --------------------
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category === 'All' ? '' : category);
@@ -52,6 +82,7 @@ export const ContextProvider = ({ children }) => {
     const indexOfFirstFood = indexOfLastFood - foodsPerPage;
     const currentFilteredFoods = filteredFoods?.slice(indexOfFirstFood, indexOfLastFood);
 
+
     // ------------------ search bar implementation --------------------
 
     const handleSearch = (e) => {
@@ -77,7 +108,8 @@ export const ContextProvider = ({ children }) => {
             handlePageChange,
             searchQuery,
             searchResult,
-            handleSearch
+            handleSearch,
+            itemsInCart
         }}>
             {children}
         </Context.Provider>
