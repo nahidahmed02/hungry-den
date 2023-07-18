@@ -4,10 +4,14 @@ import Layout from '../components/Layout/Layout'
 import Shop from '../components/Shop/Shop'
 import { BsCart4 } from 'react-icons/bs'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { Context } from '../context/Context'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { itemsInCart } = useContext(Context);
+
   return (
     <>
       <Head>
@@ -21,7 +25,12 @@ export default function Home() {
         <Layout>
           <Shop></Shop>
           <Link href='/cart'>
-            <BsCart4 className='text-5xl rounded bg-yellow-500 fixed bottom-16 right-10 cursor-pointer' />
+            <span className="fixed bottom-24 right-9 text-xl font-bold">
+              <BsCart4 className='text-5xl rounded bg-yellow-500 fixed bottom-16 right-6'>
+
+              </BsCart4>
+              {itemsInCart}
+            </span>
           </Link>
         </Layout>
       </main>
