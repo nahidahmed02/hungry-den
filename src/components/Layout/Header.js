@@ -2,13 +2,36 @@ import { AuthContext } from '@/src/context/AuthProvider';
 import { Context } from '@/src/context/Context';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { BsCart4 } from 'react-icons/bs';
 
 const Header = () => {
 
-    const { itemsInCart, searchQuery, handleSearch } = useContext(Context);
+    const { searchQuery, handleSearch } = useContext(Context);
     const { user, logout } = useContext(AuthContext);
     const router = useRouter();
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsInCart, setItemsInCart] = useState(0);
+
+
+    // ----------------------- set cart items --------------------------
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (typeof window !== undefined) {
+                try {
+                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
+                    setCartItems(cart || []);
+                    setItemsInCart(cart ? cart.length : 0);
+
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+        fetchData();
+    }, [cartItems])
+
 
     const handleLogOut = () => {
         logout()
@@ -88,6 +111,14 @@ const Header = () => {
                 </div>
 
             </div>
+
+            <Link href='/cart' className="indicator fixed bottom-16 right-6">
+                <span className="indicator-item badge">
+                    {itemsInCart}
+                </span>
+
+                <BsCart4 className='text-5xl rounded bg-yellow-500' />
+            </Link>
         </header>
     )
 }

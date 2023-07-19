@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../components/Loading/Loading';
 
@@ -10,27 +10,6 @@ export const ContextProvider = ({ children }) => {
     const [foodsPerPage, setFoodsPerPage] = useState(6);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
-    const [itemsInCart, setItemsInCart] = useState(0);
-
-
-    // ----------------------- set cart items --------------------------
-
-    useEffect(() => {
-        const fetchData = async () => {
-            if (typeof window !== undefined) {
-                try {
-                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
-                    setCartItems(cart || []);
-                    setItemsInCart(cart ? cart.length : 0);
-
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        fetchData();
-    }, [cartItems])
 
 
     // ------------------ fetch foods from database --------------------
@@ -108,8 +87,7 @@ export const ContextProvider = ({ children }) => {
             handlePageChange,
             searchQuery,
             searchResult,
-            handleSearch,
-            itemsInCart
+            handleSearch
         }}>
             {children}
         </Context.Provider>
