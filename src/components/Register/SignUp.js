@@ -89,7 +89,7 @@ const SignUp = () => {
 
         signInWithFacebook()
             .then(result => {
-                console.log(result);
+                saveUser(result.user.displayName, result.user.email);
                 toast.success('Welcome back to Friends Kebab')
             })
             .catch(error => {
