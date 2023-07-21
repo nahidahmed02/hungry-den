@@ -65,7 +65,7 @@ const Login = () => {
 
         signInWithGoogle()
             .then(result => {
-                saveUser(result.user.displayName, result.user.email);
+                console.log(result);
                 toast.success('Welcome back to Friends Kebab')
             })
             .catch(error => {
