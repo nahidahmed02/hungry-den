@@ -74,7 +74,7 @@ const SignUp = () => {
 
         signInWithGoogle()
             .then(result => {
-                console.log(result);
+                saveUser(result.user.displayName, result.user.email);
                 toast.success('Welcome to Friends Kebab')
             })
             .catch(error => {
