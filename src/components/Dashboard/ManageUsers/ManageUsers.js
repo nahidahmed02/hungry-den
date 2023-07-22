@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import UsersRow from './UsersRow';
+import { useQuery } from 'react-query';
+import Loading from '../../Loading/Loading';
 
 const ManageUsers = () => {
-    const [allUsers, setAllUsers] = useState([]);
+    const { data: users, isLoading } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/users');
+            const data = res.json();
+            return data;
+        }
+    })
 
-    useEffect(() => {
-        fetch('http://localhost:5000/users')
-            .then(res => res.json())
-            .then(data => setAllUsers(data))
-    }, [])
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <section>
@@ -28,7 +35,7 @@ const ManageUsers = () => {
 
                     <tbody>
                         {
-                            allUsers?.map((user, index) => <UsersRow
+                            users?.map((user, index) => <UsersRow
                                 key={user._id}
                                 user={user}
                                 index={index}
