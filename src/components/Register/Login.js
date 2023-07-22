@@ -65,7 +65,7 @@ const Login = () => {
 
         signInWithGoogle()
             .then(result => {
-                console.log(result);
+                setLoginUserEmail(result.user.email);
                 toast.success('Welcome back to Friends Kebab')
             })
             .catch(error => {
@@ -79,7 +79,7 @@ const Login = () => {
 
         signInWithFacebook()
             .then(result => {
-                console.log(result);
+                setLoginUserEmail(result.user.email);
                 toast.success('Welcome back to Friends Kebab')
             })
             .catch(error => {
