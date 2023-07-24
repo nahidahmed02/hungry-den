@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import UsersRow from './UsersRow';
+import React from 'react'
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
+import User from './User';
 
 const ManageUsers = () => {
+
     const { data: users, isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -19,31 +20,17 @@ const ManageUsers = () => {
 
     return (
         <section>
-            <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Manage Users</h2>
+            <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Users ({users?.length})</h2>
 
-            <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
-                <table className="table w-full">
-                    <thead>
-                        <tr className='text-center text-white'>
-                            <td className='bg-orange-500 '>SL No.</td>
-                            <th className='bg-orange-500 '>Name</th>
-                            <th className='bg-orange-500 '>Email</th>
-                            <th className='bg-orange-500 '>Role</th>
-                            <th className='bg-orange-500 '>Action</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {
-                            users?.map((user, index) => <UsersRow
-                                key={user._id}
-                                user={user}
-                                index={index}
-                            ></UsersRow>)
-                        }
-                    </tbody>
-                </table>
+            <div className='mx-4 lg:mx-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5'>
+                {
+                    users?.map(user => <User
+                        key={user._id}
+                        user={user}
+                    ></User>)
+                }
             </div>
+
         </section>)
 }
 
