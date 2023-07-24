@@ -5,7 +5,7 @@ import User from './User';
 
 const ManageUsers = () => {
 
-    const { data: users, isLoading } = useQuery({
+    const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/users');
@@ -27,6 +27,7 @@ const ManageUsers = () => {
                     users?.map(user => <User
                         key={user._id}
                         user={user}
+                        refetch={refetch}
                     ></User>)
                 }
             </div>

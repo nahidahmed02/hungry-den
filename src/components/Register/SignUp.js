@@ -32,12 +32,13 @@ const SignUp = () => {
 
 
     const saveUser = (name, email) => {
+        const role = 'user';
         fetch(`http://localhost:5000/users/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ name, email })
+            body: JSON.stringify({ name, email, role })
         })
             .then(res => res.json())
             .then(data => {
