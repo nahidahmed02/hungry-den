@@ -44,7 +44,10 @@ const User = ({ user, refetch }) => {
                     </>
                 }
 
-
+                {
+                    role !== "user" &&
+                    <p className='text-center mx-12 rounded-lg uppercase font-semibold text-xs mt-1.5 bg-blue-300'>{role}</p>
+                }
 
             </div>
 
