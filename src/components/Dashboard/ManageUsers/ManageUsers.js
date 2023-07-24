@@ -20,6 +20,23 @@ const ManageUsers = () => {
 
     return (
         <section>
+
+            {/*------------------- admins -------------------*/}
+
+            <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Admin ({users.filter(user => user?.role === 'admin').length})</h2>
+
+            <div className='mx-4 lg:mx-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5'>
+                {
+                    users?.filter(user => user?.role === 'admin').map(user => <User
+                        key={user._id}
+                        user={user}
+                        refetch={refetch}
+                    ></User>)
+                }
+            </div>
+
+            {/*------------------ all users ------------------*/}
+
             <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Users ({users?.length})</h2>
 
             <div className='mx-4 lg:mx-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5'>
