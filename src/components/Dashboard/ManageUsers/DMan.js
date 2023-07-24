@@ -1,22 +1,23 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
 
-const Admin = ({ admin, refetch }) => {
-    const { name, email } = admin;
+const DMan = ({ dMan, refetch }) => {
+    const { name, email } = dMan;
 
-    const handleRemoveAdmin = email => {
-        fetch(`http://localhost:5000/admin/${email}`, {
+    const handleRemoveDMan = email => {
+        fetch(`http://localhost:5000/dman/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    toast.success('Removed an Admin');
+                    toast.success('Removed a Delivery Man');
                     refetch()
                 }
             })
     }
+
     return (
         <div className="card w-auto lg:w-44 bg-base-100 shadow-2xl border border-orange-400">
 
@@ -24,11 +25,11 @@ const Admin = ({ admin, refetch }) => {
                 <p className='font-bold text-xs '>{name}</p>
                 <p className='italic text-xs '>{email}</p>
 
-                <span onClick={() => handleRemoveAdmin(email)} className="cursor-pointer bg-red-500 btn-xs font-semibold text-white rounded-lg">Remove</span>
+                <span onClick={() => handleRemoveDMan(email)} className="cursor-pointer bg-red-500 btn-xs font-semibold text-white rounded-lg">Remove</span>
             </div>
 
         </div>
     );
 };
 
-export default Admin;
+export default DMan;

@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import User from './User';
 import Admin from './Admin';
+import DMan from './Dman';
 
 const ManageUsers = () => {
 
@@ -43,11 +44,11 @@ const ManageUsers = () => {
 
             <div className='mx-4 lg:mx-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 mb-12'>
                 {
-                    users?.filter(user => user?.role === 'dman').map(user => <User
-                        key={user._id}
-                        user={user}
+                    users?.filter(user => user?.role === 'dman').map(dMan => <DMan
+                        key={dMan._id}
+                        dMan={dMan}
                         refetch={refetch}
-                    ></User>)
+                    ></DMan>)
                 }
             </div>
 
