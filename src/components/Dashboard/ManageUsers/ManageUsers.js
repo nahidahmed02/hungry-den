@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import User from './User';
+import Admin from './Admin';
 
 const ManageUsers = () => {
 
@@ -27,11 +28,11 @@ const ManageUsers = () => {
 
             <div className='mx-4 lg:mx-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 mb-12'>
                 {
-                    users?.filter(user => user?.role === 'admin').map(user => <User
-                        key={user._id}
-                        user={user}
+                    users?.filter(user => user?.role === 'admin').map(admin => <Admin
+                        key={admin._id}
+                        admin={admin}
                         refetch={refetch}
-                    ></User>)
+                    ></Admin>)
                 }
             </div>
 
