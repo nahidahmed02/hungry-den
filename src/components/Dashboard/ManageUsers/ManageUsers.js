@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import User from './User';
 import Admin from './Admin';
-import DMan from './Dman';
+import DMan from './DMan';
 
 const ManageUsers = () => {
 
