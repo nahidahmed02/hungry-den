@@ -1,6 +1,24 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
-const Modal = ({ setDeleteItemModal }) => {
+const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
+    const { _id } = deleteItemModal;
+
+    const handleDeleteItem = () => {
+        fetch(`http://localhost:5000/foods/${_id}`, {
+            method: 'DELETE',
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success('Food Deleted')
+                    setDeleteItemModal(false);
+                    refetch();
+                }
+            })
+    }
+
     return (
         <section>
             <input type="checkbox" id="delete_item_modal" className="modal-toggle" defaultChecked={true} />
@@ -10,7 +28,7 @@ const Modal = ({ setDeleteItemModal }) => {
 
                     <div className='text-center'>
                         <button onClick={() => setDeleteItemModal(false)} className='btn btn-xs border-none mx-2 mt-2 bg-green-600'>No</button>
-                        <button onClick={() => setDeleteItemModal(false)} className='btn btn-xs border-none mx-2 mt-2 bg-red-500'>Yes</button>
+                        <button onClick={() => handleDeleteItem()} className='btn btn-xs border-none mx-2 mt-2 bg-red-500'>Yes</button>
                     </div>
                 </div>
             </div>

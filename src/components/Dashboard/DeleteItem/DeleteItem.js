@@ -4,7 +4,7 @@ import { Context } from '@/src/context/Context';
 import Modal from './Modal';
 
 const DeleteItem = () => {
-    const { foods } = useContext(Context);
+    const { foods, refetch } = useContext(Context);
     const [deleteItemModal, setDeleteItemModal] = useState(null);
 
     return (
@@ -36,7 +36,9 @@ const DeleteItem = () => {
 
             {
                 deleteItemModal && <Modal
+                    deleteItemModal={deleteItemModal}
                     setDeleteItemModal={setDeleteItemModal}
+                    refetch={refetch}
                 ></Modal>
             }
 

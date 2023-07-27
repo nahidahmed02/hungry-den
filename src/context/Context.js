@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
 
     // ------------------ fetch foods from database --------------------
 
-    const { data: foods, isLoading } = useQuery({
+    const { data: foods, isLoading, refetch } = useQuery({
         queryKey: ['foods'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/foods');
@@ -87,7 +87,8 @@ export const ContextProvider = ({ children }) => {
             handlePageChange,
             searchQuery,
             searchResult,
-            handleSearch
+            handleSearch,
+            refetch
         }}>
             {children}
         </Context.Provider>
