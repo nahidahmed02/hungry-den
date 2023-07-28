@@ -1,15 +1,28 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext)
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
-    const handleReview = (data) => {
-        data.name = user?.displayName;
+    const handleReview = data => {
         data.email = user?.email;
-        console.log(data);
+        console.log('from console', data);
+        fetch("http://localhost:5000/reviews", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Thank you for your feedback')
+                reset()
+            })
     }
 
     return (
