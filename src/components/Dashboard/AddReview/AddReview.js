@@ -9,7 +9,7 @@ const AddReview = () => {
 
     const handleReview = data => {
         data.email = user?.email;
-        console.log('from console', data);
+
         fetch("http://localhost:5000/reviews", {
             method: 'POST',
             headers: {
@@ -30,16 +30,6 @@ const AddReview = () => {
             <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Add Review</h2>
 
             <form onSubmit={handleSubmit(handleReview)} className='flex flex-col w-auto lg:w-96 mx-auto mb-4'>
-                <label className='w-full max-w-xs ml-12 lg:ml-9 mb-1 font-semibold'>
-                    Name
-                </label>
-
-                <input
-                    {...register("name")}
-                    value={user?.displayName}
-                    readOnly
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
-                />
 
                 <label className='w-full max-w-xs ml-12 lg:ml-9 mb-1 font-semibold'>
                     Your&rsquo;s Say
