@@ -43,7 +43,7 @@ const AddReview = () => {
                 />
 
                 <label className='w-full max-w-xs ml-12 lg:ml-9 mb-1 font-semibold'>
-                    Ratings (0-5)
+                    Ratings
                 </label>
 
                 <select
