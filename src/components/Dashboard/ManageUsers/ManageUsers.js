@@ -1,20 +1,13 @@
 import React from 'react'
-import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import User from './User';
 import Admin from './Admin';
 import DMan from './DMan';
+import useUsers from '@/src/hooks/useUsers';
 
 const ManageUsers = () => {
 
-    const { data: users, isLoading, refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
-            const data = res.json();
-            return data;
-        }
-    })
+    const [users, isLoading, refetch] = useUsers();
 
     if (isLoading) {
         return <Loading></Loading>

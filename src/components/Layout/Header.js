@@ -73,6 +73,17 @@ const Header = () => {
                     <Link href="/login">Login</Link>
                 </li>
             }
+
+            {
+                user
+                    ?
+                    <>
+                        <li className={`font-bold `}>{user.displayName}</li>
+                        <li className={`font-bold `}>{user.role}</li>
+                    </>
+                    :
+                    'Default'
+            }
         </>
 
     return (
