@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
+import { AuthContext } from '@/src/context/AuthProvider';
+import useUsers from '@/src/hooks/useUsers';
+import { toast } from 'react-hot-toast';
 
 const AllReviews = () => {
-    const { data: reviews, isLoading } = useQuery({
+    const { user } = useContext(AuthContext);
+    const [users] = useUsers();
+
+    const { data: reviews, isLoading, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/reviews');
@@ -14,6 +20,22 @@ const AllReviews = () => {
 
     if (isLoading) {
         return <Loading></Loading>
+    }
+
+    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
+
+    const handleDeleteReview = id => {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'DELETE',
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success('Review Deleted')
+                    refetch();
+                }
+            })
     }
 
     return (
@@ -39,7 +61,18 @@ const AllReviews = () => {
                                     {review?.feedback}
                                     <br />
                                     Ratings {review?.ratings}
+                                    <br />
+                                    {
+                                        role === 'admin'
+                                        &&
+                                        <button
+                                            onClick={() => handleDeleteReview(review?._id)}
+                                            className='bg-red-500 px-2 rounded-lg text-sm'>
+                                            Delete
+                                        </button>
+                                    }
                                 </div>
+
 
                             </div>
                         </>)

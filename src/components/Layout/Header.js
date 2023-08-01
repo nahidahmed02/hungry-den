@@ -17,7 +17,7 @@ const Header = () => {
     const [itemsInCart, setItemsInCart] = useState(0);
 
     const name = user ? user.displayName.split(' ')[0] : 'Unknown';
-    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role
+    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
 
 
     // ----------------------- set cart items --------------------------
