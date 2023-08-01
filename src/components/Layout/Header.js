@@ -1,17 +1,23 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import { Context } from '@/src/context/Context';
+import useUsers from '@/src/hooks/useUsers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { BsCart4 } from 'react-icons/bs';
+import { CgProfile } from 'react-icons/cg';
 
 const Header = () => {
 
     const { searchQuery, handleSearch } = useContext(Context);
     const { user, logout } = useContext(AuthContext);
+    const [users] = useUsers();
     const router = useRouter();
     const [cartItems, setCartItems] = useState([]);
     const [itemsInCart, setItemsInCart] = useState(0);
+
+    const name = user ? user.displayName.split(' ')[0] : 'Unknown';
+    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role
 
 
     // ----------------------- set cart items --------------------------
@@ -74,16 +80,7 @@ const Header = () => {
                 </li>
             }
 
-            {
-                user
-                    ?
-                    <>
-                        <li className={`font-bold `}>{user.displayName}</li>
-                        <li className={`font-bold `}>{user.role}</li>
-                    </>
-                    :
-                    'Default'
-            }
+
         </>
 
     return (
@@ -114,12 +111,22 @@ const Header = () => {
                     </div>
                 }
 
-                <div className="navbar-end hidden lg:flex mr-20">
+                <div className="navbar-end hidden lg:flex mr-8">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
                     </ul>
                 </div>
+
+
+                <div className='flex flex-col px-6 py-0.5 border border-white'>
+                    <div className='flex text-orange-400'>
+                        <CgProfile className='text-lg mr-1' />
+                        <p className={`font-semibold text-sm `}>{name}</p>
+                    </div>
+                    <p className={`font first-letter:uppercase text-xs`}>{role}</p>
+                </div>
+
 
                 {
                     router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
@@ -131,9 +138,6 @@ const Header = () => {
                     </Link>
                 }
             </div>
-
-
-
 
         </header>
     )
