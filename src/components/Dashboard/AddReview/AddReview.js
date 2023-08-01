@@ -2,6 +2,7 @@ import { AuthContext } from '@/src/context/AuthProvider';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import MyReview from './MyReview';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext)
@@ -64,6 +65,9 @@ const AddReview = () => {
                     Submit
                 </button>
             </form>
+
+            <MyReview />
+
         </section>)
 }
 

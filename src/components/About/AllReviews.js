@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
 
 const AllReviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery({
+    const { data: reviews, isLoading } = useQuery({
         queryKey: ['reviews'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/reviews');
@@ -15,11 +15,13 @@ const AllReviews = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+
     return (
         <section>
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-12 mb-4'>Customer&rsquo;s Say About Us</h2>
 
             <div className='overflow-x-auto mx-36 h-96'>
+
                 {
                     reviews?.length === 0
                         ?
