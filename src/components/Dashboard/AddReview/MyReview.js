@@ -35,6 +35,31 @@ const MyReview = () => {
             })
     }
 
+
+
+    const ratingStar = (rating) => {
+        // const rating = myReviews?.map(review => review.ratings);
+
+        if (rating === '1') {
+            return '★'
+        }
+        else if (rating === '2') {
+            return '★★'
+        }
+        else if (rating === '3') {
+            return '★★★'
+        }
+        else if (rating === '4') {
+            return '★★★★'
+        }
+        else if (rating === '5') {
+            return '★★★★★'
+        }
+        else {
+            return 'None'
+        }
+    }
+
     return (
         <section>
             <h2 className='lg:mt-16 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>My Reviews</h2>
@@ -49,7 +74,11 @@ const MyReview = () => {
                             <div key={review._id} className='border border-yellow-500 rounded mx-32 mb-2'>
 
                                 <p className='italic font-semibold'>{review.feedback}</p>
-                                <p>Ratings Given: {review.ratings}</p>
+                                <p>Ratings Given:
+                                    <span className={`${review.ratings !== 'None' && 'text-orange-300'}`}>
+                                        {ratingStar(review.ratings)}
+                                    </span>
+                                </p>
 
                                 <button
                                     onClick={() => handleDeleteReview(review?._id)}
