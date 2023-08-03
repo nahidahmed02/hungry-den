@@ -36,7 +36,6 @@ const MyReview = () => {
     }
 
 
-
     const ratingStar = (rating) => {
 
         if (rating === '1') {

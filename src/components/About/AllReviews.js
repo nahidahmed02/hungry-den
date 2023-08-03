@@ -38,6 +38,28 @@ const AllReviews = () => {
             })
     }
 
+    const ratingStar = (rating) => {
+
+        if (rating === '1') {
+            return '★'
+        }
+        else if (rating === '2') {
+            return '★★'
+        }
+        else if (rating === '3') {
+            return '★★★'
+        }
+        else if (rating === '4') {
+            return '★★★★'
+        }
+        else if (rating === '5') {
+            return '★★★★★'
+        }
+        else {
+            return 'None'
+        }
+    }
+
     return (
         <section>
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-12 mb-4'>Customer&rsquo;s Say About Us</h2>
@@ -60,7 +82,9 @@ const AllReviews = () => {
                                 <div className="chat-bubble italic">
                                     {review?.feedback}
                                     <br />
-                                    Ratings: {review?.ratings}
+                                    Ratings: <span className={`${review?.ratings !== 'None' && 'text-orange-300'}`}>
+                                        {ratingStar(review?.ratings)}
+                                    </span>
                                     <br />
                                     {
                                         role === 'admin'
