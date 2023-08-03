@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 const AllReviews = () => {
     const { user } = useContext(AuthContext);
     const [users] = useUsers();
+    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
 
     const { data: reviews, isLoading, refetch } = useQuery({
         queryKey: ['reviews'],
@@ -21,8 +22,6 @@ const AllReviews = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-
-    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
 
     const handleDeleteReview = id => {
         fetch(`http://localhost:5000/reviews/${id}`, {
@@ -74,18 +73,24 @@ const AllReviews = () => {
                         reviews.map((review, index) => <>
 
                             <div className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
+
                                 <div className="chat-header mb-1">
                                     {review.name}
                                     <span className="text-xs opacity-75 ml-1.5">{review.email}</span>
                                 </div>
 
                                 <div className="chat-bubble italic">
+
                                     {review?.feedback}
+
                                     <br />
+
                                     Ratings: <span className={`${review?.ratings !== 'None' && 'text-orange-300'}`}>
                                         {ratingStar(review?.ratings)}
                                     </span>
+
                                     <br />
+
                                     {
                                         role === 'admin'
                                         &&
@@ -95,8 +100,8 @@ const AllReviews = () => {
                                             Delete
                                         </button>
                                     }
-                                </div>
 
+                                </div>
 
                             </div>
                         </>)
