@@ -52,13 +52,13 @@ const AddReview = () => {
 
                 <select
                     {...register("ratings")}
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5">
+                    className="input input-bordered text-orange-300 w-full max-w-xs mx-auto mb-2.5">
 
-                    <option value="5">5</option>
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="3">★★★</option>
+                    <option value="2">★★</option>
+                    <option value="1">★</option>
                     <option value="None">No Ratings</option>
                 </select>
 

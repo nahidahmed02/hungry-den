@@ -38,7 +38,6 @@ const MyReview = () => {
 
 
     const ratingStar = (rating) => {
-        // const rating = myReviews?.map(review => review.ratings);
 
         if (rating === '1') {
             return '★'
@@ -75,7 +74,7 @@ const MyReview = () => {
 
                                 <p className='italic font-semibold'>{review.feedback}</p>
                                 <p>Ratings Given:
-                                    <span className={`${review.ratings !== 'None' && 'text-orange-300'}`}>
+                                    <span className={`${review.ratings !== 'None' && 'text-orange-300'} ml-2`}>
                                         {ratingStar(review.ratings)}
                                     </span>
                                 </p>
