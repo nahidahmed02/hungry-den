@@ -60,7 +60,7 @@ const AllReviews = () => {
                                 <div className="chat-bubble italic">
                                     {review?.feedback}
                                     <br />
-                                    Ratings {review?.ratings}
+                                    Ratings: {review?.ratings}
                                     <br />
                                     {
                                         role === 'admin'
