@@ -3,10 +3,12 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import MyReview from './MyReview';
+import { useQueryClient } from 'react-query';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, reset } = useForm();
+    const queryClient = useQueryClient();
 
     const handleReview = data => {
         data.email = user?.email;
@@ -21,8 +23,9 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                toast.success('Thank you for your feedback')
-                reset()
+                toast.success('Thank you for your feedback');
+                reset();
+                queryClient.invalidateQueries('reviews');
             })
     }
 

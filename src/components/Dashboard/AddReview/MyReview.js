@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 
 const MyReview = () => {
     const { user } = useContext(AuthContext);
-    const email = user.email;
+    const email = user?.email;
 
     const { data: myReviews, isLoading, refetch } = useQuery({
         queryKey: ['reviews'],
