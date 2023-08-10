@@ -36,6 +36,7 @@ const Profile = () => {
             {
                 profileModal && <ProfileModal
                     id={user.uid}
+                    user={user}
                     setProfileModal={setProfileModal}
                     setProfilePic={setProfilePic}
                 ></ProfileModal>

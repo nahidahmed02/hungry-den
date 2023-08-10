@@ -1,8 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
-const ProfileModal = ({ setProfileModal, setProfilePic }) => {
+const ProfileModal = ({ user, setProfileModal, setProfilePic }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const email = user?.email;
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -10,8 +12,21 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
     };
 
     const handleEditProfile = data => {
-        console.log(data);
+        fetch(`http://localhost:5000/profile/${email}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setProfileModal(false)
+                toast.success('Profile updated')
+            })
     }
+
     return (
         <section>
             <input type="checkbox" id="my_modal_7" className="modal-toggle" defaultChecked={true} />
@@ -56,7 +71,7 @@ const ProfileModal = ({ setProfileModal, setProfilePic }) => {
                         />
 
                         <div className='text-center'>
-                            <button type='submit' className="text-white font-bold rounded btn-xs bg-orange-500 mr-4" onClick={() => setProfileModal(false)}>Save</button>
+                            <button type='submit' className="text-white font-bold rounded btn-xs bg-orange-500 mr-4" >Save</button>
                             <button className="modal-backdrop text-white font-bold rounded btn-xs bg-red-500" onClick={() => setProfileModal(false)}>Close</button>
                         </div>
 
