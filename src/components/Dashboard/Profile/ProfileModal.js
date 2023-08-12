@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
-const ProfileModal = ({ user, setProfileModal, setProfilePic }) => {
+const ProfileModal = ({ user, setProfileModal, setProfilePic, refetch }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const email = user?.email;
 
@@ -23,6 +23,7 @@ const ProfileModal = ({ user, setProfileModal, setProfilePic }) => {
             .then(data => {
                 console.log(data);
                 setProfileModal(false)
+                refetch()
                 toast.success('Profile updated')
             })
     }
