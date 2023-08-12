@@ -47,11 +47,11 @@ const Header = () => {
 
     const menuItems =
         <>
-            <li className={`font-bold ${router.pathname === '/' ? 'active-link' : ''} `}>
+            <li className={`font-bold ${router.pathname === '/' ? 'active-link' : 'text-orange-500'} `}>
                 <Link href="/">Home</Link>
             </li>
 
-            <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : ''} `}>
+            <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : 'text-orange-500'} `}>
                 <Link href="/cart">My Cart
                     <span className="indicator-item badge badge-warning">
                         {itemsInCart}
@@ -60,22 +60,22 @@ const Header = () => {
             </li>
 
             {user?.uid &&
-                <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : ''} `}>
+                <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : 'text-orange-500'} `}>
                     <Link href="/dashboard">Dashboard</Link>
                 </li>
             }
 
-            <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : ''} `}>
+            <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : 'text-orange-500'} `}>
                 <Link href="/about">About Us</Link>
             </li>
 
             {user?.uid
                 ?
-                <li className={`font-bold`}>
+                <li className={`font-bold text-orange-500`}>
                     <button onClick={handleLogOut}>Logout</button>
                 </li>
                 :
-                <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : ''} `}>
+                <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : 'text-orange-500'} `}>
                     <Link href="/login">Login</Link>
                 </li>
             }
@@ -85,7 +85,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="navbar fixNav bg-neutral text-neutral-content">
+            <div className="navbar bg-white fixNav text-neutral-content">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -124,7 +124,7 @@ const Header = () => {
                         <CgProfile className='text-lg mr-1' />
                         <p className={`font-semibold text-sm `}>{name}</p>
                     </div>
-                    <p className={`font first-letter:uppercase text-xs`}>{role}</p>
+                    <p className={`font first-letter:uppercase text-xs font-bold text-orange-500`}>{role}</p>
                 </div>
 
 
