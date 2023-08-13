@@ -59,7 +59,7 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card bg-slate-200 shadow-xl">
+            <div className="card bg-slate-200 shadow-xl hover:scale-110">
 
                 <figure>
                     <Image src={photo} alt="food" width={192} height={95} className="rounded-t-md mt-5 lg:mt-7 mb-3 lg:mb-4 px-4 lg:px-0" />
