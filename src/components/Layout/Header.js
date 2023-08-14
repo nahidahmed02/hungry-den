@@ -128,7 +128,7 @@ const Header = () => {
                 </div>
 
 
-                {
+                {/* {
                     router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
                         <span className="indicator-item badge">
                             {itemsInCart}
@@ -136,7 +136,7 @@ const Header = () => {
 
                         <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
                     </Link>
-                }
+                } */}
             </div>
 
         </header>

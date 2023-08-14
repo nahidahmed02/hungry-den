@@ -2,22 +2,42 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
-const ProfileModal = ({ user, setProfileModal, setProfilePic, refetch }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+const ProfileModal = ({ user, profile, setProfileModal, setProfilePic, refetch }) => {
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
     const email = user?.email;
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         setProfilePic(URL.createObjectURL(file));
+        setValue('profilePic', file);
     };
 
-    const handleEditProfile = data => {
+    const handleEditProfile = async data => {
+        // const formData = new FormData();
+        // formData.append('profilePic', data?.profilePic[0]);
+
+        // const ProfilePicResponse = await fetch(`http://localhost:5000/upload-profile-pic/${email}`, {
+        //     method: 'PUT',
+        //     body: formData
+        // })
+
+        // if (!ProfilePicResponse.ok) {
+        //     toast.error('Profile Picture not updated')
+
+        // }
+
+
+        const updatedData = {
+            phone: data.phone,
+            address: data.address
+        }
+
         fetch(`http://localhost:5000/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(updatedData)
         })
             .then(res => res.json())
             .then(data => {
@@ -57,6 +77,7 @@ const ProfileModal = ({ user, setProfileModal, setProfilePic, refetch }) => {
                             {...register("phone")}
                             type="text"
                             placeholder="Phone"
+                            defaultValue={profile[0].phone}
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
@@ -68,6 +89,7 @@ const ProfileModal = ({ user, setProfileModal, setProfilePic, refetch }) => {
                             {...register("address")}
                             type="text"
                             placeholder="Address"
+                            value={profile[0].address}
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
