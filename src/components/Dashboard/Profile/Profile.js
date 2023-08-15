@@ -37,7 +37,7 @@ const Profile = () => {
                         width={150}
                         height={150}
                         alt='user'
-                        className="rounded-full"
+                        className="rounded-3xl"
                         src={!profile[0]?.profilePic ? profilePic : profile[0]?.profilePic}
                     />
                 </figure>
@@ -45,16 +45,16 @@ const Profile = () => {
                 <div className="card-body">
 
                     <p className='font-semibold'>Name:
-                        <span className='font-normal'>{user?.displayName}</span>
+                        <span className='font-normal'> {user?.displayName}</span>
                     </p>
                     <p className='font-semibold'>E-Mail:
-                        <span className='font-normal'>{user?.email}</span>
+                        <span className='font-normal'> {user?.email}</span>
                     </p>
                     <p className='font-semibold'>Phone:
-                        <span className='font-normal'>{profile ? profile[0]?.phone : ''}</span>
+                        <span className='font-normal'> {profile ? profile[0]?.phone : ''}</span>
                     </p>
                     <p className='font-semibold'>Address:
-                        <span className='font-normal'>{profile ? profile[0]?.address : ''}</span>
+                        <span className='font-normal'> {profile ? profile[0]?.address : ''}</span>
                     </p>
 
                     <button
