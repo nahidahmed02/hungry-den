@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 
 const AddItem = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const { foods } = useContext(Context);
+    const { foods, refetch } = useContext(Context);
     const [addItemError, setAddItemError] = useState('');
     const [tap, setTap] = useState(false);
 
@@ -30,6 +30,7 @@ const AddItem = () => {
                 console.log(data)
                 toast.success('New item added')
                 setAddItemError('')
+                refetch()
                 reset()
             })
     }
