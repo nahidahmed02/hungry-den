@@ -1,6 +1,7 @@
 import { Context } from '@/src/context/Context';
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
 const AddItem = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -16,10 +17,23 @@ const AddItem = () => {
     }
 
     const handleAddItem = (data) => {
-        setAddItemError('')
-        reset();
-        console.log(data);
+
+        fetch('http://localhost:5000/foods', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('New item added')
+                setAddItemError('')
+                reset()
+            })
     }
+
     return (
         <section>
             <h2 className='text-2xl font-serif font-bold text-orange-500 text-center lg:mt-6 mb-4 '>Add Item</h2>
