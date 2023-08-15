@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: [
       'i.ibb.co',
+      'i.postimg.cc',
       'lh3.googleusercontent.com',
       'graph.facebook.com'
     ],

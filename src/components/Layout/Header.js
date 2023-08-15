@@ -13,8 +13,8 @@ const Header = () => {
     const { user, logout } = useContext(AuthContext);
     const [users] = useUsers();
     const router = useRouter();
-    const [cartItems, setCartItems] = useState([]);
-    const [itemsInCart, setItemsInCart] = useState(0);
+    // const [cartItems, setCartItems] = useState([]);
+    // const [itemsInCart, setItemsInCart] = useState(0);
 
     const name = user ? user.displayName.split(' ')[0] : 'Unknown';
     const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
@@ -22,21 +22,21 @@ const Header = () => {
 
     // ----------------------- set cart items --------------------------
 
-    useEffect(() => {
-        const fetchData = async () => {
-            if (typeof window !== undefined) {
-                try {
-                    const cart = await JSON.parse(localStorage.getItem('selectedFood'));
-                    setCartItems(cart || []);
-                    setItemsInCart(cart ? cart.length : 0);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         if (typeof window !== undefined) {
+    //             try {
+    //                 const cart = await JSON.parse(localStorage.getItem('selectedFood'));
+    //                 setCartItems(cart || []);
+    //                 setItemsInCart(cart ? cart.length : 0);
 
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        fetchData();
-    }, [cartItems])
+    //             } catch (error) {
+    //                 console.log(error);
+    //             }
+    //         }
+    //     }
+    //     fetchData();
+    // }, [cartItems])
 
 
     const handleLogOut = () => {
@@ -53,9 +53,9 @@ const Header = () => {
 
             <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : 'text-orange-500'} `}>
                 <Link href="/cart">My Cart
-                    <span className="indicator-item badge badge-warning">
+                    {/* <span className="indicator-item badge badge-warning">
                         {itemsInCart}
-                    </span>
+                    </span> */}
                 </Link>
             </li>
 
@@ -128,15 +128,15 @@ const Header = () => {
                 </div>
 
 
-                {/* {
+                {
                     router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
-                        <span className="indicator-item badge">
+                        {/* <span className="indicator-item badge">
                             {itemsInCart}
-                        </span>
+                        </span> */}
 
                         <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
                     </Link>
-                } */}
+                }
             </div>
 
         </header>
