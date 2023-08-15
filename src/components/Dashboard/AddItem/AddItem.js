@@ -162,7 +162,7 @@ const AddItem = () => {
                 {/*======================= URL FIELD =======================*/}
 
                 <input
-                    {...register("img", { required: "Image is required" })}
+                    {...register("photo", { required: "Image is required" })}
                     type="text"
                     placeholder="Photo URL"
                     className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
