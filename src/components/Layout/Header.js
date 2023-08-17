@@ -6,11 +6,13 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { BsCart4 } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
+import LogoutModal from './LogoutModal';
 
 const Header = () => {
 
     const { searchQuery, handleSearch } = useContext(Context);
     const { user, logout } = useContext(AuthContext);
+    const [logoutModal, setLogoutModal] = useState(null);
     const [users] = useUsers();
     const router = useRouter();
     // const [cartItems, setCartItems] = useState([]);
@@ -39,11 +41,7 @@ const Header = () => {
     // }, [cartItems])
 
 
-    const handleLogOut = () => {
-        logout()
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
-    }
+
 
     const menuItems =
         <>
@@ -72,7 +70,7 @@ const Header = () => {
             {user?.uid
                 ?
                 <li className={`font-bold text-orange-500 -mt-1 lg:-mt-0`}>
-                    <button onClick={handleLogOut} className='btn-sm'>Logout</button>
+                    <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm'>Logout</button>
                 </li>
                 :
                 <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : 'text-orange-500'} `}>
@@ -147,7 +145,12 @@ const Header = () => {
 
             </div>
 
-
+            {
+                logoutModal && <LogoutModal
+                    setLogoutModal={setLogoutModal}
+                    logout={logout}
+                ></LogoutModal>
+            }
 
         </header>
     )
