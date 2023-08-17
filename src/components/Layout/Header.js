@@ -3,7 +3,7 @@ import { Context } from '@/src/context/Context';
 import useUsers from '@/src/hooks/useUsers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsCart4 } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
 import LogoutModal from './LogoutModal';
@@ -40,9 +40,6 @@ const Header = () => {
     //     fetchData();
     // }, [cartItems])
 
-
-
-
     const menuItems =
         <>
             <li className={`font-bold ${router.pathname === '/' ? 'active-link' : 'text-orange-500'} `}>
@@ -77,8 +74,6 @@ const Header = () => {
                     <Link href="/login" className='btn-sm'>Login</Link>
                 </li>
             }
-
-
         </>
 
     return (
@@ -86,9 +81,9 @@ const Header = () => {
 
             <div className="fixNav ">
 
-                <div className='flex mb-0 py-1 justify-between bg-gray-600'>
+                <div className='flex mb-0 py-1 justify-between bg-black'>
                     <div>
-                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Friends <br className='lg:hidden' /> <span className='text-yellow-400 ml-4 md:ml-12 lg:ml-0.5'>Kebab</span></Link>
+                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Hungry <br className='lg:hidden' /> <span className='text-yellow-400 ml-4 md:ml-12 lg:ml-0.5'>Den</span></Link>
                     </div>
 
                     {
@@ -105,11 +100,11 @@ const Header = () => {
                     }
 
                     <div className='flex flex-col text-center px-6 md:mr-6 lg:mr-7 mt-1 md:mt-2 lg:mt-0'>
-                        <div className='flex text-orange-400'>
+                        <div className='flex text-yellow-400'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
                         </div>
-                        <p className={`font first-letter:uppercase text-xs font-bold  text-orange-500`}>{role}</p>
+                        <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-500`}>{role}</p>
                     </div>
 
                 </div>
