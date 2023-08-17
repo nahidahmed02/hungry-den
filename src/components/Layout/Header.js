@@ -90,23 +90,23 @@ const Header = () => {
 
                 <div className='flex mb-0 py-1 justify-between bg-gray-600'>
                     <div>
-                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:mx-auto lg:ml-12 text-orange-500" href='/'>Friends <span className='text-yellow-400 ml-4 lg:ml-0.5'>Kebab</span></Link>
+                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Friends <br className='lg:hidden' /> <span className='text-yellow-400 ml-4 md:ml-12 lg:ml-0.5'>Kebab</span></Link>
                     </div>
 
                     {
-                        router.pathname === '/' && <div className="form-control h-10 md:h-7 lg:h-8 pt-2 lg:pt-1.5">
+                        router.pathname === '/' && <div className="form-control h-10 md:h-12 lg:h-8 pt-2 md:pt-2.5 lg:pt-1.5">
                             <input
                                 type="text"
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-orange-300 border-yellow-400 w-44 md:w-48 lg:w-96 ml-9 md:ml-44 lg:ml-0"
+                                className="input bg-transparent text-orange-300 border-yellow-400 w-44 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
                             />
 
                         </div>
                     }
 
-                    <div className='flex flex-col text-center px-6 lg:mr-7'>
+                    <div className='flex flex-col text-center px-6 md:mr-6 lg:mr-7'>
                         <div className='flex text-orange-400'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
@@ -125,27 +125,29 @@ const Header = () => {
                     </ul>
                 </div>
 
-            </div>
+                {/* =================================== SMALL DEVICE MENU =================================== */}
 
-            {/* =================================== SMALL DEVICE MENU =================================== */}
+                <div className="bottom-0 fixed flex md:hidden lg:hidden w-full bg-gray-200">
+                    <ul className="flex mx-auto px-1 py-2.5">
+                        {menuItems}
+                    </ul>
+                </div>
 
-            <div className="bottom-0 fixed flex lg:hidden w-full bg-gray-200">
-                <ul className="flex mx-auto px-1 py-2.5">
-                    {menuItems}
-                </ul>
-            </div>
+                {/* =================================== CART LOGO =================================== */}
 
-            {/* =================================== CART LOGO =================================== */}
-
-            {
-                router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
-                    {/* <span className="indicator-item badge">
+                {
+                    router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
+                        {/* <span className="indicator-item badge">
                             {itemsInCart}
                         </span> */}
 
-                    <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
-                </Link>
-            }
+                        <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
+                    </Link>
+                }
+
+            </div>
+
+
 
         </header>
     )
