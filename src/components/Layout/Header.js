@@ -100,13 +100,13 @@ const Header = () => {
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-orange-300 border-yellow-400 w-44 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
+                                className="input bg-transparent text-orange-300 border-yellow-400 w-40 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
                             />
 
                         </div>
                     }
 
-                    <div className='flex flex-col text-center px-6 md:mr-6 lg:mr-7'>
+                    <div className='flex flex-col text-center px-6 md:mr-6 lg:mr-7 mt-1 md:mt-2 lg:mt-0'>
                         <div className='flex text-orange-400'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
