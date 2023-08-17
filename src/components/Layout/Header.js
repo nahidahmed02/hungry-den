@@ -48,11 +48,11 @@ const Header = () => {
     const menuItems =
         <>
             <li className={`font-bold ${router.pathname === '/' ? 'active-link' : 'text-orange-500'} `}>
-                <Link href="/">Home</Link>
+                <Link href="/" className='btn-sm'>Home</Link>
             </li>
 
             <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : 'text-orange-500'} `}>
-                <Link href="/cart">My Cart
+                <Link href="/cart" className='btn-sm'>My Cart
                     {/* <span className="indicator-item badge badge-warning">
                         {itemsInCart}
                     </span> */}
@@ -61,22 +61,22 @@ const Header = () => {
 
             {user?.uid &&
                 <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : 'text-orange-500'} `}>
-                    <Link href="/dashboard">Dashboard</Link>
+                    <Link href="/dashboard" className='btn-sm'>Dashboard</Link>
                 </li>
             }
 
             <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : 'text-orange-500'} `}>
-                <Link href="/about">About Us</Link>
+                <Link href="/about" className='btn-sm'>About Us</Link>
             </li>
 
             {user?.uid
                 ?
-                <li className={`font-bold text-orange-500`}>
-                    <button onClick={handleLogOut}>Logout</button>
+                <li className={`font-bold text-orange-500 -mt-1 lg:-mt-0`}>
+                    <button onClick={handleLogOut} className='btn-sm'>Logout</button>
                 </li>
                 :
                 <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : 'text-orange-500'} `}>
-                    <Link href="/login">Login</Link>
+                    <Link href="/login" className='btn-sm'>Login</Link>
                 </li>
             }
 
@@ -85,59 +85,67 @@ const Header = () => {
 
     return (
         <header>
-            <div className="navbar bg-white fixNav text-neutral-content">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <label tabIndex={0} className="btn bg-white text-orange-500 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52">
-                            {menuItems}
-                        </ul>
+
+            <div className="fixNav ">
+
+                <div className='flex mb-0 py-1 justify-between bg-gray-600'>
+                    <div>
+                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:mx-auto lg:ml-12 text-orange-500" href='/'>Friends <span className='text-yellow-400 ml-4 lg:ml-0.5'>Kebab</span></Link>
                     </div>
-                    <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:mx-auto lg:ml-24 text-orange-500 " href='/'>Friends <span className='text-yellow-400'>Kebab</span></Link>
+
+                    {
+                        router.pathname === '/' && <div className="form-control h-10 md:h-7 lg:h-8 pt-2 lg:pt-1.5">
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                value={searchQuery}
+                                onChange={handleSearch}
+                                className="input bg-transparent text-orange-300 border-yellow-400 w-44 md:w-48 lg:w-96 ml-9 md:ml-44 lg:ml-0"
+                            />
+
+                        </div>
+                    }
+
+                    <div className='flex flex-col text-center px-6 lg:mr-7'>
+                        <div className='flex text-orange-400'>
+                            <CgProfile className='text-lg mr-1' />
+                            <p className={`font-semibold text-sm `}>{name}</p>
+                        </div>
+                        <p className={`font first-letter:uppercase text-xs font-bold  text-orange-500`}>{role}</p>
+                    </div>
+
                 </div>
 
-                {
-                    router.pathname === '/' && <div className="form-control h-6 md:h-7 lg:h-8 lg:mr-14">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            value={searchQuery}
-                            onChange={handleSearch}
-                            className="input bg-transparent text-orange-300 border-yellow-400 w-40 md:w-48 lg:w-56 ml-7 md:ml-44 lg:ml-0"
-                        />
+                {/* =================================== LARGE DEVICE MENU =================================== */}
 
-                    </div>
-                }
-
-                <div className="navbar-end hidden lg:flex mr-5">
+                <div className=" hidden lg:flex justify-center bg-gray-200">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
                     </ul>
                 </div>
 
+            </div>
 
-                <div className='flex flex-col px-6 py-0.5 border border-white'>
-                    <div className='flex text-orange-400'>
-                        <CgProfile className='text-lg mr-1' />
-                        <p className={`font-semibold text-sm `}>{name}</p>
-                    </div>
-                    <p className={`font first-letter:uppercase text-xs font-bold text-orange-500`}>{role}</p>
-                </div>
+            {/* =================================== SMALL DEVICE MENU =================================== */}
 
+            <div className="bottom-0 fixed flex lg:hidden w-full bg-gray-200">
+                <ul className="flex mx-auto px-1 py-2.5">
+                    {menuItems}
+                </ul>
+            </div>
 
-                {
-                    router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
-                        {/* <span className="indicator-item badge">
+            {/* =================================== CART LOGO =================================== */}
+
+            {
+                router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
+                    {/* <span className="indicator-item badge">
                             {itemsInCart}
                         </span> */}
 
-                        <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
-                    </Link>
-                }
-            </div>
+                    <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
+                </Link>
+            }
 
         </header>
     )

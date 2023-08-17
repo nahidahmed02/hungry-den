@@ -70,7 +70,7 @@ const AllReviews = () => {
                         ?
                         <p className='text-red-500 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
                         :
-                        reviews.map((review, index) => <>
+                        reviews?.map((review, index) => <>
 
                             <div className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
 
