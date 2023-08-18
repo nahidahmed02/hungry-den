@@ -70,13 +70,13 @@ const AllReviews = () => {
                         ?
                         <p className='text-red-500 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
                         :
-                        reviews?.map((review, index) => <>
+                        reviews?.map((review, index) =>
 
-                            <div className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
+                            <div key={index} className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
 
                                 <div className="chat-header mb-1 text-white">
                                     {review.name}
-                                    <span className="text-xs opacity-75 ml-1.5 text-white">{review.email}</span>
+                                    <span className="text-xs opacity-75 ml-1.5">{review.email}</span>
                                 </div>
 
                                 <div className="chat-bubble italic">
@@ -104,7 +104,7 @@ const AllReviews = () => {
                                 </div>
 
                             </div>
-                        </>)
+                        )
                 }
             </div>
 
