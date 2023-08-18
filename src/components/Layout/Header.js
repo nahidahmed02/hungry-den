@@ -93,7 +93,7 @@ const Header = () => {
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-orange-300 border-yellow-400 w-40 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
+                                className="input bg-transparent text-orange-300 border-yellow-400 shadow shadow-white w-40 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
                             />
 
                         </div>

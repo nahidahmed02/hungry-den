@@ -20,7 +20,7 @@ const Pagination = () => {
                             key={number}
                             className={`page-item ${currentPage === number ? 'active' : ''}`}
                         >
-                            <button onClick={() => handlePageChange(number)} className="page-link ">
+                            <button onClick={() => handlePageChange(number)} className="page-link shadow shadow-white font-semibold">
                                 {number}
                             </button>
                         </li>
