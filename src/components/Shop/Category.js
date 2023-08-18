@@ -18,12 +18,12 @@ const Category = () => {
                 <ul className="menu menu-horizontal px-1 ml-3 md:mx-auto lg:mx-auto">
 
                     <li
-                        className={`cursor-pointer text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
+                        className={`cursor-pointer font-semibold hover:bg-orange-500 text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                         ${selectedCategory === ''
                                 ?
-                                'bg-blue-500'
+                                'bg-orange-500'
                                 :
-                                'bg-gray-600'
+                                'bg-gray-700'
                             }`}
 
                         onClick={() => handleCategoryClick('All')}>
@@ -32,12 +32,12 @@ const Category = () => {
 
                     {
                         category?.map(ctgry => <li
-                            className={`cursor-pointer text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
+                            className={`cursor-pointer font-semibold hover:bg-orange-500 text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                     ${selectedCategory === ctgry
                                     ?
-                                    'bg-blue-500'
+                                    'bg-orange-500'
                                     :
-                                    'bg-gray-600'
+                                    'bg-gray-700'
                                 }`}
 
                             onClick={() => handleCategoryClick(ctgry)}
