@@ -112,7 +112,7 @@ const SignUp = () => {
                             {...register("name", { required: "Name is required" })}
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                         {errors.name && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
@@ -121,7 +121,7 @@ const SignUp = () => {
                             {...register("email", { required: "Email is required" })}
                             type="email"
                             placeholder="Email"
-                            className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                         {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
@@ -130,10 +130,10 @@ const SignUp = () => {
                             {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
-                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-300 '>{showPassword ? 'Hide' : 'Show'}</button>
+                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-300 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
 
                         {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
@@ -148,14 +148,14 @@ const SignUp = () => {
 
                     </form>
 
-                    <p className='text-center text-sm mb-4'>Already have an account?
+                    <p className='text-center text-white text-sm mb-4'>Already have an account?
                         <span className='ml-2 text-blue-400 underline font-semibold'>
                             <Link href='/login' className='italic'>Login</Link>
                         </span>
                     </p>
                 </div>
 
-                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-xs lg:rotate-90 lg:mt-56'>OR</div>
+                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-xs lg:rotate-90 lg:mt-56 text-white'>OR</div>
 
                 <div className='lg:mt-36 lg:w-96'>
                     <div className='text-center mt-4'>
