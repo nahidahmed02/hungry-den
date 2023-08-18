@@ -74,9 +74,9 @@ const AllReviews = () => {
 
                             <div className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
 
-                                <div className="chat-header mb-1">
+                                <div className="chat-header mb-1 text-white">
                                     {review.name}
-                                    <span className="text-xs opacity-75 ml-1.5">{review.email}</span>
+                                    <span className="text-xs opacity-75 ml-1.5 text-white">{review.email}</span>
                                 </div>
 
                                 <div className="chat-bubble italic">
