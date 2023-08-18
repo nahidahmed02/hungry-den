@@ -12,7 +12,7 @@ const Pagination = () => {
     }
 
     return (
-        <section className="flex justify-center mb-4">
+        <section className="flex justify-center mb-8">
             <nav>
                 <ul className="pagination ">
                     {pageNumbers.map(number => (
@@ -20,7 +20,7 @@ const Pagination = () => {
                             key={number}
                             className={`page-item ${currentPage === number ? 'active' : ''}`}
                         >
-                            <button onClick={() => handlePageChange(number)} className="page-link">
+                            <button onClick={() => handlePageChange(number)} className="page-link ">
                                 {number}
                             </button>
                         </li>

@@ -35,27 +35,26 @@ body {
 
 .page-item {
     margin: 0 4px;
+    border-radius: 5px;
 }
 
 .page-link {
-    border: 1px solid black;
+    border: 1px solid yellow;
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
+    color: #fff;
 }
 
 .active {
     background-color: #007bff;
-    border-radius: 5px;
-    color: #fff;
 }
 
 .page-link:hover {
     background-color: #007bff;
     border-color: #007bff;
-    color: #fff;
 }
 
 
