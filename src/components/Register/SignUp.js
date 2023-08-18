@@ -112,7 +112,7 @@ const SignUp = () => {
                             {...register("name", { required: "Name is required" })}
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
                             required
                         />
                         {errors.name && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
@@ -121,7 +121,7 @@ const SignUp = () => {
                             {...register("email", { required: "Email is required" })}
                             type="email"
                             placeholder="Email"
-                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
                             required
                         />
                         {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
@@ -130,16 +130,16 @@ const SignUp = () => {
                             {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered bg-transparent text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
                             required
                         />
-                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-300 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
+                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-11 ml-72 mb-7 text-xs text-gray-300 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
 
                         {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                         <button
                             type="submit"
-                            className="bg-orange-500 text-white font-bold w-full max-w-xs mx-auto py-2 rounded-md">
+                            className="bg-orange-500 text-white shadow shadow-white hover:rounded-2xl font-bold w-full max-w-xs mx-auto py-2 rounded-md">
 
                             Sign Up
                         </button>
@@ -161,7 +161,7 @@ const SignUp = () => {
                     <div className='text-center mt-4'>
                         <button
                             type="submit"
-                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
+                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleGoogleSignUp()}
                         >
                             <FcGoogle className='text-xl mr-5' />
@@ -172,7 +172,7 @@ const SignUp = () => {
                     <div className='text-center'>
                         <button
                             type="submit"
-                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md"
+                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleFacebookSignUp()}
                         >
                             <BsFacebook className='text-xl mr-5 text-blue-500' />
