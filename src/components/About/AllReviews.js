@@ -85,7 +85,7 @@ const AllReviews = () => {
 
                                     <br />
 
-                                    Ratings: <span className={`${review?.ratings !== 'None' && 'text-orange-300'}`}>
+                                    Ratings: <span className={`${review?.ratings !== 'None' && 'text-yellow-400'}`}>
                                         {ratingStar(review?.ratings)}
                                     </span>
 
