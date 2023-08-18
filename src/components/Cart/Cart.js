@@ -75,7 +75,7 @@ const Cart = () => {
                     </div>
 
                     <div className='mt-6 text-center'>
-                        <p className=' mr-6 py-3 px-8 text-lg font-bold'>Total : ${sumOfAllPrice}</p>
+                        <p className=' mr-6 py-3 px-8 text-lg font-bold text-white'>Total : ${sumOfAllPrice}</p>
                         <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white rounded-md py-1 px-4  font-bold'>Proceed To Payment</button>
                     </div>
                 </>
