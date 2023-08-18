@@ -161,7 +161,7 @@ const SignUp = () => {
                     <div className='text-center mt-4'>
                         <button
                             type="submit"
-                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-400 hover:border-green-600 hover:text-green-600 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleGoogleSignUp()}
                         >
                             <FcGoogle className='text-xl mr-5' />
@@ -172,7 +172,7 @@ const SignUp = () => {
                     <div className='text-center'>
                         <button
                             type="submit"
-                            className="btn hover:bg-gray-200 bg-white text-green-600 border border-green-600 hover:border-green-600 font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-400 hover:border-blue-400 hover:text-blue-400 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleFacebookSignUp()}
                         >
                             <BsFacebook className='text-xl mr-5 text-blue-500' />
