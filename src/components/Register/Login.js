@@ -89,7 +89,7 @@ const Login = () => {
     }
 
     return (
-        <section className='bg-login-signup'>
+        <section className='h-screen'>
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>

@@ -3,7 +3,7 @@ import AllReviews from './AllReviews';
 
 const About = () => {
     return (
-        <section className='mt-24 mb-16'>
+        <section className='pt-24 mb-16'>
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Who We Are</h2>
 
             <p className='mx-28'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod quae sunt mollitia eius ducimus minus? Exercitationem, dolore? Et aliquam ut quibusdam, quia dignissimos impedit quo error reprehenderit sunt natus alias labore id perferendis reiciendis doloremque ratione eveniet explicabo hic dicta, odit facere suscipit eius excepturi quaerat. Minus tenetur possimus laudantium!</p>

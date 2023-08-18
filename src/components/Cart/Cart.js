@@ -36,7 +36,7 @@ const Cart = () => {
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
 
     return (
-        <section className='mt-24 mb-16'>
+        <section className='pt-24 mb-16'>
 
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Cart</h2>
 

@@ -100,7 +100,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className='bg-login-signup pt-28 '>
+        <div className='pt-28 h-screen'>
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>
@@ -112,7 +112,7 @@ const SignUp = () => {
                             {...register("name", { required: "Name is required" })}
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                         {errors.name && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
@@ -121,7 +121,7 @@ const SignUp = () => {
                             {...register("email", { required: "Email is required" })}
                             type="email"
                             placeholder="Email"
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                         {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
@@ -133,7 +133,7 @@ const SignUp = () => {
                             className="input input-bordered bg-transparent w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
-                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-400 bg-white'>{showPassword ? 'Hide' : 'Show'}</button>
+                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-10 ml-72 mb-6 text-xs text-gray-300 '>{showPassword ? 'Hide' : 'Show'}</button>
 
                         {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 

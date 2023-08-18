@@ -11,7 +11,7 @@ const Category = () => {
 
     return (
         <>
-            <p className='text-center font-bold mb-1'>Filter by Category</p>
+            <p className='text-center text-white font-bold mb-1'>Filter by Category</p>
             <hr className='mx-7 lg:mx-24' />
 
             <section className="navbar">

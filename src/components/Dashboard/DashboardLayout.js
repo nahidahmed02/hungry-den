@@ -10,7 +10,7 @@ import { MdRateReview } from 'react-icons/md'
 
 const DashboardLayout = ({ children }) => {
     return (
-        <section className='mt-20'>
+        <section className='pt-20'>
 
             <div className="drawer drawer-mobile" style={{ position: 'relative' }}>
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

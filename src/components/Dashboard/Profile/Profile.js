@@ -17,7 +17,7 @@ const Profile = () => {
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/profile/${email}`);
             const data = res.json();
-            return data;
+            return data[0];
         }
     });
 
@@ -38,7 +38,7 @@ const Profile = () => {
                         height={150}
                         alt='user'
                         className="rounded-3xl"
-                        src={!profile[0]?.profilePic ? profilePic : profile[0]?.profilePic}
+                        src={!profile?.profilePic ? profilePic : profile[0]?.profilePic}
                     />
                 </figure>
 

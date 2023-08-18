@@ -81,9 +81,9 @@ const Header = () => {
 
             <div className="fixNav ">
 
-                <div className='flex mb-0 py-1 justify-between bg-black'>
+                <div className='flex mb-0 pt-1 pb-1 lg:pb-2 justify-between bg-black border-b border-orange-500'>
                     <div>
-                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Hungry <br className='lg:hidden' /> <span className='text-yellow-400 ml-4 md:ml-12 lg:ml-0.5'>Den</span></Link>
+                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Hungry <br className='lg:hidden' /> <span className='text-orange-500 ml-4 md:ml-12 lg:ml-0.5'>Den</span></Link>
                     </div>
 
                     {
@@ -104,14 +104,14 @@ const Header = () => {
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
                         </div>
-                        <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-500`}>{role}</p>
+                        <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>{role}</p>
                     </div>
 
                 </div>
 
                 {/* =================================== LARGE DEVICE MENU =================================== */}
 
-                <div className=" hidden lg:flex justify-center bg-gray-200">
+                <div className="hidden lg:flex justify-center bg-gray-700 border-b border-orange-500">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
@@ -120,7 +120,7 @@ const Header = () => {
 
                 {/* =================================== SMALL DEVICE MENU =================================== */}
 
-                <div className="bottom-0 fixed flex md:hidden lg:hidden w-full bg-gray-200">
+                <div className="bottom-0 fixed flex md:hidden lg:hidden w-full bg-gray-700 border-t border-orange-500">
                     <ul className="flex mx-auto px-1 py-2.5">
                         {menuItems}
                     </ul>
