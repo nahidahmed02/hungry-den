@@ -1,130 +1,212 @@
 [
     {
-        "id": "1",
-        "category": "halal-meat",
-        "name": "halal_meat_1",
+        "category": "Halal Meat",
+        "name": "Chicken Tikka",
         "price": "22",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/sDFdc3fq/chicken-skewers-with-slices-sweet-peppers-dill.jpg"
     },
     {
-        "id": "2",
-        "category": "halal-meat",
-        "name": "halal_meat_2",
+        "category": "Halal Meat",
+        "name": "Beef Boti Kebab",
         "price": "20",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/DZZFt6RN/delicious-arabic-fast-food-top-view-ingredients-skewers.jpg"
     },
     {
-        "id": "3",
-        "category": "meat",
-        "name": "meat_1",
+        "category": "Halal Meat",
+        "name": "Lamb Chops",
+        "price": "15",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/FFGmhMhB/close-up-kebab-grilled-ribs-lula-kebab-with-baked-tomato-pepper-wooden-plate-dark-wooden-bark-176474.jpg"
+    },
+    {
+        "category": "Halal Meat",
+        "name": "Chicken Seekh Kebab",
+        "price": "20",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/bwcmWvKc/cooked-meat-veggies-kebab-high-view-23-2148651038.jpg"
+    },
+    {
+        "category": "Meat",
+        "name": "Lamb Chops",
         "price": "19",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/WpJrCcg0/top-view-fried-ribs-with-spicy-sauce-dark-plate-176474-3365.jpg"
     },
     {
-        "id": "4",
-        "category": "meat",
-        "name": "meat_2",
+        "category": "Meat",
+        "name": "Chicken Seekh Kebab",
         "price": "16",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/k55YFp0B/bbq-with-toppings-sausages-dish-open-air-1268-16584.jpg"
     },
     {
-        "id": "5",
-        "category": "beef",
-        "name": "beef_1",
+        "category": "Meat",
+        "name": "Beef Boti Kebab",
+        "price": "19",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/ZYXBxvdm/side-view-shish-kebab-skewers-with-tomato-paper-ayran-white-plate.jpg"
+    },
+    {
+        "category": "Meat",
+        "name": "Chicken Tikka",
+        "price": "16",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/HkSVj6bp/top-view-grilled-chicken-skewers-with-soy-sauce-plate-wood-141793-11990.jpg"
+    },
+    {
+        "category": "Meat",
+        "name": "Mutton Korma",
+        "price": "16",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/xCGQNdBK/delicious-goulash-ready-dinner-23-2149370896.jpg"
+    },
+    {
+        "category": "Beef",
+        "name": "Beef Boti Kebab",
         "price": "14",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/1tmCM5f0/high-angle-tasty-kebab-slate-with-other-dish-tomatoes-23-2148685481.jpg"
     },
     {
-        "id": "6",
-        "category": "beef",
-        "name": "beef_2",
+        "category": "Beef",
+        "name": "Beef Seekh Kebab",
+        "price": "14",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/76d69jb9/beef-shish-kebab-with-hot-chili-sauce.jpg"
+    },
+    {
+        "category": "Beef",
+        "name": "Beef Shawarma",
+        "price": "14",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/90pqbCw9/fresh-sandwich-cutting-board-with-healthy-tomatoes-generative-ai-188544-8108.jpg"
+    },
+    {
+        "category": "Beef",
+        "name": "Beef Biryani",
         "price": "17",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/SNxXq0zZ/plate-biryani-with-bunch-food-it-505751-3819.jpg"
     },
     {
-        "id": "7",
-        "category": "fish",
-        "name": "fish_1",
+        "category": "Fish",
+        "name": "Grilled Fish",
         "price": "18",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/tT6cYmZw/fried-fish-with-vegetables-plate-3-140725-754.jpg"
     },
     {
-        "id": "8",
-        "category": "fish",
-        "name": "fish_2",
+        "category": "Fish",
+        "name": "Fish Curry",
         "price": "15",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/prGKxPVH/top-view-delicious-fish-meal-23-2148734691.jpg"
     },
     {
-        "id": "9",
-        "category": "soft-drinks",
-        "name": "soft_drink_1",
+        "category": "Fish",
+        "name": "Fish Tikka",
+        "price": "18",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/PrKdXPkZ/front-view-meat-cutlets-long-formed-with-lemon-slices-140725-57018.jpg"
+    },
+    {
+        "category": "Fish",
+        "name": "Fish and Chips",
+        "price": "15",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/mrm97bMF/top-view-fish-chips-with-cutlery-lemon-slices-23-2148784859.jpg"
+    },
+    {
+        "category": "Fish",
+        "name": "Fish Korma",
+        "price": "18",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/QCySmQT1/tom-yum-crab-with-lemon-chili-tomato-garlic-lemongrass-kaffir-lime-leaves-plate-1150-25816.jpg"
+    },
+    {
+        "category": "Fish",
+        "name": "Tandoori Fish",
+        "price": "15",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/3wQY86w4/roasted-seabass-with-vegetables-2829-14260.jpg"
+    },
+    {
+        "category": "Soft Drinks",
+        "name": "Coca-Cola",
         "price": "13",
         "vat": "23",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/Y2TpDhwz/cocacola.jpg"
     },
     {
-        "id": "10",
-        "category": "soft-drinks",
-        "name": "soft_drink_2",
+        "category": "Soft Drinks",
+        "name": "Sprite",
         "price": "10",
         "vat": "23",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/SKHTbFQ3/sprite-can-imported-320-ml.webp"
     },
     {
-        "id": "11",
-        "category": "snacks",
-        "name": "snacks_1",
-        "price": "11",
-        "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "category": "Soft Drinks",
+        "name": "7up",
+        "price": "13",
+        "vat": "23",
+        "photo": "https://i.postimg.cc/pLhKb99V/18875.jpg"
     },
     {
-        "id": "12",
-        "category": "snacks",
-        "name": "snacks_2",
+        "category": "Soft Drinks",
+        "name": "Fanta",
         "price": "10",
-        "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "vat": "23",
+        "photo": "https://i.postimg.cc/WzzhGKgp/2301317-Fanta-Orange-Can-330ml-Imp.jpg"
     },
     {
-        "id": "13",
-        "category": "snacks",
-        "name": "snacks_3",
-        "price": "12",
-        "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "category": "Soft Drinks",
+        "name": "Sunkist Soda",
+        "price": "10",
+        "vat": "23",
+        "photo": "https://i.postimg.cc/ZnNhzxhF/Sunkist-Soda-Orange-flavour-Hong-Kong-version.jpg"
     },
     {
-        "id": "14",
-        "category": "halal-meat",
-        "name": "halal_meat_3",
-        "price": "15",
+        "category": "Snacks",
+        "name": "Burger",
+        "price": "25",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/HsGrcSjm/craft-beef-burger-french-fries-wooden-table-melting-chesses-isolated-black-background-ai-generative.jpg"
     },
     {
-        "id": "15",
-        "category": "halal-meat",
-        "name": "halal_meat_4",
+        "category": "Snacks",
+        "name": "Pizza",
         "price": "20",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/2SQ8ZmMF/tasty-top-view-sliced-pizza-italian-traditional-round-pizza-90220-1359.jpg"
     },
     {
-        "id": "16",
-        "category": "beef",
-        "name": "beef_3",
-        "price": "13",
+        "category": "Snacks",
+        "name": "Chicken Nuggets",
+        "price": "15",
         "vat": "8",
-        "photo": "https://i.ibb.co/61KDLnj/halalmeat.jpg"
+        "photo": "https://i.postimg.cc/Yq3tr8Wb/crispy-kentucky-fried-chicken-black-slate-background-123827-22525.jpg"
+    },
+    {
+        "category": "Snacks",
+        "name": "French Fries",
+        "price": "14",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/3RgPLJjn/bag-french-fries-is-table-1340-23261.jpg"
+    },
+    {
+        "category": "Snacks",
+        "name": "Mozzarella Sticks",
+        "price": "30",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/90W4N09p/composition-with-traditional-tequenos-plate-23-2148945402.jpg"
+    },
+    {
+        "category": "Snacks",
+        "name": "Spring Rolls",
+        "price": "12",
+        "vat": "8",
+        "photo": "https://i.postimg.cc/htGFsB5q/plate-food-with-side-sauce-188544-8402.jpg"
     }
 ]

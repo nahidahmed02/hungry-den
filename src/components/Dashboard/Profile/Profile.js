@@ -59,7 +59,7 @@ const Profile = () => {
 
                     <button
                         onClick={() => setProfileModal(true)}
-                        className="text-white font-bold rounded btn-sm border-none bg-orange-500 mt-3"
+                        className="text-white font-bold rounded hover:rounded-xl btn-sm border-none bg-orange-500 mt-3"
                     >
                         Edit
                     </button>

@@ -37,16 +37,17 @@ const User = ({ user, refetch }) => {
                 <p className='font-bold text-xs text-center'>{name}</p>
                 <p className='italic text-xs text-center'>{email}</p>
                 {
-                    role === "user" &&
-                    <>
-                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-black btn-xs font-semibold text-green-500">Make Admin</span>
-                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-black ml-1 btn-xs font-semibold text-yellow-500">Make D.Man</span>
-                    </>
+                    role === "User" &&
+                    <div className='text-center'>
+                        <span className='font-bold text-xs mr-1'>Make: </span>
+                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-black btn-xs font-semibold py-0.5 rounded-lg text-green-500">Admin</span>
+                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-black ml-1 btn-xs font-semibold py-0.5 rounded-lg text-yellow-500">D. Man</span>
+                    </div>
                 }
 
                 {
-                    role !== "user" &&
-                    <p className='text-center uppercase font-semibold text-xs mt-1.5 text-blue-500'>{role}</p>
+                    role !== "User" &&
+                    <p className='text-center font-semibold text-xs mt-1.5 text-blue-600'>{role}</p>
                 }
 
             </div>

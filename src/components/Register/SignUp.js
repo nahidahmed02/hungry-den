@@ -32,7 +32,7 @@ const SignUp = () => {
 
 
     const saveUser = (name, email) => {
-        const role = 'user';
+        const role = 'User';
         fetch(`http://localhost:5000/users/${email}`, {
             method: 'PUT',
             headers: {

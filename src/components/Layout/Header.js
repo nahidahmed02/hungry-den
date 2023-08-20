@@ -42,11 +42,11 @@ const Header = () => {
 
     const menuItems =
         <>
-            <li className={`font-bold ${router.pathname === '/' ? 'active-link' : 'text-orange-500'} `}>
+            <li className={`font-bold ${router.pathname === '/' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/" className='btn-sm'>Home</Link>
             </li>
 
-            <li className={`font-bold ${router.pathname === '/cart' ? 'active-link' : 'text-orange-500'} `}>
+            <li className={`font-bold ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/cart" className='btn-sm'>My Cart
                     {/* <span className="indicator-item badge badge-warning">
                         {itemsInCart}
@@ -55,22 +55,22 @@ const Header = () => {
             </li>
 
             {user?.uid &&
-                <li className={`font-bold ${router.pathname === '/dashboard' ? 'active-link' : 'text-orange-500'} `}>
+                <li className={`font-bold ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                     <Link href="/dashboard" className='btn-sm'>Dashboard</Link>
                 </li>
             }
 
-            <li className={`font-bold ${router.pathname === '/about' ? 'active-link' : 'text-orange-500'} `}>
+            <li className={`font-bold ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/about" className='btn-sm'>About Us</Link>
             </li>
 
             {user?.uid
                 ?
-                <li className={`font-bold text-orange-500 -mt-1 lg:-mt-0`}>
+                <li className={`font-bold text-gray-200 -mt-1 lg:-mt-0 hover:text-orange-500`}>
                     <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm'>Logout</button>
                 </li>
                 :
-                <li className={`font-bold ${router.pathname === '/login' ? 'active-link' : 'text-orange-500'} `}>
+                <li className={`font-bold ${router.pathname === '/login' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                     <Link href="/login" className='btn-sm'>Login</Link>
                 </li>
             }

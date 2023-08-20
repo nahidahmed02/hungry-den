@@ -54,7 +54,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                         <input
                             {...register('profilePic')}
                             type="text"
-                            defaultValue={profile[0]?.profilePic}
+                            defaultValue={profile?.profilePic}
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
@@ -68,7 +68,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                             {...register("phone")}
                             type="text"
                             placeholder="Phone"
-                            defaultValue={profile[0].phone}
+                            defaultValue={profile?.phone}
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 
@@ -82,7 +82,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                             {...register("address")}
                             type="text"
                             placeholder="Address"
-                            defaultValue={profile[0].address}
+                            defaultValue={profile?.address}
                             className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
                         />
 

@@ -43,7 +43,7 @@ const AddItem = () => {
 
                 {/*=================================== CATEGORY FIELD ===================================*/}
 
-                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold text-gray-200'>
                     Category
                 </label>
 
@@ -53,13 +53,14 @@ const AddItem = () => {
                         // ===================== EXISTING CATEGORIES =====================
                         <select
                             {...register("category", { required: "Category is required" })}
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                             required
                         >
                             {
                                 category.map((ctgry, index) => <option
                                     key={index}
                                     value={ctgry}
+                                    className='bg-black'
                                 >{ctgry}</option>)
                             }
                         </select>
@@ -69,7 +70,7 @@ const AddItem = () => {
                             {...register("category", { required: "Category is required" })}
                             type="text"
                             placeholder="Category"
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                 }
@@ -77,7 +78,7 @@ const AddItem = () => {
                 {/* ======== TO TOGGLE BETWEEN NEW & EXISTING CATEGORY ========*/}
 
                 <small
-                    className='cursor-pointer w-fit ml-60 -mt-1'
+                    className='cursor-pointer w-fit ml-60 -mt-1 text-gray-200'
                     onClick={toggleCategoryField}
                 >
                     {tap ? 'Add new Category' : 'Existing Categories'}
@@ -87,7 +88,7 @@ const AddItem = () => {
 
                 {/*=================================== FOOD NAME FIELD ===================================*/}
 
-                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold text-gray-200'>
                     Name
                 </label>
 
@@ -95,7 +96,7 @@ const AddItem = () => {
                     {...register("name", { required: "Name is required" })}
                     type="text"
                     placeholder="Name"
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                    className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
                 {errors.name && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
@@ -107,7 +108,7 @@ const AddItem = () => {
                     {/*=============== PRICE FIELD ===============*/}
 
                     <div className='flex flex-col'>
-                        <label className='w-full max-w-xs ml-1.5 mb-1 font-semibold'>
+                        <label className='w-full max-w-xs ml-1.5 mb-1 font-semibold text-gray-200'>
                             Price
                         </label>
 
@@ -115,7 +116,7 @@ const AddItem = () => {
                             {...register("price", { required: "Price is required" })}
                             type="number"
                             placeholder="Price"
-                            className="input input-bordered w-full"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full"
                             required
                         />
                     </div>
@@ -125,7 +126,7 @@ const AddItem = () => {
 
                     <div className='flex flex-col'>
 
-                        <label className='w-full max-w-xs ml-11 mb-1 font-semibold'>
+                        <label className='w-full max-w-xs ml-11 mb-1 font-semibold text-gray-200'>
                             VAT
                         </label>
 
@@ -134,10 +135,10 @@ const AddItem = () => {
                                 {...register("vat", { required: "Vat is required" })}
                                 type="number"
                                 placeholder="VAT"
-                                className="input input-bordered w-2/3"
+                                className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-2/3"
                                 required
                             />
-                            <label className='ml-1 mt-3 text-gray-400'>%</label>
+                            <label className='ml-1 mt-3 text-gray-200'>%</label>
                         </div>
 
                     </div>
@@ -147,15 +148,15 @@ const AddItem = () => {
 
                 {/*=================================== PHOTO URL FIELD ===================================*/}
 
-                <label className='w-full max-w-xs ml-9 mb-1 font-semibold'>Add Photo</label>
+                <label className='w-full max-w-xs ml-9 mb-1 font-semibold text-gray-200'>Add Photo</label>
 
                 {/*================= TO GET THE PHOTO LINK =================*/}
 
-                <small className='mb-1 ml-9'>
+                <small className='mb-1 ml-9 text-gray-200'>
                     Please visit
-                    <a href="https://postimages.org/" target='_blank' className='text-blue-600 underline'> this website </a>
+                    <a href="https://postimages.org/" target='_blank' className='text-blue-400 underline'> this website </a>
                     and upload your image. Then <br /> copy the
-                    <span className='font-semibold'> Direct Link </span>
+                    <span className='font-semibold text-orange-400'> Direct Link </span>
                     and paste that in this input field ⬇️
                 </small>
 
@@ -165,7 +166,7 @@ const AddItem = () => {
                     {...register("photo", { required: "Image is required" })}
                     type="text"
                     placeholder="Photo URL"
-                    className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                    className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
                 {errors.img && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.img?.message}</p>}
@@ -174,7 +175,7 @@ const AddItem = () => {
 
                 <button
                     type="submit"
-                    className="bg-orange-500 text-white font-bold w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
+                    className="bg-orange-500 text-white font-bold shadow shadow-white hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
                     Add
                 </button>
 

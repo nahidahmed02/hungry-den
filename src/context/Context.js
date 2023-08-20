@@ -7,7 +7,7 @@ export const Context = createContext();
 export const ContextProvider = ({ children }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [foodsPerPage, setFoodsPerPage] = useState(6);
+    const [foodsPerPage, setFoodsPerPage] = useState(12);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResult, setSearchResult] = useState([]);
 

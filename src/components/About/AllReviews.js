@@ -92,11 +92,11 @@ const AllReviews = () => {
                                     <br />
 
                                     {
-                                        role === 'admin'
+                                        role === 'Admin'
                                         &&
                                         <button
                                             onClick={() => handleDeleteReview(review?._id)}
-                                            className='bg-red-500 px-2 rounded-lg text-sm'>
+                                            className='bg-red-500 px-2 py-0.5 font-bold mt-2 rounded-lg text-sm'>
                                             Delete
                                         </button>
                                     }

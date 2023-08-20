@@ -3,7 +3,7 @@ import Category from './Category'
 import Foods from './Foods'
 import Pagination from './Pagination'
 
-const Shop = () => {
+const HomePage = () => {
 
     return (
         <section className='pt-20'>
@@ -23,4 +23,4 @@ const Shop = () => {
     )
 }
 
-export default Shop
+export default HomePage
