@@ -57,7 +57,7 @@ const AddItem = () => {
                             required
                         >
                             {
-                                category.map((ctgry, index) => <option
+                                category?.map((ctgry, index) => <option
                                     key={index}
                                     value={ctgry}
                                     className='bg-black'
@@ -113,14 +113,13 @@ const AddItem = () => {
                         </label>
 
                         <input
-                            {...register("price", { required: "Price is required" })}
+                            {...register("price", { required: "Price is required", min: { value: '1', message: "Invalid price" } })}
                             type="number"
                             placeholder="Price"
                             className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full"
                             required
                         />
                     </div>
-                    {errors.price && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
 
                     {/*================== VAT FIELD ==================*/}
 
@@ -132,7 +131,7 @@ const AddItem = () => {
 
                         <div className='flex justify-end'>
                             <input
-                                {...register("vat", { required: "Vat is required" })}
+                                {...register("vat", { required: "Vat is required", min: { value: '1', message: 'Invalid VAT' } })}
                                 type="number"
                                 placeholder="VAT"
                                 className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-2/3"
@@ -142,9 +141,12 @@ const AddItem = () => {
                         </div>
 
                     </div>
-                    {errors.vat && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.vat?.message}</p>}
 
                 </div>
+                {errors.price && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
+                {errors.price && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
+                {errors.vat && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.vat?.message}</p>}
+                {errors.vat && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
 
                 {/*=================================== PHOTO URL FIELD ===================================*/}
 

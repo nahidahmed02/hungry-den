@@ -7,9 +7,7 @@ import Loading from '../Loading/Loading';
 const Cart = () => {
     const router = useRouter();
     const [selectedFoods, setSelectedFoods] = useState([]);
-    const { loading } = useContext(AuthContext)
-
-
+    const { user, loading } = useContext(AuthContext)
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -35,8 +33,10 @@ const Cart = () => {
     const sumOfAllPrice =
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
 
+    const includingDeleveryChrg = parseFloat(sumOfAllPrice) + parseFloat(12);
+
     return (
-        <section className='pt-24 mb-16'>
+        <section className='pt-24 h-screen'>
 
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Cart</h2>
 
@@ -74,8 +74,13 @@ const Cart = () => {
                         </table>
                     </div>
 
+                    {!user
+                        &&
+                        <small className='text-gray-200 italic ml-6 lg:ml-24'>* As you are not logged in from your profile, you will be redirected to Login page after pressing the button below.</small>
+                    }
+
                     <div className='mt-6 text-center'>
-                        <p className=' mr-6 py-3 px-8 text-lg font-bold text-white'>Total : ${sumOfAllPrice}</p>
+                        <p className=' mr-6 py-3 px-8 text-lg font-bold text-white'>Total : ${sumOfAllPrice} + $12 (Delevery Charge) = ${includingDeleveryChrg}</p>
                         <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold'>Proceed To Payment</button>
                     </div>
                 </>

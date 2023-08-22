@@ -66,3 +66,15 @@ body {
     background-repeat: no-repeat;
     height: 95vh;
 }
+
+/* ------------- payment opts bg ------------ */
+
+.cashOnDelevery {
+    background: url(../public/images/cash_on_delevery.png);
+    background-size: 100% 100%;
+}
+
+.cashFromCard {
+    background: url(../public/images/online-payment.png);
+    background-size: 100% 100%;
+}
