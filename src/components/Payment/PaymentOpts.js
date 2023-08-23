@@ -1,10 +1,17 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Modal from './Modal';
-import cashOnDelevery from '../../../public/images/cash_on_delevery.png'
+import useCart from '@/src/hooks/useCart';
 
 const PaymentOpts = () => {
     const [modal, setModal] = useState(null);
+    const {
+        selectedFoods,
+        setSelectedFoods,
+        sumOfAllPrice,
+        includingDeleveryChrg
+    } = useCart();
+
 
     return (
         <section className='pt-24 h-screen'>
@@ -29,17 +36,15 @@ const PaymentOpts = () => {
                         <p className='text-2xl font-bold mb-2'>Card</p>
                     </div>
                 </Link>
-
-
-                {/* <Link href='/paymentOpt/card' className='text-center py-10 lg:py-20 cursor-pointer border border-yellow-300 hover:text-white shadow shadow-white hover:bg-orange-500'>
-                    <p className='text-2xl mt-3.5 md:mt-0 lg:mt-0 font-bold'>Card</p>
-                </Link> */}
             </div>
 
             {
                 modal && <Modal
-                    modal={modal}
                     setModal={setModal}
+                    selectedFoods={selectedFoods}
+                    setSelectedFoods={setSelectedFoods}
+                    sumOfAllPrice={sumOfAllPrice}
+                    includingDeleveryChrg={includingDeleveryChrg}
                 ></Modal>
             }
 

@@ -1,46 +1,32 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
 import SelectedFood from './SelectedFood';
 import { AuthContext } from '@/src/context/AuthProvider';
 import Loading from '../Loading/Loading';
+import useCart from '@/src/hooks/useCart';
 
 const Cart = () => {
     const router = useRouter();
-    const [selectedFoods, setSelectedFoods] = useState([]);
-    const { user, loading } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext);
+    const {
+        selectedFoods,
+        handleRemoveFromCart,
+        sumOfAllPrice,
+        includingDeleveryChrg
+    } = useCart();
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const storedSelectedFoods = JSON.parse(localStorage?.getItem('selectedFood'))
-            if (storedSelectedFoods) {
-                setSelectedFoods(storedSelectedFoods);
-            }
-        }
-    }, []);
+    console.log(includingDeleveryChrg);
 
     if (loading) {
         return <Loading></Loading>
     }
 
-    const handleRemoveFromCart = (id) => {
-        if (typeof window !== 'undefined') {
-            const updatedSelectedFoods = selectedFoods.filter((item) => item._id !== id);
-            setSelectedFoods(updatedSelectedFoods);
-            localStorage.setItem('selectedFood', JSON.stringify(updatedSelectedFoods));
-        }
-    };
-
-    const sumOfAllPrice =
-        selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
-
-    const includingDeleveryChrg = parseFloat(sumOfAllPrice) + parseFloat(12);
-
     return (
-        <section className='pt-24 h-screen'>
+        <section className='pt-24 min-h-screen'>
 
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Cart</h2>
 
-            {selectedFoods.length === 0
+            {selectedFoods?.length === 0
                 ?
                 <p className='font-bold text-center text-2xl italic text-red-600'>No Items Selected</p>
                 :
@@ -62,7 +48,7 @@ const Cart = () => {
 
                             <tbody>
                                 {
-                                    selectedFoods.map((selectedFood, index) => <SelectedFood
+                                    selectedFoods?.map((selectedFood, index) => <SelectedFood
                                         key={selectedFood._id}
                                         index={index}
                                         selectedFood={selectedFood}
@@ -74,12 +60,15 @@ const Cart = () => {
                         </table>
                     </div>
 
-                    {!user
+                    {
+                        !user
                         &&
-                        <small className='text-gray-200 italic ml-6 lg:ml-24'>* As you are not logged in from your profile, you will be redirected to Login page after pressing the button below.</small>
+                        <small className='text-gray-200 italic ml-6 lg:ml-24'>
+                            * As you are not logged in from your profile, you will be redirected to Login page after pressing the button below.
+                        </small>
                     }
 
-                    <div className='mt-6 text-center'>
+                    <div className='mt-6 mb-10 text-center'>
                         <p className=' mr-6 py-3 px-8 text-lg font-bold text-white'>Total : ${sumOfAllPrice} + $12 (Delevery Charge) = ${includingDeleveryChrg}</p>
                         <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold'>Proceed To Payment</button>
                     </div>
