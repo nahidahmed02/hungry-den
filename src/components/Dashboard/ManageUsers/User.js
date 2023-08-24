@@ -31,23 +31,23 @@ const User = ({ user, refetch }) => {
     }
 
     return (
-        <div className="card w-auto lg:w-44 bg-base-100 shadow-2xl border border-orange-400">
+        <div className="card w-auto lg:w-44 shadow shadow-white border border-yellow-400 bg-transparent text-gray-200">
 
-            <div className="mt-2 mb-3">
-                <p className='font-bold text-xs text-center'>{name}</p>
-                <p className='italic text-xs text-center'>{email}</p>
+            <div className="mt-2 mb-3 text-center">
+                <p className='font-bold text-xs'>{name}</p>
+                <p className='italic text-xs'>{email}</p>
                 {
                     role === "User" &&
-                    <div className='text-center'>
+                    <div className='mt-1'>
                         <span className='font-bold text-xs mr-1'>Make: </span>
-                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-black btn-xs font-semibold py-0.5 rounded-lg text-green-500">Admin</span>
-                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-black ml-1 btn-xs font-semibold py-0.5 rounded-lg text-yellow-500">D. Man</span>
+                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-green-600 hover:bg-green-700  hover:px-4 btn-xs font-semibold py-0.5 rounded-lg text-white shadow shadow-white">Admin</span>
+                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-yellow-500 hover:bg-yellow-600 hover:px-4 ml-1 btn-xs font-semibold py-0.5 rounded-lg text-white shadow shadow-white">D. Man</span>
                     </div>
                 }
 
                 {
                     role !== "User" &&
-                    <p className='text-center font-semibold text-xs mt-1.5 text-blue-600'>{role}</p>
+                    <p className='font-semibold text-xs mt-1 text-blue-400'>Current Role: {role}</p>
                 }
 
             </div>

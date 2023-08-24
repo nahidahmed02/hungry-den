@@ -65,7 +65,7 @@ const AddReview = () => {
 
                 <button
                     type="submit"
-                    className="bg-orange-500 text-white font-bold shadow shadow-white hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
+                    className="bg-orange-500 hover:bg-orange-600 text-white font-bold shadow shadow-white hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
                     Submit
                 </button>
             </form>

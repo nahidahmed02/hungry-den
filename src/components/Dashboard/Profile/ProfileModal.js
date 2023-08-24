@@ -29,7 +29,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
             <input type="checkbox" id="my_modal_7" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-black border border-yellow-300 shadow shadow-white text-gray-200">
 
                     <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>
 
@@ -43,11 +43,11 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
 
                         {/*=================================== TO GET THE PHOTO LINK ===================================*/}
 
-                        <small className='mb-1 ml-2.5 lg:ml-9'>
+                        <small className='mb-1.5 ml-2.5 lg:ml-9'>
                             Please visit
-                            <a href="https://postimages.org/" target='_blank' className='text-blue-600 underline'> this website </a>
+                            <a href="https://postimages.org/" target='_blank' className='text-blue-400 underline'> this website </a>
                             and upload your image. Then copy the
-                            <span className='font-semibold'> Direct Link </span>
+                            <span className='font-semibold text-orange-400'> Direct Link </span>
                             and paste that in this input field ⬇️
                         </small>
 
@@ -55,7 +55,8 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                             {...register('profilePic')}
                             type="text"
                             defaultValue={profile?.profilePic}
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            placeholder='Direct Link'
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                         />
 
                         {/* ================================== PHONE NUMBER FIELD ==================================*/}
@@ -69,7 +70,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                             type="text"
                             placeholder="Phone"
                             defaultValue={profile?.phone}
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                         />
 
                         {/* ================================== ADDRESS FIELD ==================================*/}
@@ -83,7 +84,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
                             type="text"
                             placeholder="Address"
                             defaultValue={profile?.address}
-                            className="input input-bordered w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                         />
 
                         {/* ================================== SAVE & CLOSE BUTTON ==================================*/}
@@ -92,13 +93,13 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
 
                             <button
                                 type='submit'
-                                className="text-white font-bold rounded btn-xs bg-orange-500 mr-4"
+                                className="text-white shadow shadow-white font-bold rounded btn-xs hover:px-4 bg-orange-500 hover:bg-orange-600 mr-4"
                             >
                                 Save
                             </button>
 
                             <button
-                                className="modal-backdrop text-white font-bold rounded btn-xs bg-red-500"
+                                className="modal-backdrop text-white shadow shadow-white font-bold rounded btn-xs hover:px-4 bg-red-500 hover:bg-red-600"
                                 onClick={() => setProfileModal(false)}
                             >
                                 Close

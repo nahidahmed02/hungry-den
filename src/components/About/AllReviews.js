@@ -63,7 +63,7 @@ const AllReviews = () => {
         <section>
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-12 mb-4'>Customer&rsquo;s Say About Us</h2>
 
-            <div className='overflow-x-auto mx-36 h-96'>
+            <div className='overflow-x-auto mx-6 lg:mx-36 h-96'>
 
                 {
                     reviews?.length === 0
@@ -72,7 +72,7 @@ const AllReviews = () => {
                         :
                         reviews?.map((review, index) =>
 
-                            <div key={index} className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'} `}>
+                            <div key={index} className={`chat ${index % 2 !== 0 ? 'chat-start' : 'chat-end'}`}>
 
                                 <div className="chat-header mb-1 text-white">
                                     {review.name}
@@ -94,11 +94,11 @@ const AllReviews = () => {
                                     {
                                         role === 'Admin'
                                         &&
-                                        <button
+                                        <span
                                             onClick={() => handleDeleteReview(review?._id)}
-                                            className='bg-red-500 px-2 py-0.5 font-bold mt-2 rounded-lg text-sm'>
+                                            className='cursor-pointer bg-red-500 hover:bg-red-600 px-2 hover:px-4 pb-0.5 font-bold my-2 rounded-lg text-xs'>
                                             Delete
-                                        </button>
+                                        </span>
                                     }
 
                                 </div>

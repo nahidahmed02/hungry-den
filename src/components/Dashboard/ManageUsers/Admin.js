@@ -18,13 +18,20 @@ const Admin = ({ admin, refetch }) => {
             })
     }
     return (
-        <div className="card w-auto lg:w-44 bg-base-100 shadow-2xl border border-orange-400">
+        <div className="card w-auto lg:w-44 shadow shadow-white border border-yellow-400 bg-transparent text-gray-200">
 
             <div className="mt-2 mb-3 text-center">
                 <p className='font-bold text-xs '>{name}</p>
                 <p className='italic text-xs '>{email}</p>
 
-                <span onClick={() => handleRemoveAdmin(email)} className="cursor-pointer bg-red-500 btn-xs font-semibold text-white rounded-lg">Remove</span>
+                <div className='mt-1'>
+                    <span
+                        onClick={() => handleRemoveAdmin(email)}
+                        className="cursor-pointer py-0.5 hover:px-4 bg-red-500 hover:bg-red-600 btn-xs font-semibold text-white shadow shadow-white rounded-lg"
+                    >
+                        Remove
+                    </span>
+                </div>
             </div>
 
         </div>

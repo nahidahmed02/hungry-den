@@ -154,7 +154,7 @@ const AddItem = () => {
 
                 {/*================= TO GET THE PHOTO LINK =================*/}
 
-                <small className='mb-1 ml-9 text-gray-200'>
+                <small className='mb-1.5 ml-9 text-gray-200'>
                     Please visit
                     <a href="https://postimages.org/" target='_blank' className='text-blue-400 underline'> this website </a>
                     and upload your image. Then <br /> copy the
@@ -167,7 +167,7 @@ const AddItem = () => {
                 <input
                     {...register("photo", { required: "Image is required" })}
                     type="text"
-                    placeholder="Photo URL"
+                    placeholder='Direct Link'
                     className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
@@ -177,7 +177,7 @@ const AddItem = () => {
 
                 <button
                     type="submit"
-                    className="bg-orange-500 text-white font-bold shadow shadow-white hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
+                    className="bg-orange-500 hover:bg-orange-600 text-white font-bold shadow shadow-white hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
                     Add
                 </button>
 

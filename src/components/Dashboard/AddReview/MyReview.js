@@ -70,7 +70,7 @@ const MyReview = () => {
                         :
                         myReviews?.map(review =>
                             <div key={review._id} className='mx-8 lg:mx-24'>
-                                <div className='border grid grid-cols-5 border-yellow-300 rounded-md mb-2 py-1'>
+                                <div className='border grid grid-cols-5 border-yellow-300 rounded-md mb-2 py-1.5'>
                                     <p className='italic font-semibold col-span-3 text-gray-200'>{review.feedback}</p>
                                     <p className='text-gray-200 mb-1.5 col-span-1'>
                                         <span className={`${review.ratings !== 'None' && 'text-orange-300'} ml-2`}>
@@ -78,12 +78,12 @@ const MyReview = () => {
                                         </span>
                                     </p>
 
-                                    <button
+                                    <span
                                         onClick={() => handleDeleteReview(review?._id)}
-                                        className='bg-red-500 hover:bg-transparent col-span-1 w-3/4 lg:w-1/2 mx-auto my-1 pb-1 font-bold rounded-lg text-sm text-white border hover:border-red-500'
+                                        className='cursor-pointer bg-red-500 hover:bg-red-600 col-span-1 w-3/4 lg:w-1/2 mx-auto my-1 py-0.5 hover:w-5/6 hover:lg:w-2/3 font-bold rounded-lg text-xs text-white shadow shadow-white'
                                     >
                                         Delete
-                                    </button>
+                                    </span>
                                 </div>
 
 
