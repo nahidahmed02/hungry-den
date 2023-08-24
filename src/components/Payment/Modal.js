@@ -59,8 +59,8 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeleveryChrg }
                     <h2 className='font-semibold text-xs text-gray-200 my-2 '>Payment Type: Cash On Delevery</h2>
 
                     <div className='text-center'>
-                        <button onClick={() => setModal(false)} className='btn btn-xs mx-2 mt-2 bg-red-500 hover:border-red-500 shadow shadow-white'>Cancel</button>
-                        <button onClick={() => handlePlaceOrder(foodsObj)} className='btn btn-xs mx-2 mt-2 px-3 bg-orange-500 hover:border-orange-500 shadow shadow-white'>Place Order</button>
+                        <button onClick={() => setModal(false)} className='btn btn-xs mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-white'>Cancel</button>
+                        <button onClick={() => handlePlaceOrder(foodsObj)} className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-orange-500 hover:bg-orange-600 shadow shadow-white'>Place Order</button>
                     </div>
                 </div>
             </div>
