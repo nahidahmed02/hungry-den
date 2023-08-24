@@ -69,8 +69,8 @@ body {
 
 /* ------------- payment opts bg ------------ */
 
-.cashOnDelevery {
-    background: url(../public/images/cash_on_delevery.png);
+.cashOnDelivery {
+    background: url(../public/images/cash_on_delivery.png);
     background-size: 100% 100%;
 }
 

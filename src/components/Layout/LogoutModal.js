@@ -1,12 +1,15 @@
+import useCart from '@/src/hooks/useCart';
 import React from 'react';
 
 const LogoutModal = ({ logout, setLogoutModal }) => {
+    const { selectedFoods } = useCart();
 
     const handleLogOut = () => {
         logout()
             .then(res => {
-                console.log(res)
-                setLogoutModal(false)
+                console.log(res);
+                localStorage?.clear();
+                setLogoutModal(false);
             })
             .catch(error => console.log(error))
     }
@@ -18,6 +21,12 @@ const LogoutModal = ({ logout, setLogoutModal }) => {
             <div className="modal">
                 <div className="modal-box py-12 bg-black border border-yellow-300 shadow shadow-white">
                     <h2 className='text-orange-500 font-bold text-xl text-center'>Are You Sure?</h2>
+
+                    {
+                        selectedFoods?.length !== 0
+                        &&
+                        <h2 className='text-gray-200 text-sm text-center my-1 font-semibold'>Logging out will remove all items you have added to the cart</h2>
+                    }
 
                     <div className='text-center'>
                         <button onClick={() => setLogoutModal(false)} className='btn btn-xs px-3 hover:px-4 border-none mx-2 mt-2 bg-green-600 hover:bg-green-700 shadow shadow-white'>No</button>

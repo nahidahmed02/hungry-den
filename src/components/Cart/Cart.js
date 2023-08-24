@@ -12,10 +12,9 @@ const Cart = () => {
         selectedFoods,
         handleRemoveFromCart,
         sumOfAllPrice,
-        includingDeleveryChrg
+        includingDeliveryChrg
     } = useCart();
 
-    console.log(includingDeleveryChrg);
 
     if (loading) {
         return <Loading></Loading>
@@ -69,7 +68,7 @@ const Cart = () => {
                     }
 
                     <div className='mt-6 mb-10 text-center'>
-                        <p className=' mr-6 py-3 px-8 text-lg font-bold text-white'>Total : ${sumOfAllPrice} + $12 (Delevery Charge) = ${includingDeleveryChrg}</p>
+                        <p className=' mr-6 py-3 px-8 lg:text-lg font-bold text-white'>Total : ${sumOfAllPrice} + $12 (Delivery Charge) = ${includingDeliveryChrg}</p>
                         <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold'>Proceed To Payment</button>
                     </div>
                 </>

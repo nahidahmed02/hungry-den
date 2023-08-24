@@ -9,7 +9,7 @@ const PaymentOpts = () => {
         selectedFoods,
         setSelectedFoods,
         sumOfAllPrice,
-        includingDeleveryChrg
+        includingDeliveryChrg
     } = useCart();
 
 
@@ -20,11 +20,11 @@ const PaymentOpts = () => {
             <div className='grid grid-cols-2 gap-6 lg:gap-10 mx-6 md:mx-16 lg:mx-36 text-orange-500 '>
 
                 <div onClick={() => setModal(true)} className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
-                    <div className='cashOnDelevery py-10 lg:py-20  '>
+                    <div className='cashOnDelivery py-10 lg:py-20  '>
 
                     </div>
                     <div>
-                        <p className='text-2xl font-bold mb-2'>Cash on Delevery</p>
+                        <p className='text-xl lg:text-2xl font-bold mb-2'>Cash on Delivery</p>
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@ const PaymentOpts = () => {
 
                     </div>
                     <div>
-                        <p className='text-2xl font-bold mb-2'>Card</p>
+                        <p className='text-xl lg:text-2xl font-bold mb-2'>Card</p>
                     </div>
                 </Link>
             </div>
@@ -44,7 +44,7 @@ const PaymentOpts = () => {
                     selectedFoods={selectedFoods}
                     setSelectedFoods={setSelectedFoods}
                     sumOfAllPrice={sumOfAllPrice}
-                    includingDeleveryChrg={includingDeleveryChrg}
+                    includingDeliveryChrg={includingDeliveryChrg}
                 ></Modal>
             }
 

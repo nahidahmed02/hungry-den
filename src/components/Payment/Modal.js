@@ -1,15 +1,37 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { useQuery } from 'react-query';
+import Loading from '../Loading/Loading';
+import { useRouter } from 'next/router';
 
-const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeleveryChrg }) => {
+const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }) => {
 
+    const { register, handleSubmit } = useForm();
     const { user } = useContext(AuthContext);
-    const foodsObj = { ...selectedFoods };
+    const email = user?.email;
+    const router = useRouter();
+
+    const { data: profile, isLoading, refetch } = useQuery({
+        queryKey: ['profile'],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/profile/${email}`);
+            const data = res.json();
+            return data;
+        }
+    });
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     const handlePlaceOrder = data => {
+
         data.email = user?.email;
-        data.paymentType = "Cash on Delevery";
+        data.paymentType = "Cash on Delivery";
+        data.deliveryStatus = "Pending";
+        data.orders = { ...selectedFoods };
 
         fetch('http://localhost:5000/order', {
             method: 'POST',
@@ -20,8 +42,11 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeleveryChrg }
         })
             .then(res => res.json())
             .then(data => {
+                setModal(false)
                 if (data.acknowledged) {
-                    toast.success('Order Taken!')
+                    toast.success('Order Taken!');
+                    localStorage?.clear();
+                    router.push('/');
                 } else {
                     toast.error('Order Placement Denied!')
                 }
@@ -30,11 +55,14 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeleveryChrg }
 
     return (
         <div className=''>
-            <input type="checkbox" id="cash_on_delevery" className="modal-toggle" defaultChecked={true} />
+            <input type="checkbox" id="cash_on_delivery" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
                 <div className="modal-box bg-black border border-yellow-300 shadow shadow-white">
+
                     <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Order Summary</h2>
+
+                    {/* ------------------- ORDER LIST -------------------- */}
 
                     <h2 className='font-semibold text-sm text-gray-200'>
                         {selectedFoods?.map(order =>
@@ -50,18 +78,62 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeleveryChrg }
 
                     <hr />
 
-                    <h2 className='font-semibold text-sm text-gray-200 text-end my-1'><span className='mr-12'>Total Price</span> ${sumOfAllPrice}</h2>
-                    <h2 className='font-semibold text-sm text-gray-200 text-end mb-1'><span className='mr-12'>Delevery Charge</span> $12</h2>
+                    {/* --------------------- PRICING --------------------- */}
+
+                    <h2 className='font-semibold text-sm text-gray-200 flex justify-between mt-2'><span>Total Price</span> ${sumOfAllPrice}</h2>
+                    <h2 className='font-semibold text-sm text-gray-200 flex justify-between mb-2'><span>Delivery Charge</span> $12</h2>
 
                     <hr />
 
-                    <h2 className='font-semibold text-gray-200 text-end mt-1'><span className='mr-12'>Total</span> ${includingDeleveryChrg}</h2>
-                    <h2 className='font-semibold text-xs text-gray-200 my-2 '>Payment Type: Cash On Delevery</h2>
+                    <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'><span>Total</span> ${includingDeliveryChrg}</h2>
 
-                    <div className='text-center'>
-                        <button onClick={() => setModal(false)} className='btn btn-xs mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-white'>Cancel</button>
-                        <button onClick={() => handlePlaceOrder(foodsObj)} className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-orange-500 hover:bg-orange-600 shadow shadow-white'>Place Order</button>
-                    </div>
+                    {/* --------------------- USER INFO --------------------- */}
+
+                    <form onSubmit={handleSubmit(handlePlaceOrder)} className='flex flex-col mt-3'>
+
+                        <div className='flex lg:mr-2'>
+
+                            <div className='flex flex-col w-7/12'>
+                                <label className='text-gray-200 ml-2.5 mb-1 font-semibold'>
+                                    Phone
+                                </label>
+                                <input
+                                    {...register("phone")}
+                                    type="text"
+                                    placeholder="Phone"
+                                    defaultValue={profile[0]?.phone ? profile[0]?.phone : ''}
+                                    className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent h-7"
+                                    required
+                                />
+                            </div>
+
+                            <div className='flex flex-col w-4/5'>
+                                <label className='text-gray-200 ml-4 mb-1 font-semibold'>
+                                    Address
+                                </label>
+                                <input
+                                    {...register("address")}
+                                    type="text"
+                                    placeholder="Address"
+                                    defaultValue={profile[0]?.address ? profile[0]?.address : ''}
+                                    className="input input-bordered w-fit lg:w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent ml-2 h-7"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        {/* --------------------- PAYMENT TYPE --------------------- */}
+                        <h2 className='font-semibold text-center text-xs text-gray-200 mt-3 mb-1'>Payment Type: Cash On Delivery</h2>
+
+                        {/* --------------------- BUTTONS --------------------- */}
+
+                        <div className='text-center'>
+                            <button onClick={() => setModal(false)} className='btn btn-xs mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-white'>Cancel</button>
+                            <button type='submit' className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-orange-500 hover:bg-orange-600 shadow shadow-white'>Place Order</button>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
 

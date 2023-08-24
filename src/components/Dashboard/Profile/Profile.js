@@ -17,7 +17,7 @@ const Profile = () => {
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/profile/${email}`);
             const data = res.json();
-            return data[0];
+            return data;
         }
     });
 
@@ -38,7 +38,7 @@ const Profile = () => {
                         height={150}
                         alt='user'
                         className="rounded-3xl"
-                        src={!profile?.profilePic ? profilePic : profile[0]?.profilePic}
+                        src={!profile[0]?.profilePic ? profilePic : profile[0]?.profilePic}
                     />
                 </figure>
 
@@ -51,10 +51,10 @@ const Profile = () => {
                         <span className='font-normal'> {user?.email}</span>
                     </p>
                     <p className='font-semibold'>Phone:
-                        <span className='font-normal'> {profile ? profile[0]?.phone : ''}</span>
+                        <span className='font-normal'> {profile[0].phone ? profile[0].phone : ''}</span>
                     </p>
                     <p className='font-semibold'>Address:
-                        <span className='font-normal'> {profile ? profile[0]?.address : ''}</span>
+                        <span className='font-normal'> {profile[0].address ? profile[0]?.address : ''}</span>
                     </p>
 
                     <button
@@ -73,7 +73,7 @@ const Profile = () => {
                 profileModal && <ProfileModal
                     id={user.uid}
                     user={user}
-                    profile={profile}
+                    profile={profile[0]}
                     setProfileModal={setProfileModal}
                     refetch={refetch}
                 ></ProfileModal>
