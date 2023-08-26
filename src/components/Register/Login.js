@@ -49,7 +49,7 @@ const Login = () => {
 
         signInWithEmailPassword(data.email, data.password)
             .then(result => {
-                toast.success('Welcome back to Friends Kebab')
+                toast.success('Welcome back to Hungry Den')
                 const user = result.user;
                 console.log(user);
                 setLoginUserEmail(data.email);
@@ -66,7 +66,7 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 setLoginUserEmail(result.user.email);
-                toast.success('Welcome back to Friends Kebab')
+                toast.success('Welcome back to Hungry Den')
             })
             .catch(error => {
                 console.log(error)
@@ -80,7 +80,7 @@ const Login = () => {
         signInWithFacebook()
             .then(result => {
                 setLoginUserEmail(result.user.email);
-                toast.success('Welcome back to Friends Kebab')
+                toast.success('Welcome back to Hungry Den')
             })
             .catch(error => {
                 console.log(error)
@@ -137,7 +137,7 @@ const Login = () => {
                     </p>
                 </div>
 
-                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-xs lg:rotate-90 lg:mt-80 text-white'>OR</div>
+                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-sm font-extrabold lg:rotate-90 lg:mt-80 text-gray-200'>OR</div>
 
                 <div className='lg:mt-64 lg:w-96'>
                     <div className='text-center mt-4'>

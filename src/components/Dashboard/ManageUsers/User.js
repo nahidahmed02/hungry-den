@@ -41,7 +41,7 @@ const User = ({ user, refetch }) => {
                     <div className='mt-1'>
                         <span className='font-bold text-xs mr-1'>Make: </span>
                         <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-green-600 hover:bg-green-700  hover:px-4 btn-xs font-semibold py-0.5 rounded-lg text-white shadow shadow-white">Admin</span>
-                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-yellow-500 hover:bg-yellow-600 hover:px-4 ml-1 btn-xs font-semibold py-0.5 rounded-lg text-white shadow shadow-white">D. Man</span>
+                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-yellow-600 hover:bg-yellow-700 hover:px-4 ml-1 btn-xs font-semibold py-0.5 rounded-lg text-white shadow shadow-white">D. Man</span>
                     </div>
                 }
 

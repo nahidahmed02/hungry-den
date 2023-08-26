@@ -26,9 +26,23 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
         return <Loading></Loading>
     }
 
+    const today = new Date();
+    const options = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    };
+    const time = today.toLocaleString('en-US', options);
+
     const handlePlaceOrder = data => {
 
+        data.time = time;
         data.email = user?.email;
+        data.sumOfAllPrice = sumOfAllPrice;
+        data.includingDeliveryChrg = includingDeliveryChrg;
         data.paymentType = "Cash on Delivery";
         data.deliveryStatus = "Pending";
         data.orders = { ...selectedFoods };
@@ -54,7 +68,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
     }
 
     return (
-        <div className=''>
+        <section>
             <input type="checkbox" id="cash_on_delivery" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
@@ -137,7 +151,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
                 </div>
             </div>
 
-        </div>
+        </section>
     );
 };
 

@@ -79,7 +79,7 @@ const AllReviews = () => {
                                     <span className="text-xs opacity-75 ml-1.5">{review.email}</span>
                                 </div>
 
-                                <div className="chat-bubble italic">
+                                <div className="chat-bubble text-sm italic">
 
                                     {review?.feedback}
 

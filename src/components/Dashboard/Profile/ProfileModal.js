@@ -28,7 +28,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
         <section>
             <input type="checkbox" id="my_modal_7" className="modal-toggle" defaultChecked={true} />
 
-            <div className="modal">
+            <div className="modal lg:mt-6">
                 <div className="modal-box bg-black border border-yellow-300 shadow shadow-white text-gray-200">
 
                     <h2 className='text-orange-500 font-serif text-center text-xl font-bold mb-4'>Edit Profile</h2>

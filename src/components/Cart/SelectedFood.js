@@ -14,7 +14,7 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
 
 
     return (
-        <tr className='text-center text-gray-200'>
+        <tr className='text-center text-sm font-semibold text-gray-200'>
             <td className='border border-b-gray-200 bg-transparent'>{index + 1}.</td>
             <td className='border border-b-gray-200 bg-transparent'><Image src={photo} alt='' width={60} height={60} className='mx-auto h-10' /></td>
             <td className='border border-b-gray-200 bg-transparent'>{category}</td>

@@ -61,7 +61,7 @@ const SignUp = () => {
                     saveUser(data.name, data.email)
                 })
 
-            toast.success('Welcome to Friends Kebab');
+            toast.success('Welcome to Hungry Den');
 
         } catch (error) {
             console.log(error);
@@ -76,7 +76,7 @@ const SignUp = () => {
         signInWithGoogle()
             .then(result => {
                 saveUser(result.user.displayName, result.user.email);
-                toast.success('Welcome to Friends Kebab')
+                toast.success('Welcome to Hungry Den')
             })
             .catch(error => {
                 console.log(error)
@@ -91,7 +91,7 @@ const SignUp = () => {
         signInWithFacebook()
             .then(result => {
                 saveUser(result.user.displayName, result.user.email);
-                toast.success('Welcome back to Friends Kebab')
+                toast.success('Welcome back to Hungry Den')
             })
             .catch(error => {
                 console.log(error)
