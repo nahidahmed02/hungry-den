@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
     const { data: foods, isLoading, refetch } = useQuery({
         queryKey: ['foods'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/foods');
+            const res = await fetch('https://hungry-den-server.onrender.com/foods');
             const data = res.json();
             return data;
         }

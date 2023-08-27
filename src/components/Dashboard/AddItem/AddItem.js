@@ -18,7 +18,7 @@ const AddItem = () => {
 
     const handleAddItem = (data) => {
 
-        fetch('http://localhost:5000/foods', {
+        fetch('https://hungry-den-server.onrender.com/foods', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -156,7 +156,7 @@ const AddItem = () => {
 
                 <small className='mb-1.5 ml-9 text-gray-200'>
                     Please visit
-                    <a href="https://postimages.org/" target='_blank' className='text-blue-400 underline'> this website </a>
+                    <a href="https://postimages.org/" target='_blank' className='text-blue-400 hover:text-blue-300 underline'> this website </a>
                     and upload your image. Then <br /> copy the
                     <span className='font-semibold text-orange-400'> Direct Link </span>
                     and paste that in this input field ⬇️

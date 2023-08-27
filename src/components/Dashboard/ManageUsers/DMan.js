@@ -5,7 +5,7 @@ const DMan = ({ dMan, refetch }) => {
     const { name, email } = dMan;
 
     const handleRemoveDMan = email => {
-        fetch(`http://localhost:5000/dman/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/dman/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

@@ -15,7 +15,7 @@ const Profile = () => {
     const { data: profile, isLoading, refetch } = useQuery({
         queryKey: ['profile'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/profile/${email}`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/profile/${email}`);
             const data = res.json();
             return data;
         }
@@ -51,10 +51,10 @@ const Profile = () => {
                         <span className='font-normal'> {user?.email}</span>
                     </p>
                     <p className='font-semibold'>Phone:
-                        <span className='font-normal'> {profile[0].phone ? profile[0].phone : ''}</span>
+                        <span className='font-normal'> {profile[0]?.phone ? profile[0].phone : ''}</span>
                     </p>
                     <p className='font-semibold'>Address:
-                        <span className='font-normal'> {profile[0].address ? profile[0]?.address : ''}</span>
+                        <span className='font-normal'> {profile[0]?.address ? profile[0]?.address : ''}</span>
                     </p>
 
                     <button

@@ -13,7 +13,7 @@ const AllReviews = () => {
     const { data: reviews, isLoading, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/reviews');
+            const res = await fetch('https://hungry-den-server.onrender.com/reviews');
             const data = res.json();
             return data;
         }
@@ -24,7 +24,7 @@ const AllReviews = () => {
     }
 
     const handleDeleteReview = id => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://hungry-den-server.onrender.com/reviews/${id}`, {
             method: 'DELETE',
 
         })

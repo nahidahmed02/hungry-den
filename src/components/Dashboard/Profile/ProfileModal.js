@@ -8,7 +8,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
 
     const handleEditProfile = data => {
 
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const ProfileModal = ({ user, profile, setProfileModal, refetch }) => {
 
                         <small className='mb-1.5 ml-2.5 lg:ml-9'>
                             Please visit
-                            <a href="https://postimages.org/" target='_blank' className='text-blue-400 underline'> this website </a>
+                            <a href="https://postimages.org/" target='_blank' className='text-blue-400 hover:text-blue-300 underline'> this website </a>
                             and upload your image. Then copy the
                             <span className='font-semibold text-orange-400'> Direct Link </span>
                             and paste that in this input field ⬇️

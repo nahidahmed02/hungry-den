@@ -5,7 +5,7 @@ const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
     const { _id } = deleteItemModal;
 
     const handleDeleteItem = () => {
-        fetch(`http://localhost:5000/foods/${_id}`, {
+        fetch(`https://hungry-den-server.onrender.com/foods/${_id}`, {
             method: 'DELETE',
 
         })

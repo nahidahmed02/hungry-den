@@ -14,7 +14,7 @@ const AddReview = () => {
         data.email = user?.email;
         data.name = user?.displayName;
 
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://hungry-den-server.onrender.com/reviews", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

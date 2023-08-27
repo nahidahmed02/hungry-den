@@ -5,7 +5,7 @@ const User = ({ user, refetch }) => {
     const { name, email, role } = user;
 
     const handleAdmin = email => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/users/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -18,7 +18,7 @@ const User = ({ user, refetch }) => {
     }
 
     const handleDMan = email => {
-        fetch(`http://localhost:5000/users/dman/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/users/dman/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

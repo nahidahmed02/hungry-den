@@ -16,7 +16,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
     const { data: profile, isLoading, refetch } = useQuery({
         queryKey: ['profile'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/profile/${email}`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/profile/${email}`);
             const data = res.json();
             return data;
         }
@@ -47,7 +47,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
         data.deliveryStatus = "Pending";
         data.orders = { ...selectedFoods };
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://hungry-den-server.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,7 +60,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
                 if (data.acknowledged) {
                     toast.success('Order Taken!');
                     localStorage?.clear();
-                    router.push('/');
+                    router.push('/dashboard/myOrders');
                 } else {
                     toast.error('Order Placement Denied!')
                 }

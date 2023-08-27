@@ -1,33 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Loading/Loading';
+import OrdersRow from './OrdersRow';
+import Modal from './Modal';
 
 const Orders = () => {
+
+    const [modal, setModal] = useState(null);
+
+    const { data: allOrderDetails, isLoading } = useQuery({
+        queryKey: ['order'],
+        queryFn: async () => {
+            const res = await fetch(`https://hungry-den-server.onrender.com/order`);
+            const data = res.json();
+            return data;
+        }
+    })
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <section>
             <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Orders</h2>
 
-            <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
-                <table className="table w-full">
-                    <thead>
-                        <tr className='text-center text-white'>
-                            <td className='bg-orange-500 '>SL No.</td>
-                            <th className='bg-orange-500 '>Customer</th>
-                            <th className='bg-orange-500 '>Email</th>
-                            <th className='bg-orange-500 '>Ordered Items</th>
-                            <th className='bg-orange-500 '>Action</th>
-                        </tr>
-                    </thead>
+            {
+                allOrderDetails?.length === 0
+                    ?
+                    <p className='font-bold text-center text-2xl italic text-red-500'>No order yet!</p>
+                    :
+                    <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
+                        <table className="table w-full">
+                            <thead>
+                                <tr className='text-center text-white'>
+                                    <td className='bg-orange-500 '>Date</td>
+                                    <th className='bg-orange-500 '>Order&rsquo;s Details</th>
+                                    <th className='bg-orange-500 '>Payment Type</th>
+                                    <th className='bg-orange-500 '>Delivery Status</th>
+                                    <th className='bg-orange-500 '>Delivered By</th>
+                                </tr>
+                            </thead>
 
-                    <tbody>
-                        <tr className='text-center'>
-                            <td className='border border-b-black'>index</td>
-                            <td className='border border-b-black'>name</td>
-                            <td className='border border-b-black'>www.sdfdd.com</td>
-                            <td className='border border-b-black'>items</td>
-                            <td className='border border-b-black'><button className='btn btn-xs border-none bg-red-500'>Cancel Order</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                            <tbody>
+                                {
+                                    allOrderDetails?.map(details => <OrdersRow
+                                        key={details._id}
+                                        details={details}
+                                        setModal={setModal}
+                                    ></OrdersRow>)
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+            }
+
+            {
+                modal && <Modal
+                    modal={modal}
+                    setModal={setModal}
+                ></Modal>
+            }
+
         </section>
     )
 }

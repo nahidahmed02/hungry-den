@@ -13,7 +13,7 @@ const MyOrders = () => {
     const { data: orderDetails, isLoading } = useQuery({
         queryKey: ['order'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/order/${email}`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/order/${email}`);
             const data = res.json();
             return data;
         }

@@ -5,7 +5,7 @@ const Admin = ({ admin, refetch }) => {
     const { name, email } = admin;
 
     const handleRemoveAdmin = email => {
-        fetch(`http://localhost:5000/admin/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

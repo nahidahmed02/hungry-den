@@ -17,7 +17,7 @@ const PaymentOpts = () => {
         <section className='pt-24 h-screen'>
             <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-8 mb-8'>Payment Options</h2>
 
-            <div className='grid grid-cols-2 gap-6 lg:gap-10 mx-6 md:mx-16 lg:mx-36 text-orange-500 '>
+            <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mx-20 md:mx-40 lg:mx-36 text-orange-500 '>
 
                 <div onClick={() => setModal(true)} className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
                     <div className='cashOnDelivery py-10 lg:py-20  '>

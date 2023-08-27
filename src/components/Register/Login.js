@@ -131,7 +131,7 @@ const Login = () => {
                     </form>
 
                     <p className='text-center text-sm mb-4 text-white'>Don&#39;t have an account?
-                        <span className='ml-2 text-blue-400 underline font-semibold'>
+                        <span className='ml-2 text-blue-400 hover:text-blue-300 underline font-semibold'>
                             <Link href='/signup' className='italic'>Create an account</Link>
                         </span>
                     </p>

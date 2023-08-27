@@ -33,7 +33,7 @@ const SignUp = () => {
 
     const saveUser = (name, email) => {
         const role = 'User';
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/users/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -149,7 +149,7 @@ const SignUp = () => {
                     </form>
 
                     <p className='text-center text-white text-sm mb-4'>Already have an account?
-                        <span className='ml-2 text-blue-400 underline font-semibold'>
+                        <span className='ml-2 text-blue-400 hover:text-blue-300 underline font-semibold'>
                             <Link href='/login' className='italic'>Login</Link>
                         </span>
                     </p>

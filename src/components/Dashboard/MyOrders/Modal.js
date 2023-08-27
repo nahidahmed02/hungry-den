@@ -16,14 +16,15 @@ const Modal = ({ orderDetails, setModal }) => {
                     {/* ------------------- ORDER LIST -------------------- */}
 
                     <h2 className='font-semibold text-sm text-gray-200'>
-                        {orders?.map(order => order.map(item =>
-                            <li
-                                key={item._id}
-                                className='mb-1 flex justify-between'
-                            >
-                                <span>{item.name} ({item.category}) x {item.quantity}</span>
-                                <span className=''>${item.total}</span>
-                            </li>))
+                        {
+                            orders?.map(order => order.map(item =>
+                                <li
+                                    key={item._id}
+                                    className='mb-1 flex justify-between'
+                                >
+                                    <span>{item.name} ({item.category}) x {item.quantity}</span>
+                                    <span className=''>${item.total}</span>
+                                </li>))
                         }
                     </h2>
 
@@ -37,6 +38,8 @@ const Modal = ({ orderDetails, setModal }) => {
                     <hr />
 
                     <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'><span>Total</span> ${orderDetails[0]?.includingDeliveryChrg}</h2>
+
+                    {/* --------------------- BUTTON --------------------- */}
 
                     <div className='text-center mt-1.5'>
                         <button
