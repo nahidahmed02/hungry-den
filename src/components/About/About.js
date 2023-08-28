@@ -18,13 +18,15 @@ const About = () => {
                 Hungry Den isn&rsquo;t just about dining; it&rsquo;s about savoring every moment and every bite. So, whether you&rsquo;re looking to indulge in a cozy dinner at home or treat your taste buds to something extraordinary, let Hungry Den be your destination of choice. Your cravings, our expertise... a perfect match made in food heaven.
             </p>
 
-            <p className='text-gray-200 font-semibold mx-6 lg:mx-20 mt-5'>Open: Mon - Fri (9 am - 11:30 pm)</p>
-            <p className='text-gray-200 font-semibold mx-6 lg:mx-20 mt-2'>Closing: Sat & Sun</p>
-            <p className='text-gray-200 font-semibold mx-6 lg:mx-20 mt-2'>Location: Poland</p>
-            <p className='text-gray-200 font-semibold mx-6 lg:mx-20 mt-2'>Contact Us:</p>
-            <p className='text-gray-200 font-semibold mx-20 lg:mx-32 mt-2'>Phone: +452311123</p>
-            <p className='text-gray-200 font-semibold mx-20 lg:mx-32 mt-2'>Facebook: fb.hungryden.com</p>
-            <p className='text-gray-200 font-semibold mx-20 lg:mx-32 mt-2'>Mail: www.hungryden@gmail.com</p>
+            <div className='text-gray-200 font-semibold'>
+                <p className='mt-5 mx-6 lg:mx-20'>Open: Mon - Fri (9 am - 11:30 pm)</p>
+                <p className='mt-1 mx-6 lg:mx-20'>Closing: Sat & Sun</p>
+                <p className='mt-1 mx-6 lg:mx-20'>Contact Us:</p>
+                <p className='mt-1 mx-16 lg:mx-32'>Phone: +452311123</p>
+                <p className='mt-1 mx-16 lg:mx-32'>Facebook: fb.hungryden.com</p>
+                <p className='mt-1 mx-16 lg:mx-32'>Mail: www.hungryden@gmail.com</p>
+            </div>
+
 
             <AllReviews></AllReviews>
 

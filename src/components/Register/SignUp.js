@@ -144,7 +144,7 @@ const SignUp = () => {
                             Sign Up
                         </button>
 
-                        {signUpError && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{signUpError}</p>}
+                        {signUpError && <p className='text-red-500 ml-10 my-1 font-semibold'>{signUpError}</p>}
 
                     </form>
 

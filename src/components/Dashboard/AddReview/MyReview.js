@@ -60,20 +60,20 @@ const MyReview = () => {
 
     return (
         <section>
-            <h2 className='lg:mt-16 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>My Reviews</h2>
+            <h2 className='mt-12 lg:mt-16 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>My Reviews</h2>
 
             <div className='mb-4 text-center'>
                 {
                     myReviews?.length === 0
                         ?
-                        <p className='text-red-500 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
+                        <p className='text-red-500 italic text-center text-2xl font-bold mt-8'>No Review Yet</p>
                         :
                         myReviews?.map(review =>
-                            <div key={review._id} className='mx-8 lg:mx-24'>
-                                <div className='border grid grid-cols-5 border-yellow-300 rounded-md mb-2 py-1.5'>
-                                    <p className='italic font-semibold col-span-3 text-gray-200'>{review.feedback}</p>
+                            <div key={review._id} className='mx-4 lg:mx-24'>
+                                <div className='border grid grid-cols-4 lg:grid-cols-5 border-yellow-300 rounded-md mb-2 py-1.5'>
+                                    <p className='italic font-semibold col-span-2 lg:col-span-3 text-gray-200'>{review.feedback}</p>
                                     <p className='text-gray-200 mb-1.5 col-span-1'>
-                                        <span className={`${review.ratings !== 'None' && 'text-orange-300'} ml-2`}>
+                                        <span className={`${review.ratings !== 'None' && 'text-orange-300'} `}>
                                             {ratingStar(review.ratings)}
                                         </span>
                                     </p>

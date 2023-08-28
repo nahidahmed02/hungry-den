@@ -61,7 +61,7 @@ const AllReviews = () => {
 
     return (
         <section>
-            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-12 mb-4'>Customer&rsquo;s Say About Us</h2>
+            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-8 mb-4'>Customer&rsquo;s Say About Us</h2>
 
             <div className='overflow-x-auto mx-6 lg:mx-36 h-96'>
 

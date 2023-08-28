@@ -126,7 +126,7 @@ const Login = () => {
                             Login
                         </button>
 
-                        {loginError && <p className='text-red-500 ml-10 pr-5 mb-2.5 font-semibold'>{loginError}</p>}
+                        {loginError && <p className='text-red-500 ml-10 pr-5 my-1 font-semibold'>{loginError}</p>}
 
                     </form>
 

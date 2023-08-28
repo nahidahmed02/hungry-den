@@ -59,42 +59,70 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card  bg-slate-200 shadow-xl hover:scale-110">
+            <div className="card rounded-lg border border-yellow-400 shadow shadow-white bg-gray-800 hover:bg-gray-900 text-gray-200 hover:text-white">
 
                 <figure>
-                    <Image src={photo} alt="food" width={190} height={92} className="h-32 rounded-t-md mt-5 lg:mt-7 mb-3 lg:mb-4 px-4 lg:px-0" />
+                    <Image
+                        src={photo}
+                        alt="food"
+                        width={190}
+                        height={92}
+                        className="h-32 lg:h-44 w-full rounded-t-md mb-3 lg:mb-4 hover:scale-125"
+                    />
                 </figure>
 
-                <div className="text-sm mx-4 md:mx-8 lg:mx-8">
+                <div className="font-semibold ml-3 md:mx-4 lg:mx-8">
 
-                    <h2 className="mb-0.5">Category: {category}</h2>
-                    <h2 className="mb-0.5">Name: {name}</h2>
-                    <h2 className="mb-0.5">Price: ${price} + vat({vat}%)</h2>
+                    <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-sm md:text-base lg:text-base">Category: {category}</h2>
+                    <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-xs md:text-sm lg:text-base">Name: {name}</h2>
+                    <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-xs md:text-sm lg:text-base">Price: ${price} + VAT ({vat}%)</h2>
 
-                    <h2 className="mb-0.5">Quantity:
-                        <span onClick={decrement} className='cursor-pointer font-bold bg-slate-300 px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'>-</span>
+                    <h2 className="mb-1 text-xs md:text-sm lg:text-base">
+                        Quantity:
+                        <span
+                            onClick={decrement}
+                            className='cursor-pointer font-bold border px-1 lg:px-1.5 lg:pb-1 ml-2 lg:ml-3 mr-1'
+                        >-</span>
+
                         <span className='px-2'>{(isAddedToCart) ? itemFromCart[0]?.quantity : quantity}</span>
-                        <span onClick={increment} className='cursor-pointer font-bold bg-slate-300 px-1 lg:pb-1 ml-1'>+</span>
+
+                        <span
+                            onClick={increment}
+                            className='cursor-pointer font-bold border px-1 lg:pb-1 ml-1'
+                        >+</span>
                     </h2>
 
-                    <h2 className="mb-0.5">Total: ${isAddedToCart ? itemFromCart[0].total : total}</h2>
+                    <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-xs md:text-sm lg:text-base">Total: ${isAddedToCart ? itemFromCart[0].total : total}</h2>
 
                 </div>
 
-                <div className="card-actions my-4 mx-5">
+                <div className="flex justify-between my-4 mx-2 md:mx-6 lg:mx-0">
+                    {/* if item is not added to cart */}
+                    {
+                        (!isAddedToCart)
+                        &&
+                        <button
+                            className="rounded-lg px-2 text-white font-bold btn-xs bg-green-600 hover:bg-green-700 mx-auto"
+                            onClick={handleAddToCart}
+                        >Add to Cart</button>
+                    }
 
-                    {(!isAddedToCart) && <button className="rounded-lg px-2 text-white font-bold btn-xs bg-green-600 mx-auto"
-                        onClick={handleAddToCart}
-                    >Add to Cart</button>}
+                    {/* if item is added to cart */}
+                    {
+                        (isAddedToCart)
+                        &&
+                        <>
+                            <button
+                                className="rounded-lg px-2 text-white font-bold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
+                                onClick={() => router.push('/cart')}
+                            >Go to Cart</button>
 
-                    {(isAddedToCart) && <>
-                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-orange-500 mx-auto"
-                            onClick={() => router.push('/cart')}
-                        >Go to Cart</button>
-                        <button className="rounded-lg px-2 text-white font-bold btn-xs bg-red-600 mx-auto"
-                            onClick={handleRemoveFromCart}
-                        >Remove From Cart</button>
-                    </>}
+                            <button
+                                className="rounded-lg px-2 text-white font-bold btn-xs bg-red-600 hover:bg-red-700 mx-auto"
+                                onClick={handleRemoveFromCart}
+                            >Remove</button>
+                        </>
+                    }
 
                 </div>
             </div>

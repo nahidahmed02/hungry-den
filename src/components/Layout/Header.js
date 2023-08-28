@@ -18,7 +18,7 @@ const Header = () => {
     // const [cartItems, setCartItems] = useState([]);
     // const [itemsInCart, setItemsInCart] = useState(0);
 
-    const name = user ? user.displayName.split(' ')[0] : 'Unknown';
+    const name = user ? user?.displayName?.split(' ')[0] : 'Unknown';
     const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
 
 
@@ -79,27 +79,27 @@ const Header = () => {
     return (
         <header>
 
-            <div className="fixNav ">
+            <div className="fixNav">
 
-                <div className='flex mb-0 pt-1 pb-1 lg:pb-2 justify-between bg-black border-b border-orange-500'>
-                    <div>
-                        <Link className="normal-case font-serif font-bold md:text-xl lg:text-2xl italic ml-4 md:ml-12 lg:ml-12 text-orange-500" href='/'>Hungry <br className='lg:hidden' /> <span className='text-orange-500 ml-4 md:ml-12 lg:ml-0.5'>Den</span></Link>
+                <div className='flex mb-0 py-1.5 justify-between bg-black border-b border-orange-500'>
+                    <div className='my-auto'>
+                        <Link className="normal-case font-serif font-bold text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-orange-500" href='/'>Hungry <br className='md:hidden lg:hidden' /> <span className='text-orange-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span></Link>
                     </div>
 
                     {
-                        router.pathname === '/' && <div className="form-control h-10 md:h-12 lg:h-8 pt-2 md:pt-2.5 lg:pt-1.5">
+                        router.pathname === '/' && <div className="form-control h-8 md:h-7 lg:h-7 my-auto">
                             <input
                                 type="text"
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-orange-300 border-yellow-400 shadow shadow-white w-40 md:w-64 lg:w-96 ml-9 md:ml-16 lg:ml-0"
+                                className="input bg-transparent text-orange-300 border-yellow-400 shadow shadow-white w-44 md:w-64 lg:w-96 ml-6 md:ml-10 lg:ml-0"
                             />
 
                         </div>
                     }
 
-                    <div className='flex flex-col text-center px-6 md:mr-6 lg:mr-7 mt-1 md:mt-2 lg:mt-0'>
+                    <div className='flex flex-col text-center px-6 md:mr-10 lg:mr-7 my-auto'>
                         <div className='flex text-yellow-400'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>

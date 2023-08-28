@@ -30,7 +30,7 @@ const Cart = () => {
                 <p className='font-bold text-center text-2xl italic text-red-500'>No Items Selected</p>
                 :
                 <>
-                    <div className="overflow-x-auto ml-6 lg:mx-24 border rounded-t-lg border-black border-b-0">
+                    <div className="overflow-x-auto mx-5 lg:mx-24 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
                                 <tr className='text-center text-white'>
@@ -62,14 +62,16 @@ const Cart = () => {
                     {
                         !user
                         &&
-                        <small className='text-gray-200 italic ml-6 lg:ml-24'>
-                            * As you are not logged in from your profile, you will be redirected to Login page after pressing the button below.
-                        </small>
+                        <div className='text-gray-200 italic text-center'>
+                            <small>
+                                * As you are not logged in from your profile, you will be redirected to Login page after pressing the button below.
+                            </small>
+                        </div>
                     }
 
                     <div className='mt-6 mb-10 text-center'>
-                        <p className='mr-6 py-3 px-8 lg:text-md font-bold text-white'>Total : ${sumOfAllPrice} + $12 (Delivery Charge) = ${includingDeliveryChrg}</p>
-                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold'>Proceed To Payment</button>
+                        <p className='mb-3 text-sm lg:text-md font-bold text-gray-200'>Total : ${sumOfAllPrice} + $12 (Delivery Charge) = ${includingDeliveryChrg}</p>
+                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold text-sm'>Proceed To Payment</button>
                     </div>
                 </>
             }

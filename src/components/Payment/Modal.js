@@ -105,9 +105,9 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
 
                     <form onSubmit={handleSubmit(handlePlaceOrder)} className='flex flex-col mt-3'>
 
-                        <div className='flex lg:mr-2'>
+                        <div className='flex mr-2'>
 
-                            <div className='flex flex-col w-7/12'>
+                            <div className='flex flex-col w-5/12 lg:w-7/12'>
                                 <label className='text-gray-200 ml-2.5 mb-1 font-semibold'>
                                     Phone
                                 </label>
@@ -121,7 +121,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
                                 />
                             </div>
 
-                            <div className='flex flex-col w-4/5'>
+                            <div className='flex flex-col w-3/5 lg:w-4/5'>
                                 <label className='text-gray-200 ml-4 mb-1 font-semibold'>
                                     Address
                                 </label>
@@ -130,7 +130,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
                                     type="text"
                                     placeholder="Address"
                                     defaultValue={profile[0]?.address ? profile[0]?.address : ''}
-                                    className="input input-bordered w-fit lg:w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent ml-2 h-7"
+                                    className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent ml-2 h-7"
                                     required
                                 />
                             </div>
