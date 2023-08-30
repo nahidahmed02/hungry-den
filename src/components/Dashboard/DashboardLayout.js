@@ -7,6 +7,7 @@ import { MdDelete } from 'react-icons/md'
 import { FaUsersCog } from 'react-icons/fa'
 import { GoListOrdered } from 'react-icons/go'
 import { MdRateReview } from 'react-icons/md'
+import { MdDeliveryDining } from 'react-icons/md'
 import { useRouter } from 'next/router'
 
 const DashboardLayout = ({ children }) => {
@@ -74,6 +75,12 @@ const DashboardLayout = ({ children }) => {
                         <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/addReview' && '-mr-2.5 ml-2.5 text-white'}`}>
                             <Link href='/dashboard/addReview' className={`${router.pathname === '/dashboard/addReview' && 'bg-orange-500'} hover:bg-orange-500`}>
                                 <MdRateReview /> Add Review
+                            </Link>
+                        </li>
+
+                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/delivery' && '-mr-2.5 ml-2.5 text-white'}`}>
+                            <Link href='/dashboard/delivery' className={`${router.pathname === '/dashboard/delivery' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                <MdDeliveryDining /> Delivery
                             </Link>
                         </li>
                     </ul>

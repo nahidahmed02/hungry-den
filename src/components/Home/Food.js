@@ -59,7 +59,7 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card rounded-lg border border-yellow-400 shadow shadow-white bg-gray-800 hover:bg-gray-900 text-gray-200 hover:text-white">
+            <div className="card rounded-lg border border-yellow-400 hover:border-orange-500 shadow shadow-white bg-gray-800 hover:bg-gray-900 text-gray-200 hover:text-white">
 
                 <figure>
                     <Image
