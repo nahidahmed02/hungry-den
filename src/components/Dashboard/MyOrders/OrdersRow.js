@@ -19,7 +19,15 @@ const OrdersRow = ({ info, setModal }) => {
                 </span>
             </td>
 
-            <td className={`border border-b-gray-200 bg-transparent ${deliveryStatus === 'Pending' && 'text-red-500'} ${deliveryStatus === 'On Shipment' && 'text-yellow-400'} ${deliveryStatus === 'Completed' && 'text-green-700'}`}>{deliveryStatus}</td>
+            <td
+                className={`
+                    border border-b-gray-200 bg-transparent 
+                    ${deliveryStatus === 'Pending' && 'text-red-500'} 
+                    ${deliveryStatus === 'On Shipment' && 'text-yellow-400'} 
+                    ${deliveryStatus === 'Completed' && 'text-green-500'}`}
+            >
+                {deliveryStatus}
+            </td>
 
         </tr>
     );

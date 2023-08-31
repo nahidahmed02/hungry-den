@@ -21,7 +21,7 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
             email: assignedTo.email
         }
 
-        fetch(`http://localhost:5000/order/assignDMan/${email}`, {
+        fetch(`https://hungry-den-server.onrender.com/order/assignDMan/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,26 +46,34 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
 
                     <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Delivery Man</h2>
 
-                    {/* ------------------- Delivery Man INFO -------------------- */}
+                    {
+                        dMan?.length === 0
+                            ?
+                            <p className='font-bold text-center text-lg italic text-red-500'>No delivery man appointed!</p>
+                            :
+                            // ------------------- Delivery Man INFO --------------------
 
-                    <h2 className='font-semibold text-sm text-gray-200'>
-                        {
-                            dMan?.map(person =>
-                                <li
-                                    key={person._id}
-                                    className='flex justify-between border rounded-lg mb-2 px-5 py-2'
-                                >
-                                    <span>
-                                        {person.name} <span className='text-xs italic'>{person.email}</span>
-                                    </span>
-                                    <button
-                                        onClick={() => handleAssignOrder(person._id)}
-                                        className='btn btn-xs border-none hover:px-3 bg-green-600 hover:bg-green-700'
-                                    >Assign</button>
+                            <h2 className='font-semibold text-sm text-gray-200 hover:text-white'>
+                                {
+                                    dMan?.map(person =>
+                                        <li
+                                            key={person._id}
+                                            className='flex justify-between border rounded-lg mb-2 px-5 py-2 hover:bg-orange-500'
+                                        >
+                                            <span>
+                                                {person.name} <span className='text-xs italic'>{person.email}</span>
+                                            </span>
+                                            <button
+                                                onClick={() => handleAssignOrder(person._id)}
+                                                className='btn btn-xs border-none hover:px-3 bg-green-600 hover:bg-black'
+                                            >Assign</button>
 
-                                </li>)
-                        }
-                    </h2>
+                                        </li>)
+                                }
+                            </h2>
+                    }
+
+
 
                     {/* ------------------- BUTTON -------------------- */}
 
