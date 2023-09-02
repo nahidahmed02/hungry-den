@@ -4,8 +4,13 @@ import useUsers from '@/src/hooks/useUsers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
-import { BsCart4 } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
+import { AiFillHome } from 'react-icons/ai';
+import { BsCart4 } from 'react-icons/bs';
+import { RxDashboard } from 'react-icons/rx';
+import { BsInfoCircle } from 'react-icons/bs';
+import { VscSignIn } from 'react-icons/vsc';
+import { FiLogOut } from 'react-icons/fi';
 import LogoutModal from './LogoutModal';
 
 const Header = () => {
@@ -42,12 +47,12 @@ const Header = () => {
 
     const menuItems =
         <>
-            <li className={`font-bold ${router.pathname === '/' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/" className='btn-sm'>Home</Link>
+            <li className={`font-bold flex flex-col ${router.pathname === '/' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                <Link href="/" className='btn-sm '><AiFillHome className='text-2xl lg:text-lg mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Home</span></Link>
             </li>
 
-            <li className={`font-bold ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/cart" className='btn-sm'>My Cart
+            <li className={`font-bold flex flex-col  ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                <Link href="/cart" className='btn-sm'><BsCart4 className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>My Cart</span>
                     {/* <span className="indicator-item badge badge-warning">
                         {itemsInCart}
                     </span> */}
@@ -55,23 +60,23 @@ const Header = () => {
             </li>
 
             {user?.uid &&
-                <li className={`font-bold ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                    <Link href="/dashboard" className='btn-sm'>Dashboard</Link>
+                <li className={`font-bold flex flex-col  ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                    <Link href="/dashboard" className='btn-sm'><RxDashboard className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Dashboard</span></Link>
                 </li>
             }
 
-            <li className={`font-bold ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/about" className='btn-sm'>About Us</Link>
+            <li className={`font-bold flex flex-col  ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                <Link href="/about" className='btn-sm'><BsInfoCircle className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>About Us</span></Link>
             </li>
 
             {user?.uid
                 ?
-                <li className={`font-bold text-gray-200 -mt-1 lg:-mt-0 hover:text-orange-500`}>
-                    <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm'>Logout</button>
+                <li className={`font-bold flex flex-col text-gray-200 hover:text-orange-500`}>
+                    <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm -mt-0.5 lg:-mt-0'><FiLogOut className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Logout</span></button>
                 </li>
                 :
-                <li className={`font-bold ${router.pathname === '/login' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                    <Link href="/login" className='btn-sm'>Login</Link>
+                <li className={`font-bold flex flex-col  ${router.pathname === '/login' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                    <Link href="/login" className='btn-sm'><VscSignIn className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Login</span></Link>
                 </li>
             }
         </>
@@ -120,8 +125,8 @@ const Header = () => {
 
                 {/* =================================== SMALL DEVICE MENU =================================== */}
 
-                <div className="bottom-0 fixed flex md:hidden lg:hidden w-full bg-gray-700 border-t border-orange-500">
-                    <ul className="flex mx-auto px-1 py-2.5">
+                <div className="bottom-0 fixed flex lg:hidden w-full bg-gray-700 border-t border-orange-500">
+                    <ul className="flex mx-auto py-1.5 ">
                         {menuItems}
                     </ul>
                 </div>

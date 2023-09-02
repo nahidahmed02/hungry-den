@@ -57,16 +57,6 @@ body {
     border-color: #007bff;
 }
 
-
-/* ------------ bg-signup --------------- */
-
-.bg-login-signup {
-    background: url(../public/images/blob-scene-haikei\ \(1\).png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    height: 95vh;
-}
-
 /* ------------- payment opts bg ------------ */
 
 .cashOnDelivery {
