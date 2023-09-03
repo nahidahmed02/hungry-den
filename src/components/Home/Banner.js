@@ -4,7 +4,7 @@ import gif from '../../../public/images/output-onlinegiftools.gif'
 
 const Banner = () => {
     return (
-        <section className='banner flex flex-col lg:flex-row md:items-center lg:justify-around py-12'>
+        <section className='flex flex-col lg:flex-row md:items-center lg:justify-around py-12 mb-6 lg:mb-10'>
 
             <div className='order-2 md:order-2 lg:order-1 mx-auto lg:mx-0'>
                 <h2 className='text-6xl font-extrabold text-gray-200'>Hungry! <br /> Then... <br /><span className='text-orange-500'> Hungry Den</span></h2>

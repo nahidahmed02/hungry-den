@@ -69,24 +69,6 @@ body {
     background-size: 100% 100%;
 }
 
-/* ------------------ banner ----------------- */
-
-.banner {
-    height: 83vh;
-}
-
-@media screen and (max-width: 688px) {
-    .banner {
-        height: 75vh;
-    }
-}
-
-/* for tablets */
-@media screen and (max-width: 920px) and (min-width:688px) {
-    .banner {
-        height: 90vh;
-    }
-}
 
 /* --------------- styling loader --------------- */
 

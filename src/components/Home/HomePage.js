@@ -3,6 +3,7 @@ import Category from './Category'
 import Foods from './Foods'
 import Pagination from './Pagination'
 import Banner from './Banner'
+import Events from './Events'
 
 const HomePage = () => {
 
@@ -21,6 +22,8 @@ const HomePage = () => {
             <Foods />
 
             <Pagination />
+
+            <Events />
 
         </section>
     )
