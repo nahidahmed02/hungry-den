@@ -60,7 +60,9 @@ const MyReview = () => {
 
     return (
         <section>
-            <h2 className='mt-12 lg:mt-16 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>My Reviews</h2>
+
+            <h2 className='border-b-2 border-b-gray-200 mt-20 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-6 text-gray-200 bg-black'>My Reviews</h2>
 
             <div className='mb-4 text-center'>
                 {

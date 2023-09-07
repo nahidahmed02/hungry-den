@@ -100,11 +100,12 @@ const SignUp = () => {
     }
 
     return (
-        <div className='pt-28 h-screen'>
+        <div className='pt-24 h-screen'>
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>
-                    <h2 className='text-orange-500 font-serif text-center text-xl font-bold lg:pt-20 mb-4'>Create an Account</h2>
+                    <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-12 md:mx-24 lg:mx-10'></h2>
+                    <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-4 mt-14 mb-10 text-gray-200 bg-black'>Create Account</h2>
 
                     <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-4'>
 
@@ -155,7 +156,7 @@ const SignUp = () => {
                     </p>
                 </div>
 
-                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-xs lg:rotate-90 lg:mt-56 text-white'>OR</div>
+                <div className='divider mx-auto lg:mx-0 w-80 lg:w-52 text-sm font-semibold lg:rotate-90 lg:mt-56 text-gray-200'>OR</div>
 
                 <div className='lg:mt-36 lg:w-96'>
                     <div className='text-center mt-4'>

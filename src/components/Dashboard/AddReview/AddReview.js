@@ -32,7 +32,9 @@ const AddReview = () => {
 
     return (
         <section>
-            <h2 className='lg:mt-6 mb-4 text-2xl font-serif font-bold text-orange-500 text-center'>Add Review</h2>
+
+            <h2 className='border-b-2 border-b-gray-200 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Add Review</h2>
 
             <form onSubmit={handleSubmit(handleReview)} className='flex flex-col w-96 mx-auto mb-4'>
 

@@ -6,6 +6,15 @@ body {
     background-color: black;
 }
 
+.logo-font {
+    font-family: 'Lobster', cursive;
+    /* font-weight: 600; */
+}
+
+.header-font {
+    font-family: 'Dancing Script', cursive;
+}
+
 /* --------- fixed navbar --------- */
 
 .fixNav {

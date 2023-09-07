@@ -23,7 +23,8 @@ const Cart = () => {
     return (
         <section className='pt-24 min-h-screen'>
 
-            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mb-4'>Cart</h2>
+            <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Cart</h2>
 
             {selectedFoods?.length === 0
                 ?

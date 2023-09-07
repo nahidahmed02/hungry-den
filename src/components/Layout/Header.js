@@ -88,7 +88,7 @@ const Header = () => {
 
                 <div className='flex mb-0 py-1.5 justify-between bg-black border-b border-orange-500'>
                     <div className='my-auto'>
-                        <Link className="normal-case font-serif font-bold text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-orange-500" href='/'>Hungry <br className='md:hidden lg:hidden' /> <span className='text-orange-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span></Link>
+                        <Link className="logo-font text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-orange-500" href='/'>Hungry <br className='md:hidden lg:hidden' /> <span className='text-orange-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span></Link>
                     </div>
 
                     {

@@ -1,32 +1,24 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
-import Modal from './Modal';
-import useCart from '@/src/hooks/useCart';
+import React from 'react'
 
 const PaymentOpts = () => {
-    const [modal, setModal] = useState(null);
-    const {
-        selectedFoods,
-        setSelectedFoods,
-        sumOfAllPrice,
-        includingDeliveryChrg
-    } = useCart();
-
 
     return (
         <section className='pt-24 h-screen'>
-            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-8 mb-8'>Payment Options</h2>
+
+            <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Payment Options</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mx-20 md:mx-40 lg:mx-36 text-orange-500 '>
 
-                <div onClick={() => setModal(true)} className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
+                <Link href='/paymentOpt/cashOnDelivery' className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
                     <div className='cashOnDelivery py-10 lg:py-20  '>
 
                     </div>
                     <div>
                         <p className='text-xl lg:text-2xl font-bold mb-2'>Cash on Delivery</p>
                     </div>
-                </div>
+                </Link>
 
                 <Link href='/paymentOpt/payOnline' className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
                     <div className='cashFromCard py-10 lg:py-20  '>
@@ -37,16 +29,6 @@ const PaymentOpts = () => {
                     </div>
                 </Link>
             </div>
-
-            {
-                modal && <Modal
-                    setModal={setModal}
-                    selectedFoods={selectedFoods}
-                    setSelectedFoods={setSelectedFoods}
-                    sumOfAllPrice={sumOfAllPrice}
-                    includingDeliveryChrg={includingDeliveryChrg}
-                ></Modal>
-            }
 
         </section>
     )

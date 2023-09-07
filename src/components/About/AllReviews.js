@@ -63,20 +63,20 @@ const AllReviews = () => {
 
     return (
         <section>
-            <h2 className='text-orange-500 font-serif text-center text-3xl font-bold mt-8 mb-6'>Customer&rsquo;s Say About Us</h2>
 
-            <section className='h-96 overflow-y-auto mx-5 lg:mx-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3 lg:gap-5'>
+            <h2 className='border-b-2 border-b-gray-200 mt-16 -mb-20 mx-2 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Customer&rsquo;s Say</h2>
+
+            <section className='h-96 lg:h-72 overflow-y-auto mx-5 lg:mx-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3 lg:gap-5'>
                 {
                     reviews?.length === 0
                         ?
                         <p className='text-red-500 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
                         :
-
-
                         reviews?.map(review =>
                             <div key={review._id}>
 
-                                <div className='relative rounded-md py-4 mb-2 text-center text-gray-200 border border-yellow-300 shadow shadow-white'>
+                                <div className='relative rounded-md py-4 text-center text-gray-200 border border-yellow-300 shadow shadow-white'>
                                     <RiDoubleQuotesL className='absolute top-1 left-1 text-yellow-400' />
 
                                     <p className='font-semibold text-sm'>{review.name}</p>
