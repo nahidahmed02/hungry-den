@@ -1,16 +1,16 @@
 import PrivateRoute from '@/src/PrivateRoute/PrivateRoute';
 import Layout from '@/src/components/Layout/Layout';
-import Card from '@/src/components/Payment/Card';
+import PayOnline from '@/src/components/Payment/PayOnline';
 import React from 'react';
 
-const card = () => {
+const payOnline = () => {
     return (
         <PrivateRoute>
             <Layout>
-                <Card></Card>
+                <PayOnline></PayOnline>
             </Layout>
         </PrivateRoute>
     );
 };
 
-export default card;
+export default payOnline;

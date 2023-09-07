@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OrdersRow = ({ details, setModal, setDManModal }) => {
-    const { time, paymentType, deliveryStatus, dManInfo } = details;
+    const { time, paymentType, transactionId, deliveryStatus, dManInfo } = details;
 
     return (
         <tr className='text-center text-sm font-semibold text-gray-200'>
@@ -16,7 +16,11 @@ const OrdersRow = ({ details, setModal, setDManModal }) => {
                 >View Details</span>
             </td>
 
-            <td className='border border-b-gray-200 bg-transparent'>{paymentType}</td>
+            <td className='border border-b-gray-200 bg-transparent'>
+                {paymentType}
+                <br />
+                {transactionId && <small>Transaction Id: {transactionId}</small>}
+            </td>
             <td
                 className={`
                 border border-b-gray-200 bg-transparent 

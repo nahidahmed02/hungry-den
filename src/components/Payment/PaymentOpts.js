@@ -28,12 +28,12 @@ const PaymentOpts = () => {
                     </div>
                 </div>
 
-                <Link href='/paymentOpt/card' className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
+                <Link href='/paymentOpt/payOnline' className='text-center cursor-pointer border border-yellow-300 shadow shadow-white hover:text-white hover:bg-orange-500'>
                     <div className='cashFromCard py-10 lg:py-20  '>
 
                     </div>
                     <div>
-                        <p className='text-xl lg:text-2xl font-bold mb-2'>Card</p>
+                        <p className='text-xl lg:text-2xl font-bold mb-2'>Online Payment</p>
                     </div>
                 </Link>
             </div>

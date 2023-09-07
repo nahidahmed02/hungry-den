@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Modal = ({ orderDetails, setModal }) => {
-    const orders = orderDetails.map(info => Object.values(info.orders));  // returns all the values of the object as array
+const Modal = ({ orderDetails, modal, setModal }) => {
+    const { sumOfAllPrice, includingDeliveryChrg } = modal;
+    const orders = Object.values(modal.orders);  // returns all the values of the object as array
     console.log(orders);
 
     return (
@@ -17,14 +18,14 @@ const Modal = ({ orderDetails, setModal }) => {
 
                     <h2 className='font-semibold text-sm text-gray-200'>
                         {
-                            orders?.map(order => order.map(item =>
+                            orders?.map(item =>
                                 <li
                                     key={item._id}
                                     className='mb-1 flex justify-between'
                                 >
                                     <span>{item.name} ({item.category}) x {item.quantity}</span>
                                     <span className=''>${item.total}</span>
-                                </li>))
+                                </li>)
                         }
                     </h2>
 
@@ -32,12 +33,12 @@ const Modal = ({ orderDetails, setModal }) => {
 
                     {/* --------------------- PRICING --------------------- */}
 
-                    <h2 className='font-semibold text-sm text-gray-200 flex justify-between mt-2'><span>Total Price</span> ${orderDetails[0]?.sumOfAllPrice}</h2>
+                    <h2 className='font-semibold text-sm text-gray-200 flex justify-between mt-2'><span>Total Price</span> ${sumOfAllPrice}</h2>
                     <h2 className='font-semibold text-sm text-gray-200 flex justify-between mb-2'><span>Delivery Charge</span> $12</h2>
 
                     <hr />
 
-                    <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'><span>Total</span> ${orderDetails[0]?.includingDeliveryChrg}</h2>
+                    <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'><span>Total</span> ${includingDeliveryChrg}</h2>
 
                     {/* --------------------- BUTTON --------------------- */}
 

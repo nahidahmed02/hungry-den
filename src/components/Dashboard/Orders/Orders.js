@@ -32,7 +32,7 @@ const Orders = () => {
                     ?
                     <p className='font-bold text-center text-2xl italic text-red-500'>No order yet!</p>
                     :
-                    <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
+                    <div className="overflow-x-auto mx-3 lg:mx-24 mb-8 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
                                 <tr className='text-center text-white'>

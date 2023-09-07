@@ -13,7 +13,7 @@ const Modal = ({ setModal, selectedFoods, sumOfAllPrice, includingDeliveryChrg }
     const email = user?.email;
     const router = useRouter();
 
-    const { data: profile, isLoading, refetch } = useQuery({
+    const { data: profile, isLoading } = useQuery({
         queryKey: ['profile'],
         queryFn: async () => {
             const res = await fetch(`https://hungry-den-server.onrender.com/profile/${email}`);

@@ -58,8 +58,8 @@ const MyOrders = () => {
 
             {
                 modal && <Modal
+                    modal={modal}
                     setModal={setModal}
-                    orderDetails={orderDetails}
                 ></Modal>
             }
 

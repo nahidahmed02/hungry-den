@@ -13,8 +13,8 @@ const Events = () => {
     }
 
     return (
-        <section className='mx-4 lg:mx-14'>
-            <h2 className='text-2xl font-serif font-bold text-orange-500 text-center lg:mt-6 mb-5'>Plan Your Events</h2>
+        <section className='mx-4 lg:mx-14 mb-12'>
+            <h2 className='text-3xl font-serif font-bold text-orange-500 text-center mt-14 mb-7'>Plan Your Events</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-9 text-white '>
 

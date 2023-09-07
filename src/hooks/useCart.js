@@ -23,8 +23,10 @@ const useCart = () => {
     const sumOfAllPrice =
         selectedFoods?.reduce((sum, food) => sum + parseFloat(food.total), 0).toFixed(2);
 
-    const includingDeliveryChrg = (parseFloat(sumOfAllPrice) + parseFloat(12)).toFixed(2);
+    const deliveryCharge = '12';
 
+    const includingDeliveryChrg = (parseFloat(sumOfAllPrice) + parseFloat(deliveryCharge)).toFixed(2);
+    console.log(includingDeliveryChrg);
     return {
         selectedFoods,
         setSelectedFoods,
