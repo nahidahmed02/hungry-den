@@ -64,7 +64,7 @@ const AllReviews = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-gray-200 mt-16 -mb-20 mx-2 md:mx-24 lg:mx-56'></h2>
+            <h2 className='border-b-2 border-b-gray-200 mt-16 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
             <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Customer&rsquo;s Say</h2>
 
             <section className='h-96 lg:h-72 overflow-y-auto mx-5 lg:mx-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3 lg:gap-5'>

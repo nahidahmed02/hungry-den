@@ -15,9 +15,12 @@ const EventsDetails = () => {
     }
 
     return (
-        <div className='pt-24 mx-4 lg:mx-14 mb-10 lg:mb-0 min-h-screen text-gray-200'>
+        <section className='pt-24 mx-4 lg:mx-14 mb-10 lg:mb-0 min-h-screen text-gray-200'>
 
-            <h2 className='text-2xl font-serif font-bold text-orange-500 text-center lg:mt-6 mb-5'>{event?.name}</h2>
+
+            <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-6 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>{event?.name}</h2>
+
             <p className='mb-3'><span className='font-semibold underline'>Description:</span> {event?.description}</p>
 
             {
@@ -82,7 +85,7 @@ const EventsDetails = () => {
 
 
 
-        </div>
+        </section>
     );
 };
 

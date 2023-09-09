@@ -6,10 +6,13 @@ body {
     background-color: black;
 }
 
+/* ------------ logo ------------- */
+
 .logo-font {
     font-family: 'Lobster', cursive;
-    /* font-weight: 600; */
 }
+
+/* ------------ header ------------- */
 
 .header-font {
     font-family: 'Dancing Script', cursive;
@@ -64,6 +67,29 @@ body {
 .page-link:hover {
     background-color: #007bff;
     border-color: #007bff;
+}
+
+/* ----------------- logo ------------------ */
+
+.contact-bg {
+    background: url(../public/images/contact1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 37vh;
+}
+
+@media screen and (max-width: 668px) {
+    .contact-bg {
+        height: 14vh;
+
+    }
+}
+
+@media screen and (min-width:668px) and (max-width:992px) {
+    .contact-bg {
+        background-size: 100%;
+
+    }
 }
 
 /* ------------- payment opts bg ------------ */
