@@ -10,6 +10,7 @@ body {
 
 .logo-font {
     font-family: 'Lobster', cursive;
+    letter-spacing: 1px;
 }
 
 /* ------------ header ------------- */
@@ -69,7 +70,7 @@ body {
     border-color: #007bff;
 }
 
-/* ----------------- logo ------------------ */
+/* ----------------- contact us ------------------ */
 
 .contact-bg {
     background: url(../public/images/contact1.png);

@@ -71,7 +71,7 @@ const Food = ({ food }) => {
                     />
                 </figure>
 
-                <div className="font-semibold ml-3 md:mx-4 lg:mx-8">
+                <div className="font-semibold ml-3 md:mx-4 lg:mx-7">
 
                     <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-sm md:text-base lg:text-base">Category: {category}</h2>
                     <h2 className="mb-1 md:mb-0.5 lg:mb-0.5 text-xs md:text-sm lg:text-base">Name: {name}</h2>

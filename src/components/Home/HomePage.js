@@ -7,6 +7,7 @@ import Events from './Events';
 import WeAreOpen from './WeAreOpen';
 import Subscribe from './Subscribe';
 import ContactUs from './ContactUs';
+import Gallery from './Gallery';
 
 const HomePage = () => {
 
@@ -26,9 +27,11 @@ const HomePage = () => {
 
             <WeAreOpen />
 
+            <Events />
+
             <ContactUs />
 
-            <Events />
+            <Gallery />
 
             <Subscribe />
 

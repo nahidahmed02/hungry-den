@@ -20,30 +20,9 @@ const Header = () => {
     const [logoutModal, setLogoutModal] = useState(null);
     const [users] = useUsers();
     const router = useRouter();
-    // const [cartItems, setCartItems] = useState([]);
-    // const [itemsInCart, setItemsInCart] = useState(0);
 
     const name = user ? user?.displayName?.split(' ')[0] : 'Unknown';
     const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
-
-
-    // ----------------------- set cart items --------------------------
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         if (typeof window !== undefined) {
-    //             try {
-    //                 const cart = await JSON.parse(localStorage.getItem('selectedFood'));
-    //                 setCartItems(cart || []);
-    //                 setItemsInCart(cart ? cart.length : 0);
-
-    //             } catch (error) {
-    //                 console.log(error);
-    //             }
-    //         }
-    //     }
-    //     fetchData();
-    // }, [cartItems])
 
     const menuItems =
         <>
@@ -53,9 +32,7 @@ const Header = () => {
 
             <li className={`font-bold flex flex-col  ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/cart" className='btn-sm'><BsCart4 className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>My Cart</span>
-                    {/* <span className="indicator-item badge badge-warning">
-                        {itemsInCart}
-                    </span> */}
+
                 </Link>
             </li>
 
@@ -130,18 +107,6 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-
-                {/* =================================== CART LOGO =================================== */}
-
-                {
-                    router.pathname === '/' && <Link href='/cart' className="indicator fixed bottom-16 right-6">
-                        {/* <span className="indicator-item badge">
-                            {itemsInCart}
-                        </span> */}
-
-                        <BsCart4 className='text-5xl rounded text-black bg-yellow-500' />
-                    </Link>
-                }
 
             </div>
 
