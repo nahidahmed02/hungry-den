@@ -1,6 +1,5 @@
 import { AuthContext } from '@/src/context/AuthProvider';
 import { Context } from '@/src/context/Context';
-import useUsers from '@/src/hooks/useUsers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
@@ -12,17 +11,21 @@ import { BsInfoCircle } from 'react-icons/bs';
 import { VscSignIn } from 'react-icons/vsc';
 import { FiLogOut } from 'react-icons/fi';
 import LogoutModal from './LogoutModal';
+import useAdmin from '@/src/hooks/useAdmin';
+import useDMan from '@/src/hooks/useDMan';
+import useToken from '@/src/hooks/useToken';
 
 const Header = () => {
 
     const { searchQuery, handleSearch } = useContext(Context);
     const { user, logout } = useContext(AuthContext);
     const [logoutModal, setLogoutModal] = useState(null);
-    const [users] = useUsers();
+    const [admin] = useAdmin(user);
+    const [dMan] = useDMan(user);
+    const [token] = useToken(user?.email);
     const router = useRouter();
 
     const name = user ? user?.displayName?.split(' ')[0] : 'Unknown';
-    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
 
     const menuItems =
         <>
@@ -30,19 +33,19 @@ const Header = () => {
                 <Link href="/" className='btn-sm '><AiFillHome className='text-2xl lg:text-lg mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Home</span></Link>
             </li>
 
-            <li className={`font-bold flex flex-col  ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+            <li className={`font-bold flex flex-col ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/cart" className='btn-sm'><BsCart4 className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>My Cart</span>
 
                 </Link>
             </li>
 
             {user?.uid &&
-                <li className={`font-bold flex flex-col  ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+                <li className={`font-bold flex flex-col ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                     <Link href="/dashboard" className='btn-sm'><RxDashboard className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Dashboard</span></Link>
                 </li>
             }
 
-            <li className={`font-bold flex flex-col  ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
+            <li className={`font-bold flex flex-col ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
                 <Link href="/about" className='btn-sm'><BsInfoCircle className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>About Us</span></Link>
             </li>
 
@@ -86,7 +89,31 @@ const Header = () => {
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
                         </div>
-                        <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>{role}</p>
+
+                        {
+                            admin
+                            &&
+                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: Admin</p>
+                        }
+
+                        {
+                            dMan
+                            &&
+                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: D. Man</p>
+                        }
+
+                        {
+                            user && (!admin && !dMan)
+                            &&
+                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: User</p>
+                        }
+
+                        {
+                            !token
+                            &&
+                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: Guest</p>
+                        }
+
                     </div>
 
                 </div>

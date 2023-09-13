@@ -24,7 +24,8 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
         fetch(`https://hungry-den-server.onrender.com/order/assignDMan/${email}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(dManInfo)
         })

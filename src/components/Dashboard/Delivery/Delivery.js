@@ -17,17 +17,21 @@ const Delivery = () => {
     const { data: allOrders, isLoading, refetch } = useQuery({
         queryKey: ['order'],
         queryFn: async () => {
-            const res = await fetch(`https://hungry-den-server.onrender.com/order`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/order`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = res.json();
             return data;
         }
     })
 
-    const assignedDeliveries = allOrders?.filter(order => order?.dManInfo?.email === email)
-
     if (isLoading) {
         return <Loading></Loading>
     }
+
+    const assignedDeliveries = allOrders?.filter(order => order?.dManInfo?.email === email)
 
     return (
         <section>

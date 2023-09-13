@@ -6,7 +6,10 @@ const DMan = ({ dMan, refetch }) => {
 
     const handleRemoveDMan = email => {
         fetch(`https://hungry-den-server.onrender.com/dman/${email}`, {
-            method: 'PUT'
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

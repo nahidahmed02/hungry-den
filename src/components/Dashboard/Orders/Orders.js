@@ -1,23 +1,34 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import OrdersRow from './OrdersRow';
 import Modal from './Modal';
 import DManModal from './DManModal';
+import { AuthContext } from '@/src/context/AuthProvider';
 
 const Orders = () => {
 
+    const { logout } = useContext(AuthContext);
     const [modal, setModal] = useState(null);
     const [dManModal, setDManModal] = useState(null);
 
     const { data: allOrderDetails, isLoading, refetch } = useQuery({
         queryKey: ['order'],
         queryFn: async () => {
-            const res = await fetch(`https://hungry-den-server.onrender.com/order`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/order`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            console.log(res.status);
+            if (res.status === 401 || res.status === 403) {
+                logout()
+            }
             const data = res.json();
             return data;
         }
     })
+    console.log(allOrderDetails);
 
     if (isLoading) {
         return <Loading></Loading>
@@ -34,7 +45,7 @@ const Orders = () => {
                     ?
                     <p className='font-bold text-center text-2xl italic text-red-500'>No order yet!</p>
                     :
-                    <div className="overflow-x-auto mx-3 lg:mx-24 mb-8 border rounded-t-lg border-black border-b-0">
+                    <div className="overflow-x-auto mx-3 lg:mx-20 mb-8 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
                                 <tr className='text-center text-white'>

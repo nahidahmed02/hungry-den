@@ -7,7 +7,9 @@ const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
     const handleDeleteItem = () => {
         fetch(`https://hungry-den-server.onrender.com/foods/${_id}`, {
             method: 'DELETE',
-
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

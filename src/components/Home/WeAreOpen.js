@@ -1,8 +1,18 @@
 import Image from 'next/image';
 import React from 'react';
-import open from '../../../public/images/we_are_open.jpg'
+import open from '../../../public/images/we_are_open.jpg';
 
 const WeAreOpen = () => {
+
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact');
+
+        if (contactSection) {
+            const yOffset = contactSection.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+            window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+    }
+
     return (
         <section>
 
@@ -34,7 +44,7 @@ const WeAreOpen = () => {
 
                     </div>
                     <div className='text-sm mt-8'>
-                        * Closure times may vary, particularly on holidays and special events. Please visit our website or contact us for the latest updates. We&rsquo;re excited to serve you!
+                        * Closure times may vary, particularly on holidays and special events. Please visit our website or <a onClick={scrollToContact} className='cursor-pointer text-blue-400 hover:text-blue-300'>contact us </a> for the latest updates. We&rsquo;re excited to serve you!
                     </div>
                 </div>
 

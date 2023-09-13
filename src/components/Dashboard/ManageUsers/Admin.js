@@ -6,7 +6,10 @@ const Admin = ({ admin, refetch }) => {
 
     const handleRemoveAdmin = email => {
         fetch(`https://hungry-den-server.onrender.com/admin/${email}`, {
-            method: 'PUT'
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

@@ -26,7 +26,7 @@ const useCart = () => {
     const deliveryCharge = '12';
 
     const includingDeliveryChrg = (parseFloat(sumOfAllPrice) + parseFloat(deliveryCharge)).toFixed(2);
-    console.log(includingDeliveryChrg);
+
     return {
         selectedFoods,
         setSelectedFoods,

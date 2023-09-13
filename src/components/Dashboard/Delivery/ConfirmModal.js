@@ -7,7 +7,8 @@ const ConfirmModal = ({ confirmModal, setConfirmModal, refetch }) => {
 
     const handleConfirmation = () => {
         fetch(`https://hungry-den-server.onrender.com/order/completed/${email}`, {
-            method: 'PUT'
+            method: 'PUT',
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
         })
             .then(res => res.json())
             .then(data => {

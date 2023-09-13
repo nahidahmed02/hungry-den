@@ -11,7 +11,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_Payment_Gateway_PK);
 
 const PayOnline = () => {
     const { selectedFoods, sumOfAllPrice, includingDeliveryChrg } = useCart();
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const email = user?.email;
 
     const { data: profile, isLoading } = useQuery({
@@ -23,7 +23,7 @@ const PayOnline = () => {
         }
     });
 
-    if (isLoading) {
+    if (loading || isLoading) {
         return <Loading></Loading>
     }
 

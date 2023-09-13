@@ -6,7 +6,10 @@ const User = ({ user, refetch }) => {
 
     const handleAdmin = email => {
         fetch(`https://hungry-den-server.onrender.com/users/admin/${email}`, {
-            method: 'PUT'
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {
@@ -19,7 +22,10 @@ const User = ({ user, refetch }) => {
 
     const handleDMan = email => {
         fetch(`https://hungry-den-server.onrender.com/users/dman/${email}`, {
-            method: 'PUT'
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

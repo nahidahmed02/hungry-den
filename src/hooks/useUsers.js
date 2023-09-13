@@ -4,7 +4,11 @@ const useUsers = () => {
     const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://hungry-den-server.onrender.com/users');
+            const res = await fetch('https://hungry-den-server.onrender.com/users', {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = res.json();
             return data;
         }

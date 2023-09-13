@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const useToken = email => {
+    const { user } = useContext(AuthContext)
     const [token, setToken] = useState('');
 
     useEffect(() => {
@@ -15,7 +17,7 @@ const useToken = email => {
                     }
                 })
         }
-    }, [email])
+    }, [email, user])
 
     return [token];
 };

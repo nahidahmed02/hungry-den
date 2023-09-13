@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { FaFacebookF } from 'react-icons/fa'
@@ -18,9 +19,15 @@ const Footer = () => {
                 <header className="text-lg font-semibold ml-2 mb-2.5">Join Us</header>
                 <div className="grid grid-flow-col gap-4">
 
-                    <FaFacebookF className='text-2xl md:text-3xl lg:text-3xl py-0.5' />
-                    <AiFillInstagram className='text-2xl md:text-3xl lg:text-3xl' />
-                    <AiOutlineTwitter className='text-2xl md:text-3xl lg:text-3xl' />
+                    <Link href='https://www.facebook.com'>
+                        <FaFacebookF className='text-2xl md:text-3xl lg:text-3xl py-0.5 hover:text-blue-500' />
+                    </Link>
+                    <Link href='https://www.instagram.com'>
+                        <AiFillInstagram className='text-2xl md:text-3xl lg:text-3xl hover:text-violet-300' />
+                    </Link>
+                    <Link href='https://twitter.com'>
+                        <AiOutlineTwitter className='text-2xl md:text-3xl lg:text-3xl hover:text-blue-500' />
+                    </Link>
 
                 </div>
             </nav>

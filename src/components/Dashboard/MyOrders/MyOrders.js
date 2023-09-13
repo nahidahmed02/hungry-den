@@ -6,20 +6,24 @@ import OrdersRow from './OrdersRow';
 import Modal from './Modal';
 
 const MyOrders = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const email = user?.email;
     const [modal, setModal] = useState(null);
 
     const { data: orderDetails, isLoading } = useQuery({
         queryKey: ['order'],
         queryFn: async () => {
-            const res = await fetch(`https://hungry-den-server.onrender.com/order/${email}`);
+            const res = await fetch(`https://hungry-den-server.onrender.com/order/${email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = res.json();
             return data;
         }
     })
 
-    if (isLoading) {
+    if (loading || isLoading) {
         return <Loading></Loading>
     }
 

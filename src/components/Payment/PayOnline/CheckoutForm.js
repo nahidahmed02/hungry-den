@@ -21,6 +21,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify({ includingDeliveryChrg })
         })
@@ -97,7 +98,8 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
         fetch('https://hungry-den-server.onrender.com/order', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(data)
         })

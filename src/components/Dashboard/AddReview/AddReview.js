@@ -17,7 +17,8 @@ const AddReview = () => {
         fetch("https://hungry-den-server.onrender.com/reviews", {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(data)
         })

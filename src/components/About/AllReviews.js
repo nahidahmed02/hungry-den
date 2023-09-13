@@ -2,15 +2,14 @@ import React, { useContext } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
 import { AuthContext } from '@/src/context/AuthProvider';
-import useUsers from '@/src/hooks/useUsers';
 import { toast } from 'react-hot-toast';
 import { RiDoubleQuotesL } from 'react-icons/ri';
 import { RiDoubleQuotesR } from 'react-icons/ri';
+import useAdmin from '@/src/hooks/useAdmin';
 
 const AllReviews = () => {
     const { user } = useContext(AuthContext);
-    const [users] = useUsers();
-    const role = users?.find(userFromDB => userFromDB.email === user?.email)?.role;
+    const [admin] = useAdmin(user);
 
     const { data: reviews, isLoading, refetch } = useQuery({
         queryKey: ['reviews'],
@@ -92,7 +91,7 @@ const AllReviews = () => {
                                     <RiDoubleQuotesR className='absolute bottom-1 right-1 text-yellow-400' />
 
                                     {
-                                        role === 'Admin'
+                                        admin
                                         &&
                                         <span
                                             onClick={() => handleDeleteReview(review?._id)}

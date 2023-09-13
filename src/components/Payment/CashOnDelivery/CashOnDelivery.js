@@ -52,13 +52,13 @@ const CashOnDelivery = () => {
         fetch('https://hungry-den-server.onrender.com/order', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {
-                setModal(false)
                 if (data.acknowledged) {
                     toast.success('Order Taken!');
                     localStorage?.clear();

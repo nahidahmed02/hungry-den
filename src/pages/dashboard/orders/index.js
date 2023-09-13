@@ -1,3 +1,4 @@
+import AdminRoute from '@/src/PrivateRoute/AdminRoute'
 import PrivateRoute from '@/src/PrivateRoute/PrivateRoute'
 import DashboardLayout from '@/src/components/Dashboard/DashboardLayout'
 import Orders from '@/src/components/Dashboard/Orders/Orders'
@@ -7,11 +8,13 @@ import React from 'react'
 const orders = () => {
     return (
         <PrivateRoute>
-            <Layout>
-                <DashboardLayout>
-                    <Orders></Orders>
-                </DashboardLayout>
-            </Layout>
+            <AdminRoute>
+                <Layout>
+                    <DashboardLayout>
+                        <Orders></Orders>
+                    </DashboardLayout>
+                </Layout>
+            </AdminRoute>
         </PrivateRoute>
     )
 }

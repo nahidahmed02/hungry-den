@@ -1,8 +1,10 @@
 import useCart from '@/src/hooks/useCart';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const LogoutModal = ({ logout, setLogoutModal }) => {
     const { selectedFoods } = useCart();
+    const router = useRouter();
 
     const handleLogOut = () => {
         logout()
@@ -10,6 +12,7 @@ const LogoutModal = ({ logout, setLogoutModal }) => {
                 console.log(res);
                 localStorage?.clear();
                 setLogoutModal(false);
+                // router.push('/')
             })
             .catch(error => console.log(error))
     }

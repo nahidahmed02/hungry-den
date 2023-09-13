@@ -1,16 +1,23 @@
-import Link from 'next/link'
-import React from 'react'
-import { CgProfile } from 'react-icons/cg'
-import { VscNotebook } from 'react-icons/vsc'
-import { BiAddToQueue } from 'react-icons/bi'
-import { MdDelete } from 'react-icons/md'
-import { FaUsersCog } from 'react-icons/fa'
-import { GoListOrdered } from 'react-icons/go'
-import { MdRateReview } from 'react-icons/md'
-import { MdDeliveryDining } from 'react-icons/md'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import React, { useContext } from 'react';
+import { CgProfile } from 'react-icons/cg';
+import { VscNotebook } from 'react-icons/vsc';
+import { BiAddToQueue } from 'react-icons/bi';
+import { MdDelete } from 'react-icons/md';
+import { FaUsersCog } from 'react-icons/fa';
+import { GoListOrdered } from 'react-icons/go';
+import { MdRateReview } from 'react-icons/md';
+import { MdDeliveryDining } from 'react-icons/md';
+import { useRouter } from 'next/router';
+import useAdmin from '@/src/hooks/useAdmin';
+import { AuthContext } from '@/src/context/AuthProvider';
+import useDMan from '@/src/hooks/useDMan';
 
 const DashboardLayout = ({ children }) => {
+
+    const { user } = useContext(AuthContext);
+    const [admin] = useAdmin(user);
+    const [dMan] = useDMan(user);
     const router = useRouter();
 
     return (
@@ -36,33 +43,12 @@ const DashboardLayout = ({ children }) => {
 
                     <ul className="menu p-4 overflow-y-auto w-52 bg-transparent text-base-content">
 
+                        {/* ======================================= Common Route ======================================= */}
+
+
                         <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard' && '-mr-2.5 ml-2.5 text-white'}`}>
                             <Link href='/dashboard' className={`${router.pathname === '/dashboard' && 'bg-orange-500'} hover:bg-orange-500`}>
                                 <CgProfile className='text-xl' /> Profile
-                            </Link>
-                        </li>
-
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/orders' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/orders' className={`${router.pathname === '/dashboard/orders' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <VscNotebook /> Orders
-                            </Link>
-                        </li>
-
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/addItem' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/addItem' className={`${router.pathname === '/dashboard/addItem' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <BiAddToQueue /> Add Item
-                            </Link>
-                        </li>
-
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/deleteItem' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/deleteItem' className={`${router.pathname === '/dashboard/deleteItem' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <MdDelete /> Delete Item
-                            </Link>
-                        </li>
-
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/manageUsers' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/manageUsers' className={`${router.pathname === '/dashboard/manageUsers' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <FaUsersCog /> Manage Users
                             </Link>
                         </li>
 
@@ -72,17 +58,63 @@ const DashboardLayout = ({ children }) => {
                             </Link>
                         </li>
 
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/addReview' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/addReview' className={`${router.pathname === '/dashboard/addReview' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <MdRateReview /> Add Review
-                            </Link>
-                        </li>
+                        {/* ========================================= User Routes ======================================== */}
 
-                        <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/delivery' && '-mr-2.5 ml-2.5 text-white'}`}>
-                            <Link href='/dashboard/delivery' className={`${router.pathname === '/dashboard/delivery' && 'bg-orange-500'} hover:bg-orange-500`}>
-                                <MdDeliveryDining /> Delivery
-                            </Link>
-                        </li>
+                        {
+                            (!admin && !dMan)
+                            &&
+                            <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/addReview' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                <Link href='/dashboard/addReview' className={`${router.pathname === '/dashboard/addReview' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                    <MdRateReview /> Add Review
+                                </Link>
+                            </li>
+                        }
+
+                        {/* ========================================= Admin Routes ======================================== */}
+
+                        {
+                            admin
+                            &&
+                            <>
+                                <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/orders' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                    <Link href='/dashboard/orders' className={`${router.pathname === '/dashboard/orders' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                        <VscNotebook /> Orders
+                                    </Link>
+                                </li>
+
+
+                                <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/addItem' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                    <Link href='/dashboard/addItem' className={`${router.pathname === '/dashboard/addItem' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                        <BiAddToQueue /> Add Item
+                                    </Link>
+                                </li>
+
+                                <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/deleteItem' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                    <Link href='/dashboard/deleteItem' className={`${router.pathname === '/dashboard/deleteItem' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                        <MdDelete /> Delete Item
+                                    </Link>
+                                </li>
+
+                                <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/manageUsers' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                    <Link href='/dashboard/manageUsers' className={`${router.pathname === '/dashboard/manageUsers' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                        <FaUsersCog /> Manage Users
+                                    </Link>
+                                </li>
+                            </>
+                        }
+
+                        {/* ===================================== Deliveryman Routes ===================================== */}
+
+                        {
+                            dMan
+                            &&
+                            <li className={`text-gray-200 hover:text-white font-bold bg-black rounded-md mb-2 shadow shadow-white ${router.pathname === '/dashboard/delivery' && '-mr-2.5 ml-2.5 text-white'}`}>
+                                <Link href='/dashboard/delivery' className={`${router.pathname === '/dashboard/delivery' && 'bg-orange-500'} hover:bg-orange-500`}>
+                                    <MdDeliveryDining /> Delivery
+                                </Link>
+                            </li>
+                        }
+
                     </ul>
 
                 </div>
