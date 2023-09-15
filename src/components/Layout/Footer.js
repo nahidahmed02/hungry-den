@@ -5,12 +5,12 @@ import { FaFacebookF } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <footer className='flex justify-around lg:justify-evenly mt-16 mb-10 lg:mb-0 py-8 lg:py-12 text-white bg-gray-900'>
+        <footer className='flex justify-around lg:justify-evenly mt-16 mb-10 lg:mb-0 py-8 lg:py-12 text-gray-200 border-t border-t-yellow-500'>
 
             <div>
-                <h2 className='logo-font text-2xl md:text-3xl lg:text-4xl font-bold'>Hungry Den</h2>
+                <h2 className='logo-font text-2xl md:text-3xl lg:text-4xl font-bold text-orange-500'>Hungry Den</h2>
 
-                <h2 className='text-sm italic py-2'>&copy; <span className='font-semibold text-orange-'>Hungry Den</span> 2023</h2>
+                <h2 className='text-sm italic py-2'>&copy; <span className='font-semibold'>Hungry Den</span> 2023</h2>
 
                 <h2 className='text-sm'>All Rights Reserved</h2>
             </div>

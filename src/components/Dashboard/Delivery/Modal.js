@@ -10,7 +10,7 @@ const Modal = ({ modal, setModal }) => {
             <input type="checkbox" id="delivery_details" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box bg-black border border-yellow-300 shadow shadow-white">
+                <div className="modal-box bg-black border border-yellow-500 shadow shadow-gray-200">
 
                     <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Order&rsquo;s Details</h2>
 
@@ -54,7 +54,7 @@ const Modal = ({ modal, setModal }) => {
                     <div className='text-center mt-1.5'>
                         <button
                             onClick={() => setModal(false)}
-                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-white'
+                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
                         >Close</button>
                     </div>
                 </div>

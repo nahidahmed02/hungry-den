@@ -64,9 +64,9 @@ const Header = () => {
     return (
         <header>
 
-            <div className="fixNav">
+            <div className="fixNav bg-black">
 
-                <div className='flex mb-0 py-1.5 justify-between bg-black border-b border-orange-500'>
+                <div className='flex mb-0 py-1.5 justify-between border-b border-yellow-500'>
                     <div className='my-auto'>
                         <Link className="logo-font text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-orange-500" href='/'>Hungry <br className='md:hidden lg:hidden' /> <span className='text-orange-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span></Link>
                     </div>
@@ -78,14 +78,14 @@ const Header = () => {
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-orange-300 border-yellow-400 shadow shadow-white w-44 md:w-64 lg:w-96 ml-6 md:ml-10 lg:ml-0"
+                                className="input bg-transparent text-yellow-500 border-yellow-500 shadow shadow-gray-200 w-44 md:w-64 lg:w-96 ml-6 md:ml-10 lg:ml-0"
                             />
 
                         </div>
                     }
 
-                    <div className='flex flex-col text-center px-6 md:mr-10 lg:mr-7 my-auto'>
-                        <div className='flex text-yellow-400'>
+                    <div className='flex flex-col text-center px-6 md:mr-10 lg:mr-7 my-auto text-yellow-500'>
+                        <div className='flex'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
                         </div>
@@ -93,25 +93,25 @@ const Header = () => {
                         {
                             admin
                             &&
-                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: Admin</p>
+                            <p className={`font first-letter:uppercase text-xs font-bold`}>Admin</p>
                         }
 
                         {
                             dMan
                             &&
-                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: D. Man</p>
+                            <p className={`font first-letter:uppercase text-xs font-bold`}>D. Man</p>
                         }
 
                         {
                             user && (!admin && !dMan)
                             &&
-                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: User</p>
+                            <p className={`font first-letter:uppercase text-xs font-bold`}>User</p>
                         }
 
                         {
                             !token
                             &&
-                            <p className={`font first-letter:uppercase text-xs font-bold  text-yellow-400`}>Role: Guest</p>
+                            <p className={`font first-letter:uppercase text-xs font-bold`}>Guest</p>
                         }
 
                     </div>
@@ -120,7 +120,7 @@ const Header = () => {
 
                 {/* =================================== LARGE DEVICE MENU =================================== */}
 
-                <div className="hidden lg:flex justify-center bg-gray-700 border-b border-orange-500">
+                <div className="hidden lg:flex justify-center border-b border-yellow-500">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
@@ -129,7 +129,7 @@ const Header = () => {
 
                 {/* =================================== SMALL DEVICE MENU =================================== */}
 
-                <div className="bottom-0 fixed flex lg:hidden w-full bg-gray-700 border-t border-orange-500">
+                <div className="bottom-0 fixed flex lg:hidden w-full bg-black border-t border-yellow-500">
                     <ul className="flex mx-auto py-1.5 ">
                         {menuItems}
                     </ul>

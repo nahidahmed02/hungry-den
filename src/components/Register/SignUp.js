@@ -104,8 +104,8 @@ const SignUp = () => {
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>
-                    <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-12 md:mx-24 lg:mx-10'></h2>
-                    <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-4 mt-14 mb-10 text-gray-200 bg-black'>Create Account</h2>
+                    <h2 className='border-b-2 border-b-orange-500 mt-8 -mb-20 mx-12 md:mx-24 lg:mx-10'></h2>
+                    <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-4 mt-14 mb-10 text-orange-500 bg-black'>Create Account</h2>
 
                     <form onSubmit={handleSubmit(handleSignUp)} className='flex flex-col w-96 mx-auto mb-4'>
 
@@ -113,44 +113,44 @@ const SignUp = () => {
                             {...register("name", { required: "Name is required" })}
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-3"
                             required
                         />
-                        {errors.name && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
+                        {errors.name && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
 
                         <input
                             {...register("email", { required: "Email is required" })}
                             type="email"
                             placeholder="Email"
-                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-3"
                             required
                         />
-                        {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
+                        {errors.email && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
 
                         <input
                             {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered bg-transparent shadow shadow-white text-orange-300 border-yellow-400 w-full max-w-xs mx-auto mb-3"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-3"
                             required
                         />
                         <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-11 ml-72 mb-7 text-xs text-gray-300 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
 
-                        {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
+                        {errors.password && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                         <button
                             type="submit"
-                            className="bg-orange-500 text-white shadow shadow-white hover:rounded-2xl font-bold w-full max-w-xs mx-auto py-2 rounded-md">
+                            className="bg-orange-500 text-gray-200 shadow shadow-gray-200 hover:rounded-2xl font-semibold w-full max-w-xs mx-auto py-2 rounded-md">
 
                             Sign Up
                         </button>
 
-                        {signUpError && <p className='text-red-500 ml-10 my-1 font-semibold'>{signUpError}</p>}
+                        {signUpError && <p className='text-yellow-500 ml-10 my-1 font-semibold'>{signUpError}</p>}
 
                     </form>
 
-                    <p className='text-center text-white text-sm mb-4'>Already have an account?
-                        <span className='ml-2 text-blue-400 hover:text-blue-300 underline font-semibold'>
+                    <p className='text-center text-gray-200 text-sm mb-4'>Already have an account?
+                        <span className='ml-2 text-yellow-500 hover:text-yellow-400 font-semibold'>
                             <Link href='/login' className='italic'>Login</Link>
                         </span>
                     </p>
@@ -162,10 +162,10 @@ const SignUp = () => {
                     <div className='text-center mt-4'>
                         <button
                             type="submit"
-                            className="btn border border-yellow-400 hover:border-green-600 hover:text-green-600 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-500 hover:border-green-600 hover:text-green-600 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-gray-200 font-semibold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleGoogleSignUp()}
                         >
-                            <FcGoogle className='text-xl mr-5' />
+                            <FcGoogle className='text-xl mr-6' />
                             Continue With Google
                         </button>
                     </div>
@@ -173,7 +173,7 @@ const SignUp = () => {
                     <div className='text-center'>
                         <button
                             type="submit"
-                            className="btn border border-yellow-400 hover:border-blue-400 hover:text-blue-400 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-500 hover:border-blue-400 hover:text-blue-400 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-gray-200 font-semibold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleFacebookSignUp()}
                         >
                             <BsFacebook className='text-xl mr-5 text-blue-500' />

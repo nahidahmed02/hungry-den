@@ -122,7 +122,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
     }
 
     return (
-        <form onSubmit={handleSubmit} className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-yellow-300 shadow shadow-white'>
+        <form onSubmit={handleSubmit} className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-yellow-500 shadow shadow-gray-200'>
 
             <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Order Summary</h2>
 
@@ -166,7 +166,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
                             placeholder="Phone"
                             onChange={event => setPhone(event.target.value)}
                             defaultValue={phone}
-                            className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent h-7"
+                            className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent h-7"
                             required
                         />
                     </div>
@@ -180,7 +180,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
                             placeholder="Address"
                             onChange={event => setAddress(event.target.value)}
                             defaultValue={address}
-                            className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent ml-2 h-7"
+                            className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent ml-2 h-7"
                             required
                         />
                     </div>
@@ -192,7 +192,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
             </div>
 
             <CardElement
-                className='py-1 px-1 rounded-lg border border-yellow-400 shadow shadow-white'
+                className='py-1 px-1 rounded-lg border border-yellow-500 shadow shadow-gray-200'
                 options={{
                     style: {
                         base: {
@@ -211,10 +211,10 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
             <button
                 type="submit"
                 disabled={!stripe || !clientSecret || processing}
-                className='btn btn-sm mt-5 px-5 hover:px-6 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:text-gray-400 shadow shadow-white'
+                className='btn btn-sm mt-5 px-5 hover:px-6 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:text-gray-400 shadow shadow-gray-200'
             >Pay & Place Order</button>
 
-            {cardError && <p className='mt-4 text-red-500'>{cardError}</p>}
+            {cardError && <p className='mt-4 text-yellow-500'>{cardError}</p>}
 
         </form>
     );

@@ -63,32 +63,32 @@ const AllReviews = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-gray-200 mt-16 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Customer&rsquo;s Say</h2>
+            <h2 className='border-b-2 border-b-orange-500 mt-16 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Customer&rsquo;s Say</h2>
 
             <section className='h-96 lg:h-72 overflow-y-auto mx-5 lg:mx-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3 lg:gap-5'>
                 {
                     reviews?.length === 0
                         ?
-                        <p className='text-red-500 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
+                        <p className='text-gray-200 italic text-center text-2xl font-bold mt-12'>No Review Yet</p>
                         :
                         reviews?.map(review =>
                             <div key={review._id}>
 
-                                <div className='relative rounded-md py-4 text-center text-gray-200 border border-yellow-300 shadow shadow-white'>
-                                    <RiDoubleQuotesL className='absolute top-1 left-1 text-yellow-400' />
+                                <div className='relative rounded-md py-4 text-center text-gray-200 border border-yellow-500 shadow shadow-gray-200'>
+                                    <RiDoubleQuotesL className='absolute top-1 left-1 text-yellow-500' />
 
                                     <p className='font-semibold text-sm'>{review.name}</p>
                                     <p className='italic text-xs mb-2'>{review.email}</p>
                                     <p className='italic font-semibold '> {review.feedback}</p>
                                     <p className=' mb-1.5'>
-                                        <span className={`${review.ratings !== 'None' && 'text-orange-300'} `}>
+                                        <span className={`${review.ratings !== 'None' && 'text-yellow-500'} `}>
                                             {ratingStar(review.ratings)}
                                         </span>
                                     </p>
 
 
-                                    <RiDoubleQuotesR className='absolute bottom-1 right-1 text-yellow-400' />
+                                    <RiDoubleQuotesR className='absolute bottom-1 right-1 text-yellow-500' />
 
                                     {
                                         admin

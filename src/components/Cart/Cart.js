@@ -23,18 +23,18 @@ const Cart = () => {
     return (
         <section className='pt-24 min-h-screen'>
 
-            <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Cart</h2>
+            <h2 className='border-b-2 border-b-orange-500 mt-8 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Cart</h2>
 
             {selectedFoods?.length === 0
                 ?
-                <p className='font-bold text-center text-2xl italic text-red-500'>No Items Selected</p>
+                <p className='font-bold text-center text-2xl italic text-gray-200'>No Items Selected</p>
                 :
                 <>
                     <div className="overflow-x-auto mx-5 lg:mx-24 border rounded-t-lg border-black border-b-0">
                         <table className="table w-full">
                             <thead>
-                                <tr className='text-center text-white'>
+                                <tr className='text-center text-gray-200'>
                                     <td className='bg-orange-500 '>SL No.</td>
                                     <th className='bg-orange-500'>Image</th>
                                     <th className='bg-orange-500'>Category</th>
@@ -72,7 +72,7 @@ const Cart = () => {
 
                     <div className='mt-6 mb-10 text-center'>
                         <p className='mb-3 text-sm lg:text-md font-bold text-gray-200'>Total : ${sumOfAllPrice} + $12 (Delivery Charge) = ${includingDeliveryChrg}</p>
-                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-white shadow shadow-white rounded-md py-1 px-4 hover:scale-x-110 font-bold text-sm'>Proceed To Payment</button>
+                        <button onClick={() => router.push('/paymentOpt')} className='bg-orange-500 text-gray-200 shadow shadow-gray-200 rounded-md py-1 px-4 hover:scale-x-110 font-bold text-sm'>Proceed To Payment</button>
                     </div>
                 </>
             }

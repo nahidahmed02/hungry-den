@@ -93,8 +93,8 @@ const Login = () => {
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>
-                    <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-16 md:mx-24 lg:mx-16'></h2>
-                    <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Login</h2>
+                    <h2 className='border-b-2 border-b-orange-500 mt-8 -mb-20 mx-16 md:mx-24 lg:mx-16'></h2>
+                    <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Login</h2>
 
                     <form onSubmit={handleSubmit(handleLogin)} className='flex flex-col w-96 mx-auto mb-4'>
 
@@ -103,36 +103,36 @@ const Login = () => {
                             type="email"
                             placeholder="Email"
                             onChange={event => setEmail(event.target.value)}
-                            className="input input-bordered text-orange-300 border-yellow-400 shadow shadow-white bg-transparent w-full max-w-xs mx-auto mb-3"
+                            className="input input-bordered text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent w-full max-w-xs mx-auto mb-3"
                             required
                         />
-                        {errors.email && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
+                        {errors.email && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.email?.message}</p>}
 
                         <input
                             {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be atleast 6 digits" } })}
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered text-orange-300 border-yellow-400 shadow shadow-white bg-transparent w-full max-w-xs mx-auto mb-3"
+                            className="input input-bordered text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent w-full max-w-xs mx-auto mb-3"
                             required
                         />
-                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-11 ml-72 mb-6 text-xs text-gray-300 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
-                        <button type='button' onClick={handleForgotPassword} className='w-fit ml-64 -mt-1 mb-2 text-xs text-white'>Forgot Password?</button>
+                        <button type='button' onClick={togglePasswordView} className='w-fit pl-5 -mt-11 ml-72 mb-6 text-xs text-gray-200 bg-black'>{showPassword ? 'Hide' : 'Show'}</button>
+                        <button type='button' onClick={handleForgotPassword} className='w-fit ml-64 -mt-1 mb-2 text-xs text-gray-200'>Forgot Password?</button>
 
-                        {errors.password && <p className='text-red-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
+                        {errors.password && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.password?.message}</p>}
 
                         <button
                             type="submit"
-                            className="bg-orange-500 text-white shadow shadow-white font-bold w-full max-w-xs mx-auto py-2 rounded-md hover:rounded-2xl">
+                            className="bg-orange-500 text-gray-200 shadow shadow-gray-200 font-semibold w-full max-w-xs mx-auto py-2 rounded-md hover:rounded-2xl">
 
                             Login
                         </button>
 
-                        {loginError && <p className='text-red-500 ml-10 pr-5 my-1 font-semibold'>{loginError}</p>}
+                        {loginError && <p className='text-yellow-500 ml-10 pr-5 my-1 font-semibold'>{loginError}</p>}
 
                     </form>
 
-                    <p className='text-center text-sm mb-4 text-white'>Don&#39;t have an account?
-                        <span className='ml-2 text-blue-400 hover:text-blue-300 underline font-semibold'>
+                    <p className='text-center text-sm mb-4 text-gray-200'>Don&#39;t have an account?
+                        <span className='ml-2 text-yellow-500 hover:text-yellow-400 font-semibold'>
                             <Link href='/signup' className='italic'>Create an account</Link>
                         </span>
                     </p>
@@ -144,10 +144,10 @@ const Login = () => {
                     <div className='text-center mt-4'>
                         <button
                             type="submit"
-                            className="btn border border-yellow-400 hover:border-green-600 hover:text-green-600 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-500 hover:border-green-600 hover:text-green-600 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-gray-200 font-semibold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleGoogleLogIn()}
                         >
-                            <FcGoogle className='text-xl mr-5' />
+                            <FcGoogle className='text-xl mr-6' />
                             Continue With Google
                         </button>
                     </div>
@@ -155,7 +155,7 @@ const Login = () => {
                     <div className='text-center'>
                         <button
                             type="submit"
-                            className="btn border border-yellow-400 hover:border-blue-400 hover:text-blue-400 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-white font-bold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
+                            className="btn border border-yellow-500 hover:border-blue-400 hover:text-blue-400 text-orange-500 bg-transparent hover:bg-transparent shadow shadow-gray-200 font-semibold w-full max-w-xs mb-3 rounded-md hover:rounded-2xl"
                             onClick={() => handleFacebookLogin()}
                         >
                             <BsFacebook className='text-xl mr-5 text-blue-500' />

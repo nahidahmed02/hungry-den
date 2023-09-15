@@ -14,13 +14,13 @@ const Pagination = () => {
     return (
         <section className="flex justify-center mb-8">
             <nav>
-                <ul className="pagination ">
+                <ul className="pagination">
                     {pageNumbers.map(number => (
                         <li
                             key={number}
-                            className={`page-item ${currentPage === number ? 'active' : ''}`}
+                            className={`page-item ${currentPage === number ? 'text-orange-500 text-xl' : 'text-gray-200'}`}
                         >
-                            <button onClick={() => handlePageChange(number)} className="page-link shadow shadow-white font-semibold">
+                            <button onClick={() => handlePageChange(number)} className="page-link hover:text-orange-500 shadow shadow-gray-200 font-semibold">
                                 {number}
                             </button>
                         </li>

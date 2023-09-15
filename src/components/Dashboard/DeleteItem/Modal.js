@@ -26,12 +26,12 @@ const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
             <input type="checkbox" id="delete_item_modal" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box py-12 bg-black border border-yellow-300 shadow shadow-white">
+                <div className="modal-box py-12 bg-black border border-yellow-500 shadow shadow-gray-200">
                     <h2 className='text-orange-500 font-bold text-xl text-center mb-1'>Are You Sure?</h2>
 
                     <div className='text-center'>
-                        <button onClick={() => setDeleteItemModal(false)} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-green-600 hover:bg-green-700 shadow shadow-white'>No</button>
-                        <button onClick={() => handleDeleteItem()} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-white'>Yes</button>
+                        <button onClick={() => setDeleteItemModal(false)} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-green-600 hover:bg-green-700 shadow shadow-gray-200'>No</button>
+                        <button onClick={() => handleDeleteItem()} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-gray-200'>Yes</button>
                     </div>
                 </div>
             </div>

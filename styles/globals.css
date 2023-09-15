@@ -52,23 +52,14 @@ body {
 }
 
 .page-link {
-    border: 1px solid yellow;
+    border: 1px solid rgb(234 179 8);
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    color: #fff;
 }
 
-.active {
-    background-color: #007bff;
-}
-
-.page-link:hover {
-    background-color: #007bff;
-    border-color: #007bff;
-}
 
 /* ----------------- contact us ------------------ */
 

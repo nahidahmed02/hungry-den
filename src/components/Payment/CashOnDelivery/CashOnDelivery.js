@@ -72,11 +72,11 @@ const CashOnDelivery = () => {
     return (
         <section className='min-h-screen pt-24 text-gray-200'>
 
-            <h2 className='border-b-2 border-b-gray-200 mt-8 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-gray-200 bg-black'>Cash On Delivery</h2>
+            <h2 className='border-b-2 border-b-orange-500 mt-8 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Cash On Delivery</h2>
 
 
-            <div className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-yellow-300 shadow shadow-white'>
+            <div className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-yellow-500 shadow shadow-gray-200'>
 
                 <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Order Summary</h2>
 
@@ -120,7 +120,7 @@ const CashOnDelivery = () => {
                                 type="text"
                                 placeholder="Phone"
                                 defaultValue={profile[0]?.phone ? profile[0]?.phone : ''}
-                                className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent h-7"
+                                className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent h-7"
                                 required
                             />
                         </div>
@@ -134,7 +134,7 @@ const CashOnDelivery = () => {
                                 type="text"
                                 placeholder="Address"
                                 defaultValue={profile[0]?.address ? profile[0]?.address : ''}
-                                className="input input-bordered w-full text-orange-300 border-yellow-400 shadow shadow-white bg-transparent ml-2 h-7"
+                                className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent ml-2 h-7"
                                 required
                             />
                         </div>
@@ -146,7 +146,7 @@ const CashOnDelivery = () => {
                     {/* --------------------- BUTTON --------------------- */}
 
                     <div className='text-center'>
-                        <button type='submit' className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-orange-500 hover:bg-orange-600 shadow shadow-white'>Place Order</button>
+                        <button type='submit' className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'>Place Order</button>
                     </div>
 
                 </form>

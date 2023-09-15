@@ -59,7 +59,7 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card rounded-lg border border-yellow-400 hover:border-orange-500 shadow shadow-white bg-gray-800 hover:bg-gray-900 text-gray-200 hover:text-white">
+            <div className="card rounded-lg border border-yellow-500 hover:border-orange-500 shadow shadow-gray-200 bg-transparent text-gray-200">
 
                 <figure>
                     <Image
@@ -102,7 +102,7 @@ const Food = ({ food }) => {
                         (!isAddedToCart)
                         &&
                         <button
-                            className="rounded-lg px-2 text-white font-bold btn-xs bg-green-600 hover:bg-green-700 mx-auto"
+                            className="rounded-lg px-2 text-gray-200 font-semibold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
                             onClick={handleAddToCart}
                         >Add to Cart</button>
                     }
@@ -113,12 +113,12 @@ const Food = ({ food }) => {
                         &&
                         <>
                             <button
-                                className="rounded-lg px-2 text-white font-bold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
+                                className="rounded-lg px-2 text-gray-200 font-semibold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
                                 onClick={() => router.push('/cart')}
                             >Go to Cart</button>
 
                             <button
-                                className="rounded-lg px-2 text-white font-bold btn-xs bg-red-600 hover:bg-red-700 mx-auto"
+                                className="rounded-lg px-2.5 text-gray-200 hover:text-orange-600 font-semibold btn-xs border border-orange-500 hover:border-orange-600 mx-auto"
                                 onClick={handleRemoveFromCart}
                             >Remove</button>
                         </>

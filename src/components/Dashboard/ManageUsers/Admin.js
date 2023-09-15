@@ -21,7 +21,7 @@ const Admin = ({ admin, refetch }) => {
             })
     }
     return (
-        <div className="card w-auto lg:w-44 shadow shadow-white border border-yellow-400 bg-transparent text-gray-200">
+        <div className="card w-auto lg:w-44 shadow shadow-gray-200 border border-yellow-500 bg-transparent text-gray-200">
 
             <div className="mt-2 mb-3 text-center">
                 <p className='font-bold text-xs '>{name}</p>
@@ -30,7 +30,7 @@ const Admin = ({ admin, refetch }) => {
                 <div className='mt-1'>
                     <span
                         onClick={() => handleRemoveAdmin(email)}
-                        className="cursor-pointer py-0.5 hover:px-4 bg-red-500 hover:bg-red-600 btn-xs font-semibold text-white shadow shadow-white rounded-lg"
+                        className="cursor-pointer py-0.5 hover:px-4 bg-red-500 hover:bg-red-600 btn-xs font-semibold text-gray-200 shadow shadow-gray-200 rounded-lg"
                     >
                         Remove
                     </span>

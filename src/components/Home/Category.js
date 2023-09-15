@@ -18,12 +18,12 @@ const Category = () => {
                 <ul className="menu menu-horizontal px-1 ml-3 md:mx-auto lg:mx-auto">
 
                     <li
-                        className={`cursor-pointer font-semibold shadow shadow-white border border-yellow-400 hover:border-orange-500 hover:bg-orange-500 hover:text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
+                        className={`cursor-pointer font-semibold shadow shadow-gray-200 border border-yellow-500 hover:border-orange-500 hover:bg-orange-500 text-gray-200 text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                         ${selectedCategory === ''
                                 ?
-                                'bg-orange-500 text-white'
+                                'bg-orange-500'
                                 :
-                                'bg-transparent text-gray-200'
+                                'bg-transparent'
                             }`}
 
                         onClick={() => handleCategoryClick('All')}>
@@ -32,12 +32,12 @@ const Category = () => {
 
                     {
                         category?.map(ctgry => <li
-                            className={`cursor-pointer font-semibold shadow shadow-white border border-yellow-400 hover:border-orange-500 hover:bg-orange-500 hover:text-white text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
+                            className={`cursor-pointer font-semibold shadow shadow-gray-200 border border-yellow-500 hover:border-orange-500 hover:bg-orange-500 text-gray-200 text-sm px-2 py-0.5 lg:py-1 mx-1 mb-2 lg:mb-0 rounded 
                     ${selectedCategory === ctgry
                                     ?
-                                    'bg-orange-500 text-white'
+                                    'bg-orange-500'
                                     :
-                                    'bg-transparent text-gray-200'
+                                    'bg-transparent'
                                 }`}
 
                             onClick={() => handleCategoryClick(ctgry)}
