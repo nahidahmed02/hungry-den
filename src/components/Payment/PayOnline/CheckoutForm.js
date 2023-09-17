@@ -68,7 +68,6 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
                 },
             },
         );
-        console.log(paymentIntent);
 
         const transactionId = paymentIntent?.id;
         const today = new Date();
@@ -116,7 +115,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
 
         if (paymentIntent?.status === 'succeeded') {
             toast.success('Payment Successful');
-            router.push('/dashboard/myOrders');
+            router.push('/');
             localStorage?.clear();
         }
     }

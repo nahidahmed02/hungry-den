@@ -62,7 +62,7 @@ const CashOnDelivery = () => {
                 if (data.acknowledged) {
                     toast.success('Order Taken!');
                     localStorage?.clear();
-                    router.push('/dashboard/myOrders');
+                    router.push('/');
                 } else {
                     toast.error('Order Placement Denied!')
                 }

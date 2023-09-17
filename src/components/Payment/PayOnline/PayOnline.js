@@ -1,5 +1,5 @@
 import { loadStripe } from '@stripe/stripe-js';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import CheckoutForm from './CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import useCart from '@/src/hooks/useCart';
@@ -11,7 +11,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_Payment_Gateway_PK);
 
 const PayOnline = () => {
     const { selectedFoods, sumOfAllPrice, includingDeliveryChrg } = useCart();
-    const { user, loading } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const email = user?.email;
 
     const { data: profile, isLoading } = useQuery({
@@ -23,7 +23,7 @@ const PayOnline = () => {
         }
     });
 
-    if (loading || isLoading) {
+    if (isLoading) {
         return <Loading></Loading>
     }
 

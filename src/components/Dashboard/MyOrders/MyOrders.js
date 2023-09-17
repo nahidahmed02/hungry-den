@@ -6,7 +6,7 @@ import OrdersRow from './OrdersRow';
 import Modal from './Modal';
 
 const MyOrders = () => {
-    const { user, loading } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const email = user?.email;
     const [modal, setModal] = useState(null);
 
@@ -24,7 +24,7 @@ const MyOrders = () => {
         }
     })
 
-    if (loading || isLoading) {
+    if (isLoading) {
         return <Loading></Loading>
     }
 
