@@ -10,7 +10,7 @@ const DeliveryRow = ({ info, setModal, setConfirmModal }) => {
                 <span
                     htmlFor="delivery_details"
                     onClick={() => setModal(info)}
-                    className='text-blue-400 hover:text-blue-300 underline italic cursor-pointer'
+                    className='underline italic cursor-pointer'
                 >View Details</span>
             </td>
 
@@ -19,9 +19,9 @@ const DeliveryRow = ({ info, setModal, setConfirmModal }) => {
             <td
                 className={`
                     border border-b-gray-200 bg-transparent 
-                    ${deliveryStatus === 'Pending' && 'text-red-500'} 
-                    ${deliveryStatus === 'On Shipment' && 'text-yellow-400'} 
-                    ${deliveryStatus === 'Completed' && 'text-green-500'}`}
+                    ${deliveryStatus === 'Pending' && 'text-yellow-500'} 
+                    ${deliveryStatus === 'On Shipment' && 'text-orange-500'} 
+                    ${deliveryStatus === 'Completed' && 'italic'}`}
             >
                 {deliveryStatus}
             </td>

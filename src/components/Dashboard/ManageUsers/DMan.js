@@ -31,7 +31,7 @@ const DMan = ({ dMan, refetch }) => {
                 <div className='mt-1'>
                     <span
                         onClick={() => handleRemoveDMan(email)}
-                        className="cursor-pointer text-xs py-0.5 hover:px-4 bg-red-500 hover:bg-red-600 btn-xs font-semibold text-gray-200 shadow shadow-gray-200 rounded-lg"
+                        className="cursor-pointer text-xs py-0.5 hover:px-4 bg-orange-500 hover:bg-orange-600 btn-xs font-semibold text-gray-200 shadow shadow-gray-200 rounded-lg"
                     >
                         Remove
                     </span>

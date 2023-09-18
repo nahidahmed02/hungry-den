@@ -32,8 +32,8 @@ const LogoutModal = ({ logout, setLogoutModal }) => {
                     }
 
                     <div className='text-center'>
-                        <button onClick={() => setLogoutModal(false)} className='btn btn-xs px-3 hover:px-4 border-none mx-2 mt-2 bg-green-600 hover:bg-green-700 shadow shadow-gray-200'>No</button>
-                        <button onClick={() => handleLogOut()} className='btn btn-xs px-3 hover:px-4 mx-2 mt-2 bg-red-500 hover:bg-red-600 shadow shadow-gray-200'>Yes</button>
+                        <button onClick={() => setLogoutModal(false)} className='btn btn-xs px-3 hover:px-4 border-none mx-2 mt-2 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'>No</button>
+                        <button onClick={() => handleLogOut()} className='btn btn-xs px-3 hover:px-4 mx-2 mt-2 bg-transparent hover:bg-transparent border border-orange-500 hover:border-orange-600 hover:text-orange-500 shadow shadow-gray-200'>Yes</button>
                     </div>
                 </div>
             </div>

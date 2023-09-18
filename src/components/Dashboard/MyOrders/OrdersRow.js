@@ -17,7 +17,7 @@ const OrdersRow = ({ info, setModal }) => {
                 <span
                     htmlFor="ordered_items"
                     onClick={() => setModal(info)}
-                    className='text-blue-400 hover:text-blue-300 underline italic cursor-pointer'
+                    className='underline italic cursor-pointer'
                 >
                     View Details
                 </span>
@@ -26,9 +26,9 @@ const OrdersRow = ({ info, setModal }) => {
             <td
                 className={`
                     border border-b-gray-200 bg-transparent 
-                    ${deliveryStatus === 'Pending' && 'text-red-500'} 
-                    ${deliveryStatus === 'On Shipment' && 'text-yellow-400'} 
-                    ${deliveryStatus === 'Completed' && 'text-green-500'}`}
+                    ${deliveryStatus === 'Pending' && 'text-yellow-500'} 
+                    ${deliveryStatus === 'On Shipment' && 'text-orange-500'} 
+                    ${deliveryStatus === 'Completed' && 'italic'}`}
             >
                 {deliveryStatus}
             </td>

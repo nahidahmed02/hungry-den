@@ -46,14 +46,14 @@ const User = ({ user, refetch }) => {
                     role === "User" &&
                     <div className='mt-1'>
                         <span className='font-bold text-xs mr-1'>Make: </span>
-                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-green-600 hover:bg-green-700  hover:px-4 btn-xs font-semibold py-0.5 rounded-lg text-gray-200 shadow shadow-gray-200">Admin</span>
-                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-yellow-600 hover:bg-yellow-700 hover:px-4 ml-1 btn-xs font-semibold py-0.5 rounded-lg text-gray-200 shadow shadow-gray-200">D. Man</span>
+                        <span onClick={() => handleAdmin(email)} className="cursor-pointer bg-transparent hover:bg-transparent  hover:px-4 btn-xs font-semibold py-0.5 rounded-lg border border-orange-500 hover:border-orange-600 hover:text-orange-500 shadow shadow-gray-200">Admin</span>
+                        <span onClick={() => handleDMan(email)} className="cursor-pointer bg-transparent hover:bg-transparent hover:px-4 ml-1 btn-xs font-semibold py-0.5 rounded-lg border border-orange-500 hover:border-orange-600 hover:text-orange-500 shadow shadow-gray-200">D. Man</span>
                     </div>
                 }
 
                 {
                     role !== "User" &&
-                    <p className='font-semibold text-xs mt-1 text-blue-400'>Current Role: {role}</p>
+                    <p className='font-semibold text-xs mt-1 text-orange-500'>Current Role: {role}</p>
                 }
 
             </div>

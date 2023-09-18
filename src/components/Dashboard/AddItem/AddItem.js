@@ -159,7 +159,7 @@ const AddItem = () => {
 
                 <small className='mb-1.5 ml-9 text-gray-200'>
                     Please visit
-                    <a href="https://postimages.org/" target='_blank' className='text-blue-400 hover:text-blue-300 underline'> this website </a>
+                    <a href="https://postimages.org/" target='_blank' className='text-yellow-500 hover:text-yellow-400 font-semibold italic'> this website </a>
                     and upload your image. Then <br /> copy the
                     <span className='font-semibold text-orange-400'> Direct Link </span>
                     and paste that in this input field ⬇️

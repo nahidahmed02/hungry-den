@@ -13,7 +13,7 @@ const ItemsCard = ({ item, setDeleteItemModal }) => {
                 <button
                     onClick={() => setDeleteItemModal(item)}
                     htmlFor="delete_item_modal"
-                    className='btn-xs font-semibold mt-1.5 hover:px-4 text-gray-200 rounded-lg bg-red-500 hover:bg-red-600 shadow shadow-gray-200'
+                    className='btn btn-xs mt-1.5 hover:px-4 text-gray-200 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
                 >
                     Delete
                 </button>

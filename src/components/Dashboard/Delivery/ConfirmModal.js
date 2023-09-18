@@ -33,7 +33,7 @@ const ConfirmModal = ({ confirmModal, setConfirmModal, refetch }) => {
                     {
                         paymentType === 'Cash on Delivery'
                         &&
-                        <h2 className='text-orange-500 font-bold text-sm text-center mb-2.5'>
+                        <h2 className='text-gray-200 font-bold text-sm text-center mb-2.5'>
                             It&rsquo;s a Cash on Delivery. Do you get the cash from your client?
                         </h2>
                     }
@@ -44,12 +44,12 @@ const ConfirmModal = ({ confirmModal, setConfirmModal, refetch }) => {
 
                         <button
                             onClick={() => setConfirmModal(false)}
-                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-gray-200'
+                            className='btn btn-xs mx-2 mt-2 px-3 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
                         >No</button>
 
                         <button
                             onClick={handleConfirmation}
-                            className='btn btn-xs mx-2 mt-2 px-3 hover:px-5 bg-green-600 hover:bg-green-700 shadow shadow-gray-200'
+                            className='btn btn-xs mx-2 mt-2 px-3 hover:px-4 bg-transparent hover:bg-transparent border border-orange-500 hover:border-orange-600 hover:text-orange-500 shadow shadow-gray-200'
                         >Yes</button>
 
                     </div>

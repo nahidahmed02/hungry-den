@@ -30,7 +30,7 @@ const Admin = ({ admin, refetch }) => {
                 <div className='mt-1'>
                     <span
                         onClick={() => handleRemoveAdmin(email)}
-                        className="cursor-pointer py-0.5 hover:px-4 bg-red-500 hover:bg-red-600 btn-xs font-semibold text-gray-200 shadow shadow-gray-200 rounded-lg"
+                        className={`cursor-pointer py-0.5 hover:px-4 bg-orange-500 hover:bg-orange-600 btn-xs font-semibold text-gray-200 shadow shadow-gray-200 rounded-lg ${email === 'ahmednahid1995@gmail.com' && 'btn-disabled bg-transparent'}`}
                     >
                         Remove
                     </span>

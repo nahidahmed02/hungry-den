@@ -27,6 +27,9 @@ const AllReviews = () => {
     const handleDeleteReview = id => {
         fetch(`https://hungry-den-server.onrender.com/reviews/${id}`, {
             method: 'DELETE',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
 
         })
             .then(res => res.json())
@@ -75,7 +78,7 @@ const AllReviews = () => {
                         reviews?.map(review =>
                             <div key={review._id}>
 
-                                <div className='relative rounded-md py-4 text-center text-gray-200 border border-yellow-500 shadow shadow-gray-200'>
+                                <div className='relative rounded-md py-4 px-2 text-center text-gray-200 border border-yellow-500 shadow shadow-gray-200'>
                                     <RiDoubleQuotesL className='absolute top-1 left-1 text-yellow-500' />
 
                                     <p className='font-semibold text-sm'>{review.name}</p>
@@ -95,7 +98,7 @@ const AllReviews = () => {
                                         &&
                                         <span
                                             onClick={() => handleDeleteReview(review?._id)}
-                                            className='cursor-pointer bg-red-500 hover:bg-red-600 px-2 hover:px-4 pb-0.5 font-bold my-2 rounded-lg text-xs'>
+                                            className='cursor-pointer bg-transparent hover:bg-transparent border border-orange-500 hover:border-orange-600 hover:text-orange-500 px-2.5 hover:px-4 pb-0.5 font-semibold my-2 rounded-lg text-xs'>
                                             Delete
                                         </span>
                                     }

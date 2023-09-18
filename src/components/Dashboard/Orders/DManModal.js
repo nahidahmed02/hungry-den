@@ -66,7 +66,7 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
                                             </span>
                                             <button
                                                 onClick={() => handleAssignOrder(person._id)}
-                                                className='btn btn-xs border-none hover:px-3 bg-green-600 hover:bg-black'
+                                                className='btn btn-xs hover:px-3 border border-gray-200 bg-transparent hover:bg-black'
                                             >Assign</button>
 
                                         </li>)

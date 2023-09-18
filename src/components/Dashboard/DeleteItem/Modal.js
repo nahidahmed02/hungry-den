@@ -1,8 +1,12 @@
-import React from 'react';
+import { AuthContext } from '@/src/context/AuthProvider';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 
 const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
+
     const { _id } = deleteItemModal;
+    const { user } = useContext(AuthContext);
+    const email = user?.email;
 
     const handleDeleteItem = () => {
         fetch(`https://hungry-den-server.onrender.com/foods/${_id}`, {
@@ -30,9 +34,21 @@ const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
                     <h2 className='text-orange-500 font-bold text-xl text-center mb-1'>Are You Sure?</h2>
 
                     <div className='text-center'>
-                        <button onClick={() => setDeleteItemModal(false)} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-green-600 hover:bg-green-700 shadow shadow-gray-200'>No</button>
-                        <button onClick={() => handleDeleteItem()} className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-red-500 hover:bg-red-600 shadow shadow-gray-200'>Yes</button>
+
+                        <button
+                            onClick={() => setDeleteItemModal(false)}
+                            className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
+                        >No</button>
+
+                        <button
+                            onClick={() => handleDeleteItem()}
+                            className={`btn btn-xs ${email !== 'ahmednahid1995@gmail.com' && 'btn-disabled text-gray-200'} bg-transparent hover:bg-transparent mx-2 mt-2 hover:px-4 hover:text-orange-500 border border-orange-500 hover:border-orange-600 shadow shadow-gray-200`}
+                        >Yes</button>
+
                     </div>
+
+                    <h2 className='text-gray-200 text-center text-xs mt-2.5'>* The Delete Item option is currently restricted for some admins</h2>
+
                 </div>
             </div>
         </section>

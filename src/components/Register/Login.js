@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc'
+import Credentials from './Credentials';
 
 const Login = () => {
 
@@ -89,7 +90,7 @@ const Login = () => {
     }
 
     return (
-        <section className='pt-24 h-screen'>
+        <section className='pt-24 min-h-screen'>
             <div className='lg:flex lg:justify-center'>
 
                 <div className='lg:w-96'>
@@ -165,6 +166,8 @@ const Login = () => {
                 </div>
 
             </div>
+
+            <Credentials></Credentials>
 
         </section>
     )
