@@ -1,14 +1,19 @@
 import useEvents from '@/src/hooks/useEvents';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 
 const EventsDetails = () => {
+    const [event, setEvent] = useState(null);
     const [events, isLoading] = useEvents();
     const router = useRouter();
     const eventsId = router.query.eventsId;
 
-    const event = events?.find(event => event._id === eventsId);
+    useEffect(() => {
+        setEvent(events?.find(event => event._id === eventsId))
+    }, [events, eventsId])
+
+    // const event = events?.find(event => event._id === eventsId);
 
     if (isLoading) {
         return <Loading></Loading>
