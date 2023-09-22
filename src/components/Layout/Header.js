@@ -29,34 +29,50 @@ const Header = () => {
 
     const menuItems =
         <>
-            <li className={`font-bold flex flex-col ${router.pathname === '/' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/" className='btn-sm '><AiFillHome className='text-2xl lg:text-lg mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Home</span></Link>
+            <li className={`font-bold flex flex-col ${router.pathname === '/' ? 'text-custom-500' : 'text-gray-200'} hover:text-custom-500`}>
+                <Link href="/" className='btn-sm '>
+                    <AiFillHome className='text-2xl lg:text-lg mx-3 lg:mx-auto' />
+                    <span className='hidden lg:flex'>Home</span>
+                </Link>
             </li>
 
-            <li className={`font-bold flex flex-col ${router.pathname === '/cart' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/cart" className='btn-sm'><BsCart4 className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>My Cart</span>
-
+            <li className={`font-bold flex flex-col ${router.pathname === '/cart' ? 'text-custom-500' : 'text-gray-200'} hover:text-custom-500`}>
+                <Link href="/cart" className='btn-sm'>
+                    <BsCart4 className='text-2xl lg:text-lg  mx-3 lg:mx-auto' />
+                    <span className='hidden lg:flex'>My Cart</span>
                 </Link>
             </li>
 
             {user?.uid &&
-                <li className={`font-bold flex flex-col ${router.pathname === '/dashboard' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                    <Link href="/dashboard" className='btn-sm'><RxDashboard className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Dashboard</span></Link>
+                <li className={`font-bold flex flex-col ${router.pathname === '/dashboard' ? 'text-custom-500' : 'text-gray-200'} hover:text-custom-500`}>
+                    <Link href="/dashboard" className='btn-sm'>
+                        <RxDashboard className='text-2xl lg:text-lg  mx-3 lg:mx-auto' />
+                        <span className='hidden lg:flex'>Dashboard</span>
+                    </Link>
                 </li>
             }
 
-            <li className={`font-bold flex flex-col ${router.pathname === '/about' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                <Link href="/about" className='btn-sm'><BsInfoCircle className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>About Us</span></Link>
+            <li className={`font-bold flex flex-col ${router.pathname === '/about' ? 'text-custom-500' : 'text-gray-200'} hover:text-custom-500`}>
+                <Link href="/about" className='btn-sm'>
+                    <BsInfoCircle className='text-2xl lg:text-lg  mx-3 lg:mx-auto' />
+                    <span className='hidden lg:flex'>About Us</span>
+                </Link>
             </li>
 
             {user?.uid
                 ?
-                <li className={`font-bold flex flex-col text-gray-200 hover:text-orange-500`}>
-                    <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm -mt-0.5 lg:-mt-0'><FiLogOut className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Logout</span></button>
+                <li className={`font-bold flex flex-col text-gray-200 hover:text-custom-500`}>
+                    <button onClick={() => setLogoutModal(true)} htmlFor="logout_modal" className='btn-sm -mt-0.5 lg:-mt-0'>
+                        <FiLogOut className='text-2xl lg:text-lg mx-3 lg:mx-auto' />
+                        <span className='hidden lg:flex'>Logout</span>
+                    </button>
                 </li>
                 :
-                <li className={`font-bold flex flex-col  ${router.pathname === '/login' ? 'text-orange-500' : 'text-gray-200'} hover:text-orange-500`}>
-                    <Link href="/login" className='btn-sm'><VscSignIn className='text-2xl lg:text-lg  mx-3 lg:mx-auto' /><span className='hidden lg:flex'>Login</span></Link>
+                <li className={`font-bold flex flex-col  ${router.pathname === '/login' ? 'text-custom-500' : 'text-gray-200'} hover:text-custom-500`}>
+                    <Link href="/login" className='btn-sm'>
+                        <VscSignIn className='text-2xl lg:text-lg  mx-3 lg:mx-auto' />
+                        <span className='hidden lg:flex'>Login</span>
+                    </Link>
                 </li>
             }
         </>
@@ -66,9 +82,11 @@ const Header = () => {
 
             <div className="fixNav bg-black">
 
-                <div className='flex mb-0 py-1.5 justify-between border-b border-yellow-500'>
+                <div className='flex mb-0 py-1.5 justify-between border-b border-custom-500'>
                     <div className='my-auto'>
-                        <Link className="logo-font text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-orange-500" href='/'>Hungry <br className='md:hidden lg:hidden' /> <span className='text-orange-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span></Link>
+                        <Link className="logo-font text-xl md:text-xl lg:text-2xl ml-4 md:ml-12 lg:ml-14 text-custom-500" href='/'>
+                            Hungry <br className='md:hidden lg:hidden' /> <span className='text-custom-500 my-auto ml-8 md:ml-0 lg:ml-0'>Den</span>
+                        </Link>
                     </div>
 
                     {
@@ -78,13 +96,13 @@ const Header = () => {
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                className="input bg-transparent text-yellow-500 border-yellow-500 shadow shadow-gray-200 w-44 md:w-64 lg:w-96 ml-6 md:ml-10 lg:ml-0"
+                                className="input bg-transparent text-custom-500 border-custom-500 shadow shadow-gray-200 w-44 md:w-64 lg:w-96 ml-6 md:ml-10 lg:ml-0"
                             />
 
                         </div>
                     }
 
-                    <div className='flex flex-col text-center px-6 md:mr-10 lg:mr-7 my-auto text-yellow-500'>
+                    <div className='flex flex-col text-center px-6 md:mr-10 lg:mr-7 my-auto text-custom-500'>
                         <div className='flex'>
                             <CgProfile className='text-lg mr-1' />
                             <p className={`font-semibold text-sm `}>{name}</p>
@@ -120,7 +138,7 @@ const Header = () => {
 
                 {/* =================================== LARGE DEVICE MENU =================================== */}
 
-                <div className="hidden lg:flex justify-center border-b border-yellow-500">
+                <div className="hidden lg:flex justify-center border-b border-custom-500">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
 
@@ -129,7 +147,7 @@ const Header = () => {
 
                 {/* =================================== SMALL DEVICE MENU =================================== */}
 
-                <div className="bottom-0 fixed flex lg:hidden w-full bg-black border-t border-yellow-500">
+                <div className="bottom-0 fixed flex lg:hidden w-full bg-black border-t border-custom-500">
                     <ul className="flex mx-auto py-1.5 ">
                         {menuItems}
                     </ul>

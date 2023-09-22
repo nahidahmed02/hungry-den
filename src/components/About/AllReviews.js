@@ -66,8 +66,8 @@ const AllReviews = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-16 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Customer&rsquo;s Say</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-16 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>Customer&rsquo;s Say</h2>
 
             <section className='h-96 lg:h-72 overflow-y-auto mx-5 lg:mx-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3 lg:gap-5'>
                 {
@@ -78,29 +78,28 @@ const AllReviews = () => {
                         reviews?.map(review =>
                             <div key={review._id}>
 
-                                <div className='relative rounded-md py-4 px-2 text-center text-gray-200 border border-yellow-500 shadow shadow-gray-200'>
-                                    <RiDoubleQuotesL className='absolute top-1 left-1 text-yellow-500' />
+                                <div className='relative rounded-md py-4 px-2 text-center text-gray-200 border border-custom-500 shadow shadow-gray-200'>
+                                    <RiDoubleQuotesL className='absolute top-1 left-1 text-custom-500' />
 
                                     <p className='font-semibold text-sm'>{review.name}</p>
                                     <p className='italic text-xs mb-2'>{review.email}</p>
                                     <p className='italic font-semibold '> {review.feedback}</p>
-                                    <p className=' mb-1.5'>
-                                        <span className={`${review.ratings !== 'None' && 'text-yellow-500'} `}>
+                                    <p className=' my-1.5'>
+                                        <span className={`${review.ratings !== 'None' && 'text-custom-500'} `}>
                                             {ratingStar(review.ratings)}
                                         </span>
                                     </p>
 
 
-                                    <RiDoubleQuotesR className='absolute bottom-1 right-1 text-yellow-500' />
+                                    <RiDoubleQuotesR className='absolute bottom-1 right-1 text-custom-500' />
 
                                     {
                                         admin
                                         &&
-                                        <span
+                                        <button
                                             onClick={() => handleDeleteReview(review?._id)}
-                                            className='cursor-pointer bg-transparent hover:bg-transparent border border-orange-500 hover:border-orange-600 hover:text-orange-500 px-2.5 hover:px-4 pb-0.5 font-semibold my-2 rounded-lg text-xs'>
-                                            Delete
-                                        </span>
+                                            className='btn btn-xs rounded-md px-3 hover:px-4 mx-2 bg-transparent hover:bg-custom-500 text-custom-500 hover:text-gray-200 border border-custom-500 hover:border-custom-500 shadow shadow-gray-200'
+                                        >Delete</button>
                                     }
                                 </div>
 

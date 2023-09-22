@@ -16,12 +16,12 @@ const WeAreOpen = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-24 -mb-20 mx-9 md:mx-24 lg:mx-72'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>We Are Open</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-24 -mb-20 mx-9 md:mx-24 lg:mx-72'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>We Are Open</h2>
 
             <div className='flex flex-col lg:flex-row md:items-center mb-14 lg:mb-10'>
 
-                <div className='border border-yellow-500 mx-12 lg:mx-0 lg:ml-44'>
+                <div className='border border-custom-500 mx-12 lg:mx-0 lg:ml-44'>
                     <Image
                         src={open}
                         width={375}
@@ -44,7 +44,7 @@ const WeAreOpen = () => {
 
                     </div>
                     <div className='text-sm mt-8'>
-                        * Closure times may vary, particularly on holidays and special events. Please visit our website or <a onClick={scrollToContact} className='cursor-pointer font-semibold italic text-yellow-500 hover:text-yellow-400'>contact us </a> for the latest updates. We&rsquo;re excited to serve you!
+                        * Closure times may vary, particularly on holidays and special events. Please visit our website or <a onClick={scrollToContact} className='cursor-pointer font-semibold italic text-custom-500 hover:text-custom-400'>contact us </a> for the latest updates. We&rsquo;re excited to serve you!
                     </div>
                 </div>
 

@@ -121,9 +121,9 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
     }
 
     return (
-        <form onSubmit={handleSubmit} className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-yellow-500 shadow shadow-gray-200'>
+        <form onSubmit={handleSubmit} className='w-96 mx-auto mb-10 px-6 py-8 rounded-lg border border-custom-500 shadow shadow-gray-200'>
 
-            <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Order Summary</h2>
+            <h2 className='text-custom-500 font-bold text-xl text-center mb-2.5'>Order Summary</h2>
 
             {/* ------------------- ORDER LIST -------------------- */}
 
@@ -143,12 +143,19 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
 
             {/* --------------------- PRICING --------------------- */}
 
-            <h2 className='font-semibold text-sm text-gray-200 flex justify-between mt-2'><span>Total Price</span> ${sumOfAllPrice}</h2>
-            <h2 className='font-semibold text-sm text-gray-200 flex justify-between mb-2'><span>Delivery Charge</span> $12</h2>
+            <h2 className='font-semibold text-sm text-gray-200 flex justify-between mt-2'>
+                <span>Total Price</span> ${sumOfAllPrice}
+            </h2>
+
+            <h2 className='font-semibold text-sm text-gray-200 flex justify-between mb-2'>
+                <span>Delivery Charge</span> $12
+            </h2>
 
             <hr />
 
-            <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'><span>Total</span> ${includingDeliveryChrg}</h2>
+            <h2 className='font-semibold text-gray-200 flex justify-between mt-1.5'>
+                <span>Total</span> ${includingDeliveryChrg}
+            </h2>
 
             {/* --------------------- USER INFO --------------------- */}
 
@@ -165,7 +172,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
                             placeholder="Phone"
                             onChange={event => setPhone(event.target.value)}
                             defaultValue={phone}
-                            className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent h-7"
+                            className="input input-bordered w-full text-custom-500 border-custom-500 shadow shadow-gray-200 bg-transparent h-7"
                             required
                         />
                     </div>
@@ -179,7 +186,7 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
                             placeholder="Address"
                             onChange={event => setAddress(event.target.value)}
                             defaultValue={address}
-                            className="input input-bordered w-full text-yellow-500 border-yellow-500 shadow shadow-gray-200 bg-transparent ml-2 h-7"
+                            className="input input-bordered w-full text-custom-500 border-custom-500 shadow shadow-gray-200 bg-transparent ml-2 h-7"
                             required
                         />
                     </div>
@@ -191,12 +198,12 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
             </div>
 
             <CardElement
-                className='py-1 px-1 rounded-lg border border-yellow-500 shadow shadow-gray-200'
+                className='py-1 px-1 rounded-lg border border-custom-500 shadow shadow-gray-200'
                 options={{
                     style: {
                         base: {
                             fontSize: '16px',
-                            color: 'orange',
+                            color: '#F4A460',
                             '::placeholder': {
                                 color: '#aab7c4',
                             },
@@ -210,10 +217,10 @@ const CheckoutForm = ({ user, profile, selectedFoods, sumOfAllPrice, includingDe
             <button
                 type="submit"
                 disabled={!stripe || !clientSecret || processing}
-                className='btn btn-sm mt-5 px-5 hover:px-6 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:text-gray-400 shadow shadow-gray-200'
+                className='btn btn-sm rounded-md mt-5 px-5 hover:px-6 bg-transparent hover:bg-custom-500 text-custom-500 hover:text-gray-200 border border-custom-500 hover:border-custom-500 shadow shadow-gray-200'
             >Pay & Place Order</button>
 
-            {cardError && <p className='mt-4 text-yellow-500'>{cardError}</p>}
+            {cardError && <p className='mt-4 text-custom-500'>{cardError}</p>}
 
         </form>
     );

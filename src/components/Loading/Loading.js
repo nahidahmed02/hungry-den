@@ -11,7 +11,7 @@ const Loading = () => {
             </div>
 
             <div className='loading-animation'>
-                <span className="text-xl text-orange-400 animate-shine">Hungry Den</span>
+                <span className="text-xl text-custom-500 animate-shine">Hungry Den</span>
             </div>
         </div>
     );
