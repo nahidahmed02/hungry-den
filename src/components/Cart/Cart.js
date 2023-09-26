@@ -33,15 +33,15 @@ const Cart = () => {
                     <div className="overflow-x-auto mx-5 lg:mx-24 border rounded-t-lg border-custom-500 ">
                         <table className="table w-full">
                             <thead>
-                                <tr className='text-center text-gray-200 border border-black border-b-custom-500 '>
-                                    <td className='bg-transparent'>SL No.</td>
-                                    <th className='bg-transparent'>Image</th>
-                                    <th className='bg-transparent'>Category</th>
-                                    <th className='bg-transparent'>Name</th>
-                                    <th className='bg-transparent'>Unit Price</th>
-                                    <th className='bg-transparent'>Quantity</th>
-                                    <th className='bg-transparent'>Price (+vat)</th>
-                                    <th className='bg-transparent'>Action</th>
+                                <tr className='text-center text-gray-200 border border-black border-b-custom-500'>
+                                    <td className='bg-custom-500'>SL No.</td>
+                                    <th className='bg-custom-500'>Image</th>
+                                    <th className='bg-custom-500'>Category</th>
+                                    <th className='bg-custom-500'>Name</th>
+                                    <th className='bg-custom-500'>Unit Price</th>
+                                    <th className='bg-custom-500'>Quantity</th>
+                                    <th className='bg-custom-500'>Price (+vat)</th>
+                                    <th className='bg-custom-500'>Action</th>
                                 </tr>
                             </thead>
 

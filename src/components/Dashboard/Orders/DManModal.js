@@ -45,7 +45,7 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
             <div className="modal">
                 <div className="modal-box bg-black border border-yellow-500 shadow shadow-gray-200">
 
-                    <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Delivery Man</h2>
+                    <h2 className='text-custom-500 font-bold text-xl text-center mb-2.5'>Delivery Man</h2>
 
                     {
                         dMan?.length === 0
@@ -59,14 +59,14 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
                                     dMan?.map(person =>
                                         <li
                                             key={person._id}
-                                            className='flex justify-between border rounded-lg mb-2 px-5 py-2 hover:bg-orange-500'
+                                            className='flex justify-between border rounded-lg mb-2 px-5 py-2 hover:bg-custom-500'
                                         >
                                             <span>
                                                 {person.name} <span className='text-xs italic'>{person.email}</span>
                                             </span>
                                             <button
                                                 onClick={() => handleAssignOrder(person._id)}
-                                                className='btn btn-xs hover:px-3 border border-gray-200 bg-transparent hover:bg-black'
+                                                className='btn btn-xs hover:px-3 border border-gray-200 bg-transparent hover:bg-black hover:text-custom-500'
                                             >Assign</button>
 
                                         </li>)
@@ -81,7 +81,7 @@ const DManModal = ({ dManModal, setDManModal, refetch }) => {
                     <div className='text-center mt-1.5'>
                         <button
                             onClick={() => setDManModal(false)}
-                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
+                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-custom-500 hover:bg-custom-500 shadow shadow-gray-200'
                         >Close</button>
                     </div>
 

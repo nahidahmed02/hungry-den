@@ -39,8 +39,8 @@ const AddItem = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Add Item</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>Add Item</h2>
 
             <form onSubmit={handleSubmit(handleAddItem)} className='flex flex-col w-96 mx-auto mb-4'>
 
@@ -56,7 +56,7 @@ const AddItem = () => {
                         // ===================== EXISTING CATEGORIES =====================
                         <select
                             {...register("category", { required: "Category is required" })}
-                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-full max-w-xs mx-auto mb-2.5"
                             required
                         >
                             {
@@ -73,7 +73,7 @@ const AddItem = () => {
                             {...register("category", { required: "Category is required" })}
                             type="text"
                             placeholder="Category"
-                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-2.5"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-full max-w-xs mx-auto mb-2.5"
                             required
                         />
                 }
@@ -81,13 +81,13 @@ const AddItem = () => {
                 {/* ======== TO TOGGLE BETWEEN NEW & EXISTING CATEGORY ========*/}
 
                 <small
-                    className='cursor-pointer w-fit ml-60 -mt-1 text-gray-200'
+                    className='cursor-pointer w-fit ml-60 -mt-1 text-custom-500'
                     onClick={toggleCategoryField}
                 >
                     {tap ? 'Add new Category' : 'Existing Categories'}
                 </small>
 
-                {errors.category && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.category?.message}</p>}
+                {errors.category && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.category?.message}</p>}
 
                 {/*=================================== FOOD NAME FIELD ===================================*/}
 
@@ -99,10 +99,10 @@ const AddItem = () => {
                     {...register("name", { required: "Name is required" })}
                     type="text"
                     placeholder="Name"
-                    className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-2.5"
+                    className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
-                {errors.name && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
+                {errors.name && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.name?.message}</p>}
 
                 {/*=================================== PRICE & VAT FIELD ===================================*/}
 
@@ -119,7 +119,7 @@ const AddItem = () => {
                             {...register("price", { required: "Price is required", min: { value: '1', message: "Invalid price" } })}
                             type="number"
                             placeholder="Price"
-                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full"
+                            className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-full"
                             required
                         />
                     </div>
@@ -137,7 +137,7 @@ const AddItem = () => {
                                 {...register("vat", { required: "Vat is required", min: { value: '1', message: 'Invalid VAT' } })}
                                 type="number"
                                 placeholder="VAT"
-                                className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-2/3"
+                                className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-2/3"
                                 required
                             />
                             <label className='ml-1 mt-3 text-gray-200'>%</label>
@@ -146,10 +146,10 @@ const AddItem = () => {
                     </div>
 
                 </div>
-                {errors.price && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
-                {errors.price && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
-                {errors.vat && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.vat?.message}</p>}
-                {errors.vat && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
+                {errors.price && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.price?.message}</p>}
+                {errors.price && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
+                {errors.vat && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.vat?.message}</p>}
+                {errors.vat && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.min?.message}</p>}
 
                 {/*=================================== PHOTO URL FIELD ===================================*/}
 
@@ -159,10 +159,10 @@ const AddItem = () => {
 
                 <small className='mb-1.5 ml-9 text-gray-200'>
                     Please visit
-                    <a href="https://postimages.org/" target='_blank' className='text-yellow-500 hover:text-yellow-400 font-semibold italic'> this website </a>
+                    <a href="https://postimages.org/" target='_blank' className='text-custom-500 font-semibold italic'> this website </a>
                     and upload your image. Then <br /> copy the
-                    <span className='font-semibold text-orange-400'> Direct Link </span>
-                    and paste that in this input field ⬇️
+                    <span className='font-semibold'> &rsquo;Direct Link&rsquo; </span>
+                    and paste that in this input field
                 </small>
 
                 {/*======================= URL FIELD =======================*/}
@@ -171,22 +171,22 @@ const AddItem = () => {
                     {...register("photo", { required: "Image is required" })}
                     type="text"
                     placeholder='Direct Link'
-                    className="input input-bordered bg-transparent shadow shadow-gray-200 text-yellow-500 border-yellow-500 w-full max-w-xs mx-auto mb-2.5"
+                    className="input input-bordered bg-transparent shadow shadow-gray-200 text-custom-500 border-custom-500 w-full max-w-xs mx-auto mb-2.5"
                     required
                 />
-                {errors.img && <p className='text-yellow-500 ml-10 mb-2.5 font-semibold'>{errors.img?.message}</p>}
+                {errors.img && <p className='text-custom-500 ml-10 mb-2.5 font-semibold'>{errors.img?.message}</p>}
 
                 {/*=================================== SUBMIT BUTTON ===================================*/}
 
                 <button
                     type="submit"
-                    className="bg-orange-500 hover:bg-orange-600 text-gray-200 font-bold shadow shadow-gray-200 hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
+                    className="bg-custom-500 text-gray-200 font-semibold shadow shadow-gray-200 hover:rounded-2xl w-full max-w-xs mx-auto py-2 mt-1.5 rounded-md">
                     Add
                 </button>
 
                 {/*============================== SHOWING ERRORS IN THE UI ==============================*/}
 
-                {addItemError && <p className='text-yellow-500 ml-10 pr-5 mb-2.5 font-semibold'>{addItemError}</p>}
+                {addItemError && <p className='text-custom-500 ml-10 pr-5 mb-2.5 font-semibold'>{addItemError}</p>}
             </form>
 
         </section>)

@@ -6,30 +6,24 @@ const OrdersRow = ({ info, setModal }) => {
     return (
         <tr className='text-center text-sm font-semibold text-gray-200'>
 
-            <td className='border border-b-gray-200 bg-transparent'>{time}</td>
-            <td className='border border-b-gray-200 bg-transparent'>
+            <td className='border border-x-0 border-custom-500 bg-transparent'>{time}</td>
+            <td className='border border-x-0 border-custom-500 bg-transparent'>
                 {paymentType}
                 <br />
                 {transactionId && <small>Transaction Id: {transactionId}</small>}
             </td>
 
-            <td className='border border-b-gray-200 bg-transparent'>
+            <td className='border border-x-0 border-custom-500 bg-transparent'>
                 <span
                     htmlFor="ordered_items"
                     onClick={() => setModal(info)}
-                    className='underline italic cursor-pointer'
+                    className='italic cursor-pointer text-custom-500'
                 >
                     View Details
                 </span>
             </td>
 
-            <td
-                className={`
-                    border border-b-gray-200 bg-transparent 
-                    ${deliveryStatus === 'Pending' && 'text-yellow-500'} 
-                    ${deliveryStatus === 'On Shipment' && 'text-orange-500'} 
-                    ${deliveryStatus === 'Completed' && 'italic'}`}
-            >
+            <td className='border border-x-0 border-custom-500 bg-transparent'>
                 {deliveryStatus}
             </td>
 

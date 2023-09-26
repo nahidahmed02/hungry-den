@@ -36,22 +36,22 @@ const Delivery = () => {
     return (
         <section>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Delivery Orders</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>Delivery Orders</h2>
 
             {
                 assignedDeliveries?.length === 0
                     ?
                     <p className='font-bold text-center text-2xl italic text-gray-200'>No delivery order yet!</p>
                     :
-                    <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-black border-b-0">
+                    <div className="overflow-x-auto mx-3 lg:mx-28 mb-8 border rounded-t-lg border-custom-500">
                         <table className="table w-full">
                             <thead>
-                                <tr className='text-center text-gray-200'>
-                                    <td className='bg-orange-500 '>Order&rsquo;s Details</td>
-                                    <th className='bg-orange-500 '>Payment Type</th>
-                                    <th className='bg-orange-500 '>Delivery Status</th>
-                                    <th className='bg-orange-500 '>Delivery Progress</th>
+                                <tr className='text-center text-gray-200 border border-black border-b-custom-500'>
+                                    <td className='bg-custom-500'>Order&rsquo;s Details</td>
+                                    <th className='bg-custom-500'>Payment Type</th>
+                                    <th className='bg-custom-500'>Delivery Status</th>
+                                    <th className='bg-custom-500'>Delivery Progress</th>
                                 </tr>
                             </thead>
 

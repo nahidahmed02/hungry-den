@@ -18,9 +18,9 @@ const Pagination = () => {
                     {pageNumbers.map(number => (
                         <li
                             key={number}
-                            className={`page-item ${currentPage === number ? 'text-orange-500 text-xl' : 'text-gray-200'}`}
+                            className={`page-item ${currentPage === number ? 'text-custom-500 text-xl' : 'text-gray-200'}`}
                         >
-                            <button onClick={() => handlePageChange(number)} className="page-link hover:text-orange-500 shadow shadow-gray-200 font-semibold">
+                            <button onClick={() => handlePageChange(number)} className="page-link hover:text-custom-500 shadow shadow-gray-200 font-semibold">
                                 {number}
                             </button>
                         </li>

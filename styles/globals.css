@@ -52,7 +52,7 @@ body {
 }
 
 .page-link {
-    border: 1px solid rgb(234 179 8);
+    border: 1px solid #F4A460;
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 10px;

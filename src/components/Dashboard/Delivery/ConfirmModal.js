@@ -27,9 +27,9 @@ const ConfirmModal = ({ confirmModal, setConfirmModal, refetch }) => {
             <input type="checkbox" id="confirm_modal" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box bg-black border border-yellow-500 shadow shadow-gray-200">
+                <div className="modal-box bg-black border border-custom-500 shadow shadow-gray-200">
 
-                    <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Are you sure?</h2>
+                    <h2 className='text-custom-500 font-bold text-xl text-center mb-2.5'>Are you sure?</h2>
                     {
                         paymentType === 'Cash on Delivery'
                         &&
@@ -44,12 +44,12 @@ const ConfirmModal = ({ confirmModal, setConfirmModal, refetch }) => {
 
                         <button
                             onClick={() => setConfirmModal(false)}
-                            className='btn btn-xs mx-2 mt-2 px-3 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
+                            className='btn btn-xs rounded-md mx-2 mt-2 px-3 hover:px-4 bg-custom-500 hover:bg-transparent hover:text-custom-500 hover:border-custom-500 shadow shadow-gray-200'
                         >No</button>
 
                         <button
                             onClick={handleConfirmation}
-                            className='btn btn-xs mx-2 mt-2 px-3 hover:px-4 bg-transparent hover:bg-transparent border border-orange-500 hover:border-orange-600 hover:text-orange-500 shadow shadow-gray-200'
+                            className='btn btn-xs rounded-md mx-2 mt-2 px-3 hover:px-4 bg-transparent hover:bg-custom-500 border border-custom-500 hover:border-custom-500 hover:text-gray-200 shadow shadow-gray-200'
                         >Yes</button>
 
                     </div>

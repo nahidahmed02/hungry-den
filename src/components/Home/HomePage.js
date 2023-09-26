@@ -16,8 +16,8 @@ const HomePage = () => {
 
             <Banner />
 
-            <h2 className='border-b-2 border-b-orange-500 mt-16 -mb-20 mx-9 md:mx-24 lg:mx-72'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-8 text-orange-500 bg-black'>Checkout Our Menu</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-16 -mb-20 mx-9 md:mx-24 lg:mx-72'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-8 text-custom-500 bg-black'>Checkout Our Menu</h2>
 
             <Category />
 

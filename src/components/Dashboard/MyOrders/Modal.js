@@ -10,9 +10,9 @@ const Modal = ({ orderDetails, modal, setModal }) => {
             <input type="checkbox" id="ordered_items" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box bg-black border border-yellow-500 shadow shadow-gray-200">
+                <div className="modal-box bg-black border border-custom-500 shadow shadow-gray-200">
 
-                    <h2 className='text-orange-500 font-bold text-xl text-center mb-2.5'>Ordered Items</h2>
+                    <h2 className='text-custom-500 font-bold text-xl text-center mb-2.5'>Ordered Items</h2>
 
                     {/* ------------------- ORDER LIST -------------------- */}
 
@@ -45,7 +45,7 @@ const Modal = ({ orderDetails, modal, setModal }) => {
                     <div className='text-center mt-1.5'>
                         <button
                             onClick={() => setModal(false)}
-                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
+                            className='btn btn-xs mx-2 mt-2 hover:px-4 bg-custom-500 hover:bg-custom-500 shadow shadow-gray-200'
                         >
                             Close
                         </button>

@@ -59,7 +59,7 @@ const Food = ({ food }) => {
 
     return (
         <section>
-            <div className="card rounded-lg border border-yellow-500 hover:border-orange-500 shadow shadow-gray-200 bg-transparent text-gray-200">
+            <div className="card rounded-lg border border-custom-500 hover:border-gray-200 shadow shadow-gray-200 bg-transparent text-gray-200">
 
                 <figure>
                     <Image
@@ -102,7 +102,7 @@ const Food = ({ food }) => {
                         (!isAddedToCart)
                         &&
                         <button
-                            className="rounded-lg px-2 text-gray-200 font-semibold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
+                            className="rounded-md px-2 text-gray-200 font-semibold btn-xs bg-custom-500 hover:bg-transparent hover:text-custom-500 hover:border hover:border-custom-500 shadow shadow-gray-200 mx-auto"
                             onClick={handleAddToCart}
                         >Add to Cart</button>
                     }
@@ -113,12 +113,12 @@ const Food = ({ food }) => {
                         &&
                         <>
                             <button
-                                className="rounded-lg px-2 text-gray-200 font-semibold btn-xs bg-orange-500 hover:bg-orange-600 mx-auto"
+                                className="rounded-md px-2 text-custom-500 hover:text-gray-200 font-semibold btn-xs bg-transparent border border-custom-500 hover:bg-custom-500 mx-auto shadow shadow-gray-200"
                                 onClick={() => router.push('/cart')}
                             >Go to Cart</button>
 
                             <button
-                                className="rounded-lg px-2.5 text-gray-200 hover:text-orange-600 font-semibold btn-xs border border-orange-500 hover:border-orange-600 mx-auto"
+                                className="rounded-md px-2.5 text-custom-500 hover:text-gray-200 font-semibold btn-xs border border-custom-500 hover:bg-custom-500 mx-auto shadow shadow-gray-200"
                                 onClick={handleRemoveFromCart}
                             >Remove</button>
                         </>

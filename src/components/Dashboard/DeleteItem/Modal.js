@@ -30,19 +30,19 @@ const Modal = ({ deleteItemModal, setDeleteItemModal, refetch }) => {
             <input type="checkbox" id="delete_item_modal" className="modal-toggle" defaultChecked={true} />
 
             <div className="modal">
-                <div className="modal-box py-12 bg-black border border-yellow-500 shadow shadow-gray-200">
-                    <h2 className='text-orange-500 font-bold text-xl text-center mb-1'>Are You Sure?</h2>
+                <div className="modal-box py-12 bg-black border border-custom-500 shadow shadow-gray-200">
+                    <h2 className='text-custom-500 font-bold text-xl text-center mb-1'>Are You Sure?</h2>
 
                     <div className='text-center'>
 
                         <button
                             onClick={() => setDeleteItemModal(false)}
-                            className='btn btn-xs border-none mx-2 mt-2 hover:px-4 bg-orange-500 hover:bg-orange-600 shadow shadow-gray-200'
+                            className='btn btn-xs rounded-md mx-2 mt-2 px-3 hover:px-4 bg-custom-500 hover:bg-transparent hover:text-custom-500 hover:border-custom-500 shadow shadow-gray-200'
                         >No</button>
 
                         <button
                             onClick={() => handleDeleteItem()}
-                            className={`btn btn-xs ${email !== 'ahmednahid1995@gmail.com' && 'btn-disabled text-gray-200'} bg-transparent hover:bg-transparent mx-2 mt-2 hover:px-4 hover:text-orange-500 border border-orange-500 hover:border-orange-600 shadow shadow-gray-200`}
+                            className={`btn btn-xs rounded-md ${email !== 'ahmednahid1995@gmail.com' && 'btn-disabled text-gray-200'} bg-transparent hover:bg-transparent mx-2 mt-2 px-3 hover:px-4 hover:text-custom-500 border border-custom-500 hover:border-custom-500 shadow shadow-gray-200`}
                         >Yes</button>
 
                     </div>

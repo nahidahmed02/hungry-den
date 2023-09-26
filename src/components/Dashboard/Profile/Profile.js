@@ -33,10 +33,10 @@ const Profile = () => {
 
         <section>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Profile</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-12 -mb-20 mx-16 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>Profile</h2>
 
-            <div className="mx-8 lg:mx-auto card w-auto lg:w-96 text-gray-200 bg-black border border-yellow-500 shadow-md shadow-gray-200">
+            <div className="mx-8 lg:mx-auto card w-auto lg:w-96 text-gray-200 border border-custom-500 shadow-md shadow-gray-200">
 
                 <figure className="px-10 pt-10">
                     <Image
@@ -65,7 +65,7 @@ const Profile = () => {
 
                     <button
                         onClick={() => setProfileModal(true)}
-                        className="text-gray-200 font-bold rounded hover:rounded-xl btn-sm shadow shadow-gray-200 bg-orange-500 hover:bg-orange-600 mt-3"
+                        className="text-gray-200 font-semibold rounded-md hover:rounded-xl btn-sm shadow shadow-gray-200 bg-custom-500 mt-3"
                     >
                         Edit
                     </button>

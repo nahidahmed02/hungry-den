@@ -30,7 +30,7 @@ const SelectedFood = ({ selectedFood, handleRemoveFromCart, index }) => {
             <td className='border border-x-0 border-custom-500 bg-transparent'>
                 <button
                     onClick={() => handleRemoveFromCart(_id)}
-                    className='btn btn-xs rounded-md text-custom-500 hover:text-gray-200 border border-custom-500 hover:border-custom-500 shadow shadow-gray-200 bg-transparent hover:bg-custom-500'
+                    className='btn btn-xs rounded-md hover:text-custom-500 border border-custom-500 hover:border-custom-500 shadow shadow-gray-200 bg-custom-500 hover:bg-transparent'
                 >Remove</button>
             </td>
 

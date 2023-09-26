@@ -8,8 +8,72 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
+      },
+      {
+        "source": "/events/**",
+        "destination": "/events/[eventsId].html"
+      },
+      {
+        "source": "/cart",
+        "destination": "/cart.html"
+      },
+      {
+        "source": "/paymentOpt",
+        "destination": "/paymentOpt.html"
+      },
+      {
+        "source": "/paymentOpt/cashOnDelivery",
+        "destination": "/paymentOpt/cashOnDelivery.html"
+      },
+      {
+        "source": "/paymentOpt/payOnline",
+        "destination": "/paymentOpt/payOnline.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
+      },
+      {
+        "source": "/dashboard/addReview",
+        "destination": "/dashboard/addReview.html"
+      },
+      {
+        "source": "/dashboard/deleteItem",
+        "destination": "/dashboard/deleteItem.html"
+      },
+      {
+        "source": "/dashboard/delivery",
+        "destination": "/dashboard/delivery.html"
+      },
+      {
+        "source": "/dashboard/manageUsers",
+        "destination": "/dashboard/manageUsers.html"
+      },
+      {
+        "source": "/dashboard/myOrders",
+        "destination": "/dashboard/myOrders.html"
+      },
+      {
+        "source": "/dashboard/orders",
+        "destination": "/dashboard/orders.html"
+      },
+      {
+        "source": "/dashboard/addItem",
+        "destination": "/dashboard/addItem.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "/login",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/signup",
+        "destination": "/signup.html"
       }
     ]
   }
