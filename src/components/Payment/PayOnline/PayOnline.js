@@ -30,8 +30,8 @@ const PayOnline = () => {
     return (
         <section className='min-h-screen pt-24 text-gray-200'>
 
-            <h2 className='border-b-2 border-b-orange-500 mt-8 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
-            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-orange-500 bg-black'>Online Payment</h2>
+            <h2 className='border-b-2 border-b-custom-500 mt-8 -mb-20 mx-10 md:mx-24 lg:mx-56'></h2>
+            <h2 className='header-font text-4xl w-fit mx-auto px-3 md:px-5 lg:px-5 mt-14 mb-10 text-custom-500 bg-black'>Online Payment</h2>
 
             <Elements stripe={stripePromise}>
                 <CheckoutForm
