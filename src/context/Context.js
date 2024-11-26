@@ -23,14 +23,6 @@ export const ContextProvider = ({ children }) => {
         }
     })
 
-
-    // ---------- showing loader while loading foods from DB -------------
-
-    if (isLoading) {
-        return <Loading></Loading>
-    }
-
-
     // ------------------ category and pagination --------------------
 
     const handleCategoryClick = (category) => {
@@ -88,6 +80,7 @@ export const ContextProvider = ({ children }) => {
             searchQuery,
             searchResult,
             handleSearch,
+            isLoading,
             refetch
         }}>
             {children}
